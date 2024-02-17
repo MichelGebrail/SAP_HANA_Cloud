@@ -1,0 +1,832 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="mccain-shared::CV_Daily_Variance" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_Daily_Variance"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="mccain-shared::KKBC_PAPM">
+    <resourceUri>mccain-shared::KKBC_PAPM</resourceUri>
+  </DataSource>
+  <DataSource id="mccain-shared::ZGRTR_MATMAS">
+    <resourceUri>mccain-shared::ZGRTR_MATMAS</resourceUri>
+  </DataSource>
+  <DataSource id="mccain-shared::T023T">
+    <resourceUri>mccain-shared::T023T</resourceUri>
+  </DataSource>
+  <DataSource id="mccain-shared::SKAT">
+    <resourceUri>mccain-shared::SKAT</resourceUri>
+  </DataSource>
+  <DataSource id="mccain-shared::ZGRTR_KKBC_POVR">
+    <resourceUri>mccain-shared::ZGRTR_KKBC_POVR</resourceUri>
+  </DataSource>
+  <DataSource id="mccain-shared::CSLT">
+    <resourceUri>mccain-shared::CSLT</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="EnrichedKKBC">
+    <viewAttributes>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="AUFNR"/>
+      <viewAttribute id="KOSTL"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="KSTAR"/>
+      <viewAttribute id="KSTAR_T"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="MAKTX"/>
+      <viewAttribute id="ZACTIVITY_1"/>
+      <viewAttribute id="WOGBTR_A"/>
+      <viewAttribute id="WOGBTR_T"/>
+      <viewAttribute id="QTY_A_KG"/>
+      <viewAttribute id="QTY_A_LB"/>
+      <viewAttribute id="QTY_KG_NW"/>
+      <viewAttribute id="QTY_LB_NW"/>
+      <viewAttribute id="ZDRQTY"/>
+      <viewAttribute id="ZDRACTR"/>
+      <viewAttribute id="MENGE"/>
+      <viewAttribute id="ZST_PRICE"/>
+      <viewAttribute id="BEKNZ"/>
+      <viewAttribute id="BOM_UOM"/>
+      <viewAttribute id="BASE_UOM"/>
+      <viewAttribute id="YIELD"/>
+      <viewAttribute id="ZMTREF"/>
+      <viewAttribute id="BKLAS"/>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="ENGR_QTY"/>
+      <viewAttribute id="SAKNR"/>
+      <viewAttribute id="MAKTL"/>
+      <viewAttribute id="ZDATE"/>
+      <viewAttribute id="ZTIME"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="mccain-shared::KKBC_PAPM"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="MaterialMaster">
+    <viewAttributes>
+      <viewAttribute id="ZMATNR"/>
+      <viewAttribute id="MATKL"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CC_MATNR" datatype="NVARCHAR" length="10" expressionLanguage="SQL">
+        <formula>LTRIM(&quot;ZMATNR&quot;,'0')</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="mccain-shared::ZGRTR_MATMAS"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_5">
+    <viewAttributes>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="WGBEZ"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="mccain-shared::T023T"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:AggregationView" id="Projection_6">
+    <viewAttributes>
+      <viewAttribute id="KTOPL"/>
+      <viewAttribute id="SAKNR"/>
+      <viewAttribute id="TXT20"/>
+      <viewAttribute id="TXT50"/>
+      <viewAttribute id="MCOD1"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <restrictedViewAttributes/>
+    <input node="mccain-shared::SKAT"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="MaterialGroup" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MATKL"/>
+    
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="AUFNR"/>
+      <viewAttribute id="KOSTL"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="KSTAR"/>
+      <viewAttribute id="KSTAR_T"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="MAKTX"/>
+      <viewAttribute id="ZACTIVITY_1"/>
+      <viewAttribute id="WOGBTR_A" aggregationType="sum"/>
+      <viewAttribute id="WOGBTR_T" aggregationType="sum"/>
+      <viewAttribute id="QTY_A_KG" aggregationType="sum"/>
+      <viewAttribute id="QTY_A_LB" aggregationType="sum"/>
+      <viewAttribute id="QTY_KG_NW" aggregationType="sum"/>
+      <viewAttribute id="QTY_LB_NW" aggregationType="sum"/>
+      <viewAttribute id="ZDRQTY" aggregationType="sum"/>
+      <viewAttribute id="ZDRACTR" aggregationType="sum"/>
+      <viewAttribute id="MENGE" aggregationType="sum"/>
+      <viewAttribute id="ZST_PRICE" aggregationType="sum"/>
+      <viewAttribute id="BEKNZ"/>
+      <viewAttribute id="BOM_UOM"/>
+      <viewAttribute id="BASE_UOM"/>
+      <viewAttribute id="YIELD" aggregationType="sum"/>
+      <viewAttribute id="ZMTREF"/>
+      <viewAttribute id="BKLAS"/>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="ENGR_QTY" aggregationType="sum"/>
+      <viewAttribute id="SAKNR"/>
+      <viewAttribute id="MAKTL"/>
+      <viewAttribute id="ZDATE"/>
+      <viewAttribute id="ZTIME"/>
+      <viewAttribute id="WOGBTR_V" aggregationType="sum"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Union_1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AUFNR" source="AUFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOSTL" source="KOSTL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KSTAR" source="KSTAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KSTAR_T" source="KSTAR_T"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAKTX" source="MAKTX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZACTIVITY_1" source="ZACTIVITY_1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WOGBTR_A" source="WOGBTR_A"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WOGBTR_T" source="WOGBTR_T"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="QTY_A_KG" source="QTY_A_KG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="QTY_A_LB" source="QTY_A_LB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="QTY_KG_NW" source="QTY_KG_NW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="QTY_LB_NW" source="QTY_LB_NW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZDRQTY" source="ZDRQTY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZDRACTR" source="ZDRACTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MENGE" source="MENGE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZST_PRICE" source="ZST_PRICE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BEKNZ" source="BEKNZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BOM_UOM" source="BOM_UOM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BASE_UOM" source="BASE_UOM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="YIELD" source="YIELD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZMTREF" source="ZMTREF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BKLAS" source="BKLAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOKRS" source="KOKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ENGR_QTY" source="ENGR_QTY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SAKNR" source="SAKNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAKTL" source="MAKTL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZDATE" source="ZDATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZTIME" source="ZTIME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WOGBTR_V" source="WOGBTR_V"/>
+    </input>
+    <input node="MaterialMaster">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL" source="MATKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="CC_MATNR"/>
+    </input>
+    <joinAttribute name="MATNR"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:UnionView" id="Union_1">
+    <viewAttributes>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="AUFNR"/>
+      <viewAttribute id="KOSTL"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="KSTAR"/>
+      <viewAttribute id="KSTAR_T"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="MAKTX"/>
+      <viewAttribute id="ZACTIVITY_1"/>
+      <viewAttribute id="WOGBTR_A" aggregationType="sum"/>
+      <viewAttribute id="WOGBTR_T" aggregationType="sum"/>
+      <viewAttribute id="QTY_A_KG" aggregationType="sum"/>
+      <viewAttribute id="QTY_A_LB" aggregationType="sum"/>
+      <viewAttribute id="QTY_KG_NW" aggregationType="sum"/>
+      <viewAttribute id="QTY_LB_NW" aggregationType="sum"/>
+      <viewAttribute id="ZDRQTY" aggregationType="sum"/>
+      <viewAttribute id="ZDRACTR" aggregationType="sum"/>
+      <viewAttribute id="MENGE" aggregationType="sum"/>
+      <viewAttribute id="ZST_PRICE" aggregationType="sum"/>
+      <viewAttribute id="BEKNZ"/>
+      <viewAttribute id="BOM_UOM"/>
+      <viewAttribute id="BASE_UOM"/>
+      <viewAttribute id="YIELD" aggregationType="sum"/>
+      <viewAttribute id="ZMTREF"/>
+      <viewAttribute id="BKLAS"/>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="ENGR_QTY" aggregationType="sum"/>
+      <viewAttribute id="SAKNR"/>
+      <viewAttribute id="MAKTL"/>
+      <viewAttribute id="ZDATE"/>
+      <viewAttribute id="ZTIME"/>
+      <viewAttribute id="WOGBTR_V" aggregationType="sum"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EnrichedKKBC" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AUFNR" source="AUFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOSTL" source="KOSTL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KSTAR" source="KSTAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KSTAR_T" source="KSTAR_T"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAKTX" source="MAKTX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZACTIVITY_1" source="ZACTIVITY_1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WOGBTR_A" source="WOGBTR_A"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WOGBTR_T" source="WOGBTR_T"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="QTY_A_KG" source="QTY_A_KG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="QTY_A_LB" source="QTY_A_LB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="QTY_KG_NW" source="QTY_KG_NW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="QTY_LB_NW" source="QTY_LB_NW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZDRQTY" source="ZDRQTY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZDRACTR" source="ZDRACTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MENGE" source="MENGE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZST_PRICE" source="ZST_PRICE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BEKNZ" source="BEKNZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BOM_UOM" source="BOM_UOM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BASE_UOM" source="BASE_UOM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="YIELD" source="YIELD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZMTREF" source="ZMTREF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BKLAS" source="BKLAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOKRS" source="KOKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ENGR_QTY" source="ENGR_QTY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SAKNR" source="SAKNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAKTL" source="MAKTL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZDATE" source="ZDATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZTIME" source="ZTIME"/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="WOGBTR_V" null="true" value=""/>
+    </input>
+    <input node="KKBC" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AUFNR" source="AUFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOSTL" source="KOSTL"/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="BUKRS" null="true" value=""/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KSTAR" source="KSTAR"/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="KSTAR_T" null="true" value=""/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAKTX" source="MAKTX"/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="ZACTIVITY_1" null="true" value=""/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WOGBTR_A" source="WOGBTR_A"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WOGBTR_T" source="WOGBTR_T"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="QTY_A_KG" source="WOGBTR_T"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="QTY_A_LB" source="QTY_A_LB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="QTY_KG_NW" source="QTY_KG_NW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="QTY_LB_NW" source="QTY_LB_NW"/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="ZDRQTY" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="ZDRACTR" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="MENGE" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="ZST_PRICE" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="BEKNZ" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="BOM_UOM" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="BASE_UOM" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="YIELD" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="ZMTREF" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="BKLAS" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="KOKRS" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="ENGR_QTY" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="SAKNR" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="MAKTL" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="ZDATE" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="ZTIME" null="true" value=""/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WOGBTR_V" source="WOGBTR_V"/>
+    </input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="KKBC" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="AUFNR"/>
+      <viewAttribute id="KOSTL"/>
+      <viewAttribute id="KSTAR"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="MAKTX"/>
+      <viewAttribute id="WOGBTR_A"/>
+      <viewAttribute id="WOGBTR_T"/>
+      <viewAttribute id="QTY_A_LB"/>
+      <viewAttribute id="QTY_KG_NW"/>
+      <viewAttribute id="QTY_LB_NW"/>
+      <viewAttribute id="WOGBTR_V"/>
+      <viewAttribute id="OWAER"/>
+      <viewAttribute id="MEGBTR_T"/>
+      <viewAttribute id="MEGBTR_A"/>
+      <viewAttribute id="MEGBTR_V"/>
+      <viewAttribute id="WOGBTR_T_V3"/>
+      <viewAttribute id="WOGBTR_V_V3"/>
+      <viewAttribute id="MEGBTR_T_V3"/>
+      <viewAttribute id="MEGBTR_V_V3"/>
+      <viewAttribute id="MEINB"/>
+      <viewAttribute id="QTY_A_KG"/>
+      <viewAttribute id="AUART"/>
+      <viewAttribute id="PLNBEZ"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="QTY_KG_NW1"/>
+      <viewAttribute id="QTY_LB_NW1"/>
+      <viewAttribute id="QTY_KG_NW2"/>
+      <viewAttribute id="NAME"/>
+      <viewAttribute id="KTEXT"/></viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="mccain-shared::ZGRTR_KKBC_POVR"/>
+    <filter>&quot;KSTAR&quot;= '0000651030' or &quot;KSTAR&quot; = '0000651130' or &quot;KSTAR&quot; = '0000651040' or &quot;KSTAR&quot; = '0000651135'</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="MateriaGroupDesc" cardinality="C1_N" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="WGBEZ"/>
+    
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="AUFNR"/>
+      <viewAttribute id="KOSTL"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="KSTAR"/>
+      <viewAttribute id="KSTAR_T"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="MAKTX"/>
+      <viewAttribute id="ZACTIVITY_1"/>
+      <viewAttribute id="WOGBTR_A" aggregationType="sum"/>
+      <viewAttribute id="WOGBTR_T" aggregationType="sum"/>
+      <viewAttribute id="QTY_A_KG" aggregationType="sum"/>
+      <viewAttribute id="QTY_A_LB" aggregationType="sum"/>
+      <viewAttribute id="QTY_KG_NW" aggregationType="sum"/>
+      <viewAttribute id="QTY_LB_NW" aggregationType="sum"/>
+      <viewAttribute id="ZDRQTY" aggregationType="sum"/>
+      <viewAttribute id="ZDRACTR" aggregationType="sum"/>
+      <viewAttribute id="MENGE" aggregationType="sum"/>
+      <viewAttribute id="ZST_PRICE" aggregationType="sum"/>
+      <viewAttribute id="BEKNZ"/>
+      <viewAttribute id="BOM_UOM"/>
+      <viewAttribute id="BASE_UOM"/>
+      <viewAttribute id="YIELD" aggregationType="sum"/>
+      <viewAttribute id="ZMTREF"/>
+      <viewAttribute id="BKLAS"/>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="ENGR_QTY" aggregationType="sum"/>
+      <viewAttribute id="SAKNR"/>
+      <viewAttribute id="MAKTL"/>
+      <viewAttribute id="ZDATE"/>
+      <viewAttribute id="ZTIME"/>
+      <viewAttribute id="WOGBTR_V" aggregationType="sum"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="MaterialGroup">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL" source="MATKL"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AUFNR" source="AUFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOSTL" source="KOSTL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KSTAR" source="KSTAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KSTAR_T" source="KSTAR_T"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAKTX" source="MAKTX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZACTIVITY_1" source="ZACTIVITY_1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WOGBTR_A" source="WOGBTR_A"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WOGBTR_T" source="WOGBTR_T"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="QTY_A_KG" source="QTY_A_KG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="QTY_A_LB" source="QTY_A_LB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="QTY_KG_NW" source="QTY_KG_NW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="QTY_LB_NW" source="QTY_LB_NW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZDRQTY" source="ZDRQTY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZDRACTR" source="ZDRACTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MENGE" source="MENGE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZST_PRICE" source="ZST_PRICE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BEKNZ" source="BEKNZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BOM_UOM" source="BOM_UOM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BASE_UOM" source="BASE_UOM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="YIELD" source="YIELD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZMTREF" source="ZMTREF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BKLAS" source="BKLAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOKRS" source="KOKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ENGR_QTY" source="ENGR_QTY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SAKNR" source="SAKNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAKTL" source="MAKTL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZDATE" source="ZDATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZTIME" source="ZTIME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WOGBTR_V" source="WOGBTR_V"/>
+    </input>
+    <input node="Projection_5">
+      <mapping xsi:type="Calculation:AttributeMapping" target="WGBEZ" source="WGBEZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL" source="MATKL"/>
+    </input>
+    <joinAttribute name="MATKL"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="AccountDescription" cardinality="C1_N" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="WGBEZ"/>
+      <viewAttribute id="TXT50"/>
+      <viewAttribute id="TXT20"/>
+    
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="AUFNR"/>
+      <viewAttribute id="KOSTL"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="KSTAR"/>
+      <viewAttribute id="KSTAR_T"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="MAKTX"/>
+      <viewAttribute id="ZACTIVITY_1"/>
+      <viewAttribute id="WOGBTR_A" aggregationType="sum"/>
+      <viewAttribute id="WOGBTR_T" aggregationType="sum"/>
+      <viewAttribute id="QTY_A_KG" aggregationType="sum"/>
+      <viewAttribute id="QTY_A_LB" aggregationType="sum"/>
+      <viewAttribute id="QTY_KG_NW" aggregationType="sum"/>
+      <viewAttribute id="QTY_LB_NW" aggregationType="sum"/>
+      <viewAttribute id="ZDRQTY" aggregationType="sum"/>
+      <viewAttribute id="ZDRACTR" aggregationType="sum"/>
+      <viewAttribute id="MENGE" aggregationType="sum"/>
+      <viewAttribute id="ZST_PRICE" aggregationType="sum"/>
+      <viewAttribute id="BEKNZ"/>
+      <viewAttribute id="BOM_UOM"/>
+      <viewAttribute id="BASE_UOM"/>
+      <viewAttribute id="YIELD" aggregationType="sum"/>
+      <viewAttribute id="ZMTREF"/>
+      <viewAttribute id="BKLAS"/>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="ENGR_QTY" aggregationType="sum"/>
+      <viewAttribute id="SAKNR"/>
+      <viewAttribute id="MAKTL"/>
+      <viewAttribute id="ZDATE"/>
+      <viewAttribute id="ZTIME"/>
+      <viewAttribute id="WOGBTR_V" aggregationType="sum"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="MateriaGroupDesc">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL" source="MATKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WGBEZ" source="WGBEZ"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AUFNR" source="AUFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOSTL" source="KOSTL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KSTAR" source="KSTAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KSTAR_T" source="KSTAR_T"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAKTX" source="MAKTX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZACTIVITY_1" source="ZACTIVITY_1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WOGBTR_A" source="WOGBTR_A"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WOGBTR_T" source="WOGBTR_T"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="QTY_A_KG" source="QTY_A_KG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="QTY_A_LB" source="QTY_A_LB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="QTY_KG_NW" source="QTY_KG_NW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="QTY_LB_NW" source="QTY_LB_NW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZDRQTY" source="ZDRQTY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZDRACTR" source="ZDRACTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MENGE" source="MENGE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZST_PRICE" source="ZST_PRICE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BEKNZ" source="BEKNZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BOM_UOM" source="BOM_UOM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BASE_UOM" source="BASE_UOM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="YIELD" source="YIELD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZMTREF" source="ZMTREF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BKLAS" source="BKLAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOKRS" source="KOKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ENGR_QTY" source="ENGR_QTY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SAKNR" source="SAKNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAKTL" source="MAKTL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZDATE" source="ZDATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZTIME" source="ZTIME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WOGBTR_V" source="WOGBTR_V"/>
+    </input>
+    <input node="Projection_6">
+      <mapping xsi:type="Calculation:AttributeMapping" target="TXT50" source="TXT50"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TXT20" source="TXT20"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SAKNR" source="SAKNR"/>
+    </input>
+    <joinAttribute name="SAKNR"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="ActivityDescription" cardinality="CN_N" joinType="inner">
+    <viewAttributes>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="WGBEZ"/>
+      <viewAttribute id="TXT50"/>
+      <viewAttribute id="TXT20"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="AUFNR"/>
+      <viewAttribute id="KOSTL"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="KSTAR"/>
+      <viewAttribute id="KSTAR_T"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="MAKTX"/>
+      <viewAttribute id="ZACTIVITY_1"/>
+      <viewAttribute id="WOGBTR_A" aggregationType="sum"/>
+      <viewAttribute id="WOGBTR_T" aggregationType="sum"/>
+      <viewAttribute id="QTY_A_KG" aggregationType="sum"/>
+      <viewAttribute id="QTY_A_LB" aggregationType="sum"/>
+      <viewAttribute id="QTY_KG_NW" aggregationType="sum"/>
+      <viewAttribute id="QTY_LB_NW" aggregationType="sum"/>
+      <viewAttribute id="ZDRQTY" aggregationType="sum"/>
+      <viewAttribute id="ZDRACTR" aggregationType="sum"/>
+      <viewAttribute id="MENGE" aggregationType="sum"/>
+      <viewAttribute id="ZST_PRICE" aggregationType="sum"/>
+      <viewAttribute id="BEKNZ"/>
+      <viewAttribute id="BOM_UOM"/>
+      <viewAttribute id="BASE_UOM"/>
+      <viewAttribute id="YIELD" aggregationType="sum"/>
+      <viewAttribute id="ZMTREF"/>
+      <viewAttribute id="BKLAS"/>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="ENGR_QTY" aggregationType="sum"/>
+      <viewAttribute id="SAKNR"/>
+      <viewAttribute id="MAKTL"/>
+      <viewAttribute id="ZDATE"/>
+      <viewAttribute id="ZTIME"/>
+      <viewAttribute id="WOGBTR_V" aggregationType="sum"/>
+    
+      <viewAttribute id="LTEXT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="AccountDescription">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL" source="MATKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WGBEZ" source="WGBEZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TXT50" source="TXT50"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TXT20" source="TXT20"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AUFNR" source="AUFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOSTL" source="KOSTL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KSTAR" source="KSTAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KSTAR_T" source="KSTAR_T"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAKTX" source="MAKTX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZACTIVITY_1" source="ZACTIVITY_1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WOGBTR_A" source="WOGBTR_A"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WOGBTR_T" source="WOGBTR_T"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="QTY_A_KG" source="QTY_A_KG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="QTY_A_LB" source="QTY_A_LB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="QTY_KG_NW" source="QTY_KG_NW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="QTY_LB_NW" source="QTY_LB_NW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZDRQTY" source="ZDRQTY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZDRACTR" source="ZDRACTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MENGE" source="MENGE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZST_PRICE" source="ZST_PRICE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BEKNZ" source="BEKNZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BOM_UOM" source="BOM_UOM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BASE_UOM" source="BASE_UOM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="YIELD" source="YIELD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZMTREF" source="ZMTREF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BKLAS" source="BKLAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOKRS" source="KOKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ENGR_QTY" source="ENGR_QTY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SAKNR" source="SAKNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAKTL" source="MAKTL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZDATE" source="ZDATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZTIME" source="ZTIME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WOGBTR_V" source="WOGBTR_V"/>
+    </input>
+    <input node="Projection_7">
+      <mapping xsi:type="Calculation:AttributeMapping" target="LTEXT" source="LTEXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZACTIVITY_1" source="LSTAR"/>
+    </input>
+    <joinAttribute name="ZACTIVITY_1"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:AggregationView" id="Projection_7">
+    <viewAttributes>
+      <viewAttribute id="LTEXT"/>
+    
+      <viewAttribute id="LSTAR"/></viewAttributes>
+    <calculatedViewAttributes/>
+    <restrictedViewAttributes/>
+    <input node="mccain-shared::CSLT"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="ActivityDescription">
+  <attributes>
+    <attribute id="MATKL" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MATKL"/>
+      <keyMapping columnObjectName="ActivityDescription" columnName="MATKL"/>
+    </attribute>
+    <attribute id="WGBEZ" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WGBEZ"/>
+      <keyMapping columnObjectName="ActivityDescription" columnName="WGBEZ"/>
+    </attribute>
+    <attribute id="TXT50" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TXT50"/>
+      <keyMapping columnObjectName="ActivityDescription" columnName="TXT50"/>
+    </attribute>
+    <attribute id="TXT20" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TXT20"/>
+      <keyMapping columnObjectName="ActivityDescription" columnName="TXT20"/>
+    </attribute>
+    <attribute id="WERKS" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WERKS"/>
+      <keyMapping columnObjectName="ActivityDescription" columnName="WERKS"/>
+    </attribute>
+    <attribute id="AUFNR" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="AUFNR"/>
+      <keyMapping columnObjectName="ActivityDescription" columnName="AUFNR"/>
+    </attribute>
+    <attribute id="KOSTL" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KOSTL"/>
+      <keyMapping columnObjectName="ActivityDescription" columnName="KOSTL"/>
+    </attribute>
+    <attribute id="BUKRS" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BUKRS"/>
+      <keyMapping columnObjectName="ActivityDescription" columnName="BUKRS"/>
+    </attribute>
+    <attribute id="KSTAR" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KSTAR"/>
+      <keyMapping columnObjectName="ActivityDescription" columnName="KSTAR"/>
+    </attribute>
+    <attribute id="KSTAR_T" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KSTAR_T"/>
+      <keyMapping columnObjectName="ActivityDescription" columnName="KSTAR_T"/>
+    </attribute>
+    <attribute id="MATNR" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MATNR"/>
+      <keyMapping columnObjectName="ActivityDescription" columnName="MATNR"/>
+    </attribute>
+    <attribute id="MAKTX" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MAKTX"/>
+      <keyMapping columnObjectName="ActivityDescription" columnName="MAKTX"/>
+    </attribute>
+    <attribute id="ZACTIVITY_1" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ZACTIVITY_1"/>
+      <keyMapping columnObjectName="ActivityDescription" columnName="ZACTIVITY_1"/>
+    </attribute>
+    <attribute id="ZST_PRICE" order="23" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ZST_PRICE"/>
+      <keyMapping columnObjectName="ActivityDescription" columnName="ZST_PRICE"/>
+    </attribute>
+    <attribute id="BEKNZ" order="24" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BEKNZ"/>
+      <keyMapping columnObjectName="ActivityDescription" columnName="BEKNZ"/>
+    </attribute>
+    <attribute id="BOM_UOM" order="25" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BOM_UOM"/>
+      <keyMapping columnObjectName="ActivityDescription" columnName="BOM_UOM"/>
+    </attribute>
+    <attribute id="BASE_UOM" order="26" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BASE_UOM"/>
+      <keyMapping columnObjectName="ActivityDescription" columnName="BASE_UOM"/>
+    </attribute>
+    <attribute id="ZMTREF" order="28" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ZMTREF"/>
+      <keyMapping columnObjectName="ActivityDescription" columnName="ZMTREF"/>
+    </attribute>
+    <attribute id="BKLAS" order="29" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BKLAS"/>
+      <keyMapping columnObjectName="ActivityDescription" columnName="BKLAS"/>
+    </attribute>
+    <attribute id="KOKRS" order="30" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KOKRS"/>
+      <keyMapping columnObjectName="ActivityDescription" columnName="KOKRS"/>
+    </attribute>
+    <attribute id="SAKNR" order="32" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SAKNR"/>
+      <keyMapping columnObjectName="ActivityDescription" columnName="SAKNR"/>
+    </attribute>
+    <attribute id="MAKTL" order="33" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MAKTL"/>
+      <keyMapping columnObjectName="ActivityDescription" columnName="MAKTL"/>
+    </attribute>
+    <attribute id="ZDATE" order="34" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ZDATE"/>
+      <keyMapping columnObjectName="ActivityDescription" columnName="ZDATE"/>
+    </attribute>
+    <attribute id="ZTIME" order="35" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ZTIME"/>
+      <keyMapping columnObjectName="ActivityDescription" columnName="ZTIME"/>
+    </attribute>
+  
+    <attribute id="LTEXT" order="37" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LTEXT"/>
+  
+      <keyMapping columnObjectName="ActivityDescription" columnName="LTEXT"/>
+  
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures>
+    <measure id="WOGBTR_A" order="14" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="WOGBTR_A"/>
+      <measureMapping columnObjectName="ActivityDescription" columnName="WOGBTR_A"/>
+    </measure>
+    <measure id="WOGBTR_T" order="15" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="WOGBTR_T"/>
+      <measureMapping columnObjectName="ActivityDescription" columnName="WOGBTR_T"/>
+    </measure>
+    <measure id="QTY_A_KG" order="16" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="QTY_A_KG"/>
+      <measureMapping columnObjectName="ActivityDescription" columnName="QTY_A_KG"/>
+    </measure>
+    <measure id="QTY_A_LB" order="17" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="QTY_A_LB"/>
+      <measureMapping columnObjectName="ActivityDescription" columnName="QTY_A_LB"/>
+    </measure>
+    <measure id="QTY_KG_NW" order="18" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="QTY_KG_NW"/>
+      <measureMapping columnObjectName="ActivityDescription" columnName="QTY_KG_NW"/>
+    </measure>
+    <measure id="QTY_LB_NW" order="19" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="QTY_LB_NW"/>
+      <measureMapping columnObjectName="ActivityDescription" columnName="QTY_LB_NW"/>
+    </measure>
+    <measure id="ZDRQTY" order="20" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="ZDRQTY"/>
+      <measureMapping columnObjectName="ActivityDescription" columnName="ZDRQTY"/>
+    </measure>
+    <measure id="ZDRACTR" order="21" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="ZDRACTR"/>
+      <measureMapping columnObjectName="ActivityDescription" columnName="ZDRACTR"/>
+    </measure>
+    <measure id="MENGE" order="22" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="MENGE"/>
+      <measureMapping columnObjectName="ActivityDescription" columnName="MENGE"/>
+    </measure>
+    <measure id="YIELD" order="27" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="YIELD"/>
+      <measureMapping columnObjectName="ActivityDescription" columnName="YIELD"/>
+    </measure>
+    <measure id="ENGR_QTY" order="31" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="ENGR_QTY"/>
+      <measureMapping columnObjectName="ActivityDescription" columnName="ENGR_QTY"/>
+    </measure>
+    <measure id="WOGBTR_V" order="36" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="WOGBTR_V"/>
+      <measureMapping columnObjectName="ActivityDescription" columnName="WOGBTR_V"/>
+    </measure>
+  </baseMeasures>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+  <localDimensions/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="783" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    
+  
+    <shape expanded="true" modelObjectName="EnrichedKKBC" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="91" y="996"/>
+      <rectangleSize height="30" width="214"/>
+    </shape>
+    <shape expanded="true" modelObjectName="MaterialMaster" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="419" y="856"/>
+      <rectangleSize height="30" width="253"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_5" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="474" y="693"/>
+      <rectangleSize height="30" width="214"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_6" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="581" y="509"/>
+      <rectangleSize height="30" width="202"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="MaterialGroup" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="172" y="696"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Union_1" modelObjectNameSpace="MaterialGroup" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="159"/>
+    </shape>
+    <shape modelObjectName="MaterialMaster" modelObjectNameSpace="MaterialGroup" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Union_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="145" y="856"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="KKBC" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="356" y="996"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+  
+    <shape expanded="true" modelObjectName="MateriaGroupDesc" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="198" y="536"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="MaterialGroup" modelObjectNameSpace="MateriaGroupDesc" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="Projection_5" modelObjectNameSpace="MateriaGroupDesc" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="305" y="96"/>
+      <rectangleSize width="136"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="AccountDescription" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="225" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="MateriaGroupDesc" modelObjectNameSpace="AccountDescription" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="145"/>
+    </shape>
+    <shape modelObjectName="Projection_6" modelObjectNameSpace="AccountDescription" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="317" y="343"/>
+      <rectangleSize width="136"/>
+    </shape>
+    <shape expanded="true" modelObjectName="ActivityDescription" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="783" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="AccountDescription" modelObjectNameSpace="ActivityDescription" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="Projection_7" modelObjectNameSpace="ActivityDescription" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="136"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_7" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="825" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

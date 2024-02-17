@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="mccain-shared::CV_MD_SKU" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_MD_SKU"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="TGT_ZGRTR_BOMMAT_BPC">
+    <resourceUri>TGT_ZGRTR_BOMMAT_BPC</resourceUri>
+  </DataSource>
+  <DataSource id="TGT_MAKT">
+    <resourceUri>TGT_MAKT</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_SKU" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="STLAL"/>
+      <viewAttribute id="STLKN"/>
+      <viewAttribute id="IDNRK"/>
+      <viewAttribute id="BOM_UOM"/>
+      <viewAttribute id="BASE_UOM"/>
+      <viewAttribute id="ENGR_QTY"/>
+      <viewAttribute id="AUSCH"/>
+      <viewAttribute id="MENGE"/>
+      <viewAttribute id="YIELD"/>
+      <viewAttribute id="ALPGR"/>
+      <viewAttribute id="ALPRF"/>
+      <viewAttribute id="ALPST"/>
+      <viewAttribute id="EWAHR"/>
+      <viewAttribute id="MATBOM_UOM"/>
+      <viewAttribute id="COMP_TYPE"/>
+      <viewAttribute id="ANNAM"/>
+      <viewAttribute id="ANDAT"/>
+      <viewAttribute id="ANTIME"/>
+      <viewAttribute id="AENAM"/>
+      <viewAttribute id="AEDAT"/>
+      <viewAttribute id="AETIME"/>
+      <viewAttribute id="STATUS"/>
+      <viewAttribute id="ERROR_MSG"/>
+      <viewAttribute id="FILE_ID"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="TGT_ZGRTR_BOMMAT_BPC"/>
+    <filter>&quot;COMP_TYPE&quot;='ZFIN'</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_MAKT">
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="MAKTX"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="TGT_MAKT"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_SKU" cardinality="CN_N" joinType="inner">
+    <viewAttributes>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="STLAL"/>
+      <viewAttribute id="STLKN"/>
+      <viewAttribute id="IDNRK"/>
+      <viewAttribute id="BOM_UOM"/>
+      <viewAttribute id="BASE_UOM"/>
+      <viewAttribute id="ENGR_QTY"/>
+      <viewAttribute id="AUSCH"/>
+      <viewAttribute id="MENGE"/>
+      <viewAttribute id="YIELD"/>
+      <viewAttribute id="ALPGR"/>
+      <viewAttribute id="ALPRF"/>
+      <viewAttribute id="ALPST"/>
+      <viewAttribute id="EWAHR"/>
+      <viewAttribute id="MATBOM_UOM"/>
+      <viewAttribute id="COMP_TYPE"/>
+      <viewAttribute id="ANNAM"/>
+      <viewAttribute id="ANDAT"/>
+      <viewAttribute id="ANTIME"/>
+      <viewAttribute id="AENAM"/>
+      <viewAttribute id="AEDAT"/>
+      <viewAttribute id="AETIME"/>
+      <viewAttribute id="STATUS"/>
+      <viewAttribute id="ERROR_MSG"/>
+      <viewAttribute id="FILE_ID"/>
+    
+      <viewAttribute id="MAKTX"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="P_SKU">
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STLAL" source="STLAL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STLKN" source="STLKN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IDNRK" source="IDNRK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BOM_UOM" source="BOM_UOM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BASE_UOM" source="BASE_UOM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ENGR_QTY" source="ENGR_QTY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AUSCH" source="AUSCH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MENGE" source="MENGE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="YIELD" source="YIELD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ALPGR" source="ALPGR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ALPRF" source="ALPRF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ALPST" source="ALPST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EWAHR" source="EWAHR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATBOM_UOM" source="MATBOM_UOM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COMP_TYPE" source="COMP_TYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANNAM" source="ANNAM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANDAT" source="ANDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANTIME" source="ANTIME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AENAM" source="AENAM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AEDAT" source="AEDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AETIME" source="AETIME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STATUS" source="STATUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERROR_MSG" source="ERROR_MSG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FILE_ID" source="FILE_ID"/>
+    </input>
+    <input node="P_MAKT">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAKTX" source="MAKTX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+    </input>
+    <joinAttribute name="MATNR"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="J_SKU">
+  <attributes>
+    <attribute id="MATNR" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MATNR"/>
+      <keyMapping columnObjectName="J_SKU" columnName="MATNR"/>
+    </attribute>
+    <attribute id="MAKTX" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MAKTX"/>
+      <keyMapping columnObjectName="J_SKU" columnName="MAKTX"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="221.11302679000914" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    
+  
+    <shape expanded="true" modelObjectName="P_SKU" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92.00000000000001" y="376.9999988079071"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="false" modelObjectName="P_MAKT" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302.00000000000006" y="376.9999988079071"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_SKU" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="221.11302679000914" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="P_SKU" modelObjectNameSpace="J_SKU" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="P_MAKT" modelObjectNameSpace="J_SKU" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="124"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

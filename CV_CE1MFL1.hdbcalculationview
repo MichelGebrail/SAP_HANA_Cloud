@@ -1,0 +1,1778 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="mccain-shared::CV_CE1MFL1" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_ECC_COPA_DATA"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="TGT_CE1MFL1_01">
+    <resourceUri>TGT_CE1MFL1_01</resourceUri>
+  </DataSource>
+  <DataSource id="TGT_CE1MFL1_02">
+    <resourceUri>TGT_CE1MFL1_02</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="PALEDGER"/>
+      <viewAttribute id="VRGAR"/>
+      <viewAttribute id="VERSI"/>
+      <viewAttribute id="PERIO"/>
+      <viewAttribute id="PAOBJNR"/>
+      <viewAttribute id="PASUBNR"/>
+      <viewAttribute id="BELNR"/>
+      <viewAttribute id="POSNR"/>
+      <viewAttribute id="HZDAT"/>
+      <viewAttribute id="USNAM"/>
+      <viewAttribute id="GJAHR"/>
+      <viewAttribute id="PERDE"/>
+      <viewAttribute id="WADAT"/>
+      <viewAttribute id="FADAT"/>
+      <viewAttribute id="BUDAT"/>
+      <viewAttribute id="ALTPERIO"/>
+      <viewAttribute id="PAPAOBJNR"/>
+      <viewAttribute id="PAPASUBNR"/>
+      <viewAttribute id="KNDNR"/>
+      <viewAttribute id="ARTNR"/>
+      <viewAttribute id="FKART"/>
+      <viewAttribute id="FRWAE"/>
+      <viewAttribute id="KURSF"/>
+      <viewAttribute id="KURSBK"/>
+      <viewAttribute id="KURSKZ"/>
+      <viewAttribute id="REC_WAERS"/>
+      <viewAttribute id="KAUFN"/>
+      <viewAttribute id="KDPOS"/>
+      <viewAttribute id="RKAUFNR"/>
+      <viewAttribute id="SKOST"/>
+      <viewAttribute id="PRZNR"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="GSBER"/>
+      <viewAttribute id="VKORG"/>
+      <viewAttribute id="VTWEG"/>
+      <viewAttribute id="SPART"/>
+      <viewAttribute id="HRKFT"/>
+      <viewAttribute id="PLIKZ"/>
+      <viewAttribute id="KSTAR"/>
+      <viewAttribute id="PSPNR"/>
+      <viewAttribute id="KSTRG"/>
+      <viewAttribute id="RBELN"/>
+      <viewAttribute id="RPOSN"/>
+      <viewAttribute id="STO_BELNR"/>
+      <viewAttribute id="STO_POSNR"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="PPRCTR"/>
+      <viewAttribute id="RKESTATU"/>
+      <viewAttribute id="TIMESTMP"/>
+      <viewAttribute id="COPA_AWTYP"/>
+      <viewAttribute id="COPA_AWORG"/>
+      <viewAttribute id="COPA_BWZPT"/>
+      <viewAttribute id="COPA_AWSYS"/>
+      <viewAttribute id="AUGRU"/>
+      <viewAttribute id="BZIRK"/>
+      <viewAttribute id="KDGRP"/>
+      <viewAttribute id="KMLAND"/>
+      <viewAttribute id="KMVKBU"/>
+      <viewAttribute id="KMVKGR"/>
+      <viewAttribute id="KTGRD"/>
+      <viewAttribute id="KUNRE"/>
+      <viewAttribute id="KUNWE"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="PRODH"/>
+      <viewAttribute id="WWIND"/>
+      <viewAttribute id="WWMKT"/>
+      <viewAttribute id="WWBRD"/>
+      <viewAttribute id="CRMCSTY"/>
+      <viewAttribute id="CRMELEM"/>
+      <viewAttribute id="CRMFIGR"/>
+      <viewAttribute id="WWDES"/>
+      <viewAttribute id="WWPRG"/>
+      <viewAttribute id="KMHI01"/>
+      <viewAttribute id="KMHI02"/>
+      <viewAttribute id="KMHI03"/>
+      <viewAttribute id="WWPDA"/>
+      <viewAttribute id="VVXX1_ME"/>
+      <viewAttribute id="VVXX2_ME"/>
+      <viewAttribute id="VVX11"/>
+      <viewAttribute id="VVX12"/>
+      <viewAttribute id="VVXX1"/>
+      <viewAttribute id="VVXX2"/>
+      <viewAttribute id="VVXX3"/>
+      <viewAttribute id="VVXX4"/>
+      <viewAttribute id="VVXX5"/>
+      <viewAttribute id="VVXX6"/>
+      <viewAttribute id="VVXX7"/>
+      <viewAttribute id="VVX10"/>
+      <viewAttribute id="VVX21"/>
+      <viewAttribute id="VVX22"/>
+      <viewAttribute id="VVX23"/>
+      <viewAttribute id="VVX24"/>
+      <viewAttribute id="VVX25"/>
+      <viewAttribute id="VVX26"/>
+      <viewAttribute id="VVX27"/>
+      <viewAttribute id="VVX28"/>
+      <viewAttribute id="VVX29"/>
+      <viewAttribute id="VVXX9"/>
+      <viewAttribute id="VVX15"/>
+      <viewAttribute id="VVFB1"/>
+      <viewAttribute id="VVFC1"/>
+      <viewAttribute id="VVFD1"/>
+      <viewAttribute id="VVEE1"/>
+      <viewAttribute id="VVEF1"/>
+      <viewAttribute id="VVFA1"/>
+      <viewAttribute id="VVCB2"/>
+      <viewAttribute id="VVCB3"/>
+      <viewAttribute id="VVCB4"/>
+      <viewAttribute id="VVCC1"/>
+      <viewAttribute id="VVDA1"/>
+      <viewAttribute id="VVDA2"/>
+      <viewAttribute id="VVDB1"/>
+      <viewAttribute id="VVDC1"/>
+      <viewAttribute id="VVDE1"/>
+      <viewAttribute id="VVDF1"/>
+      <viewAttribute id="VVEA1"/>
+      <viewAttribute id="VVEB1"/>
+      <viewAttribute id="VVEC1"/>
+      <viewAttribute id="VVED1"/>
+      <viewAttribute id="VVBC1"/>
+      <viewAttribute id="VVBC2"/>
+      <viewAttribute id="VVBC3"/>
+      <viewAttribute id="VVBC4"/>
+      <viewAttribute id="VVBD1"/>
+      <viewAttribute id="VVBD2"/>
+      <viewAttribute id="VVBD3"/>
+      <viewAttribute id="VVBD4"/>
+      <viewAttribute id="VVBE1"/>
+      <viewAttribute id="VVBE2"/>
+      <viewAttribute id="VVBE3"/>
+      <viewAttribute id="VVBE4"/>
+      <viewAttribute id="VVBF1"/>
+      <viewAttribute id="VVCA1"/>
+      <viewAttribute id="VVCB1"/>
+      <viewAttribute id="VVAB1"/>
+      <viewAttribute id="VVBA1"/>
+      <viewAttribute id="VVBA2"/>
+      <viewAttribute id="VVBA3"/>
+      <viewAttribute id="VVBA4"/>
+      <viewAttribute id="VVBA5"/>
+      <viewAttribute id="VVBA6"/>
+      <viewAttribute id="VVBA7"/>
+      <viewAttribute id="VVBA8"/>
+      <viewAttribute id="VVBA9"/>
+      <viewAttribute id="VVBB1"/>
+      <viewAttribute id="VVBB2"/>
+      <viewAttribute id="VVBB3"/>
+      <viewAttribute id="VVBB4"/>
+      <viewAttribute id="VVAA1"/>
+      <viewAttribute id="VVBC5"/>
+      <viewAttribute id="VVBD5"/>
+      <viewAttribute id="VVBAA"/>
+      <viewAttribute id="VVBAB"/>
+      <viewAttribute id="VVBAC"/>
+      <viewAttribute id="VVBAD"/>
+      <viewAttribute id="VVBAE"/>
+      <viewAttribute id="VVBAF"/>
+      <viewAttribute id="VVBB5"/>
+      <viewAttribute id="VVBB6"/>
+      <viewAttribute id="VVBC6"/>
+      <viewAttribute id="VVBE5"/>
+      <viewAttribute id="VVBE6"/>
+      <viewAttribute id="VVBE7"/>
+      <viewAttribute id="VVFE1"/>
+      <viewAttribute id="KATR9"/>
+      <viewAttribute id="WWBU1"/>
+      <viewAttribute id="WWFC1"/>
+      <viewAttribute id="WWFC4"/>
+      <viewAttribute id="WWFC5"/>
+      <viewAttribute id="WWGP1"/>
+      <viewAttribute id="VVX30"/>
+      <viewAttribute id="VVX31"/>
+      <viewAttribute id="VVX32"/>
+      <viewAttribute id="VVX33"/>
+      <viewAttribute id="VVX34"/>
+      <viewAttribute id="VVX35"/>
+      <viewAttribute id="VVX36"/>
+      <viewAttribute id="VVX37"/>
+      <viewAttribute id="VVX38"/>
+      <viewAttribute id="VVX39"/>
+      <viewAttribute id="VVX40"/>
+      <viewAttribute id="VVX41"/>
+      <viewAttribute id="VVX42"/>
+      <viewAttribute id="VVX43"/>
+      <viewAttribute id="VVX44"/>
+      <viewAttribute id="VVX45"/>
+      <viewAttribute id="VVX46"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="TGT_CE1MFL1_01"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_2">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="PALEDGER"/>
+      <viewAttribute id="VRGAR"/>
+      <viewAttribute id="VERSI"/>
+      <viewAttribute id="PERIO"/>
+      <viewAttribute id="PAOBJNR"/>
+      <viewAttribute id="PASUBNR"/>
+      <viewAttribute id="BELNR"/>
+      <viewAttribute id="POSNR"/>
+      <viewAttribute id="HZDAT"/>
+      <viewAttribute id="USNAM"/>
+      <viewAttribute id="GJAHR"/>
+      <viewAttribute id="PERDE"/>
+      <viewAttribute id="WADAT"/>
+      <viewAttribute id="FADAT"/>
+      <viewAttribute id="BUDAT"/>
+      <viewAttribute id="ALTPERIO"/>
+      <viewAttribute id="PAPAOBJNR"/>
+      <viewAttribute id="PAPASUBNR"/>
+      <viewAttribute id="KNDNR"/>
+      <viewAttribute id="ARTNR"/>
+      <viewAttribute id="FKART"/>
+      <viewAttribute id="FRWAE"/>
+      <viewAttribute id="KURSF"/>
+      <viewAttribute id="KURSBK"/>
+      <viewAttribute id="KURSKZ"/>
+      <viewAttribute id="REC_WAERS"/>
+      <viewAttribute id="KAUFN"/>
+      <viewAttribute id="KDPOS"/>
+      <viewAttribute id="RKAUFNR"/>
+      <viewAttribute id="SKOST"/>
+      <viewAttribute id="PRZNR"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="GSBER"/>
+      <viewAttribute id="VKORG"/>
+      <viewAttribute id="VTWEG"/>
+      <viewAttribute id="SPART"/>
+      <viewAttribute id="HRKFT"/>
+      <viewAttribute id="PLIKZ"/>
+      <viewAttribute id="KSTAR"/>
+      <viewAttribute id="PSPNR"/>
+      <viewAttribute id="KSTRG"/>
+      <viewAttribute id="RBELN"/>
+      <viewAttribute id="RPOSN"/>
+      <viewAttribute id="STO_BELNR"/>
+      <viewAttribute id="STO_POSNR"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="PPRCTR"/>
+      <viewAttribute id="RKESTATU"/>
+      <viewAttribute id="TIMESTMP"/>
+      <viewAttribute id="COPA_AWTYP"/>
+      <viewAttribute id="COPA_AWORG"/>
+      <viewAttribute id="COPA_BWZPT"/>
+      <viewAttribute id="COPA_AWSYS"/>
+      <viewAttribute id="AUGRU"/>
+      <viewAttribute id="BZIRK"/>
+      <viewAttribute id="KDGRP"/>
+      <viewAttribute id="KMLAND"/>
+      <viewAttribute id="KMVKBU"/>
+      <viewAttribute id="KMVKGR"/>
+      <viewAttribute id="KTGRD"/>
+      <viewAttribute id="KUNRE"/>
+      <viewAttribute id="KUNWE"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="PRODH"/>
+      <viewAttribute id="WWIND"/>
+      <viewAttribute id="WWMKT"/>
+      <viewAttribute id="WWBRD"/>
+      <viewAttribute id="CRMCSTY"/>
+      <viewAttribute id="CRMELEM"/>
+      <viewAttribute id="CRMFIGR"/>
+      <viewAttribute id="WWDES"/>
+      <viewAttribute id="WWPRG"/>
+      <viewAttribute id="KMHI01"/>
+      <viewAttribute id="KMHI02"/>
+      <viewAttribute id="KMHI03"/>
+      <viewAttribute id="WWPDA"/>
+      <viewAttribute id="VVXX1_ME"/>
+      <viewAttribute id="VVXX2_ME"/>
+      <viewAttribute id="VVX11"/>
+      <viewAttribute id="VVX12"/>
+      <viewAttribute id="VVXX1"/>
+      <viewAttribute id="VVXX2"/>
+      <viewAttribute id="VVXX3"/>
+      <viewAttribute id="VVXX4"/>
+      <viewAttribute id="VVXX5"/>
+      <viewAttribute id="VVXX6"/>
+      <viewAttribute id="VVXX7"/>
+      <viewAttribute id="VVX10"/>
+      <viewAttribute id="VVX21"/>
+      <viewAttribute id="VVX22"/>
+      <viewAttribute id="VVX23"/>
+      <viewAttribute id="VVX24"/>
+      <viewAttribute id="VVX25"/>
+      <viewAttribute id="VVX26"/>
+      <viewAttribute id="VVX27"/>
+      <viewAttribute id="VVX28"/>
+      <viewAttribute id="VVX29"/>
+      <viewAttribute id="VVXX9"/>
+      <viewAttribute id="VVX15"/>
+      <viewAttribute id="VVFB1"/>
+      <viewAttribute id="VVFC1"/>
+      <viewAttribute id="VVFD1"/>
+      <viewAttribute id="VVEE1"/>
+      <viewAttribute id="VVEF1"/>
+      <viewAttribute id="VVFA1"/>
+      <viewAttribute id="VVCB2"/>
+      <viewAttribute id="VVCB3"/>
+      <viewAttribute id="VVCB4"/>
+      <viewAttribute id="VVCC1"/>
+      <viewAttribute id="VVDA1"/>
+      <viewAttribute id="VVDA2"/>
+      <viewAttribute id="VVDB1"/>
+      <viewAttribute id="VVDC1"/>
+      <viewAttribute id="VVDE1"/>
+      <viewAttribute id="VVDF1"/>
+      <viewAttribute id="VVEA1"/>
+      <viewAttribute id="VVEB1"/>
+      <viewAttribute id="VVEC1"/>
+      <viewAttribute id="VVED1"/>
+      <viewAttribute id="VVBC1"/>
+      <viewAttribute id="VVBC2"/>
+      <viewAttribute id="VVBC3"/>
+      <viewAttribute id="VVBC4"/>
+      <viewAttribute id="VVBD1"/>
+      <viewAttribute id="VVBD2"/>
+      <viewAttribute id="VVBD3"/>
+      <viewAttribute id="VVBD4"/>
+      <viewAttribute id="VVBE1"/>
+      <viewAttribute id="VVBE2"/>
+      <viewAttribute id="VVBE3"/>
+      <viewAttribute id="VVBE4"/>
+      <viewAttribute id="VVBF1"/>
+      <viewAttribute id="VVCA1"/>
+      <viewAttribute id="VVCB1"/>
+      <viewAttribute id="VVAB1"/>
+      <viewAttribute id="VVBA1"/>
+      <viewAttribute id="VVBA2"/>
+      <viewAttribute id="VVBA3"/>
+      <viewAttribute id="VVBA4"/>
+      <viewAttribute id="VVBA5"/>
+      <viewAttribute id="VVBA6"/>
+      <viewAttribute id="VVBA7"/>
+      <viewAttribute id="VVBA8"/>
+      <viewAttribute id="VVBA9"/>
+      <viewAttribute id="VVBB1"/>
+      <viewAttribute id="VVBB2"/>
+      <viewAttribute id="VVBB3"/>
+      <viewAttribute id="VVBB4"/>
+      <viewAttribute id="VVAA1"/>
+      <viewAttribute id="VVBC5"/>
+      <viewAttribute id="VVBD5"/>
+      <viewAttribute id="VVBAA"/>
+      <viewAttribute id="VVBAB"/>
+      <viewAttribute id="VVBAC"/>
+      <viewAttribute id="VVBAD"/>
+      <viewAttribute id="VVBAE"/>
+      <viewAttribute id="VVBAF"/>
+      <viewAttribute id="VVBB5"/>
+      <viewAttribute id="VVBB6"/>
+      <viewAttribute id="VVBC6"/>
+      <viewAttribute id="VVBE5"/>
+      <viewAttribute id="VVBE6"/>
+      <viewAttribute id="VVBE7"/>
+      <viewAttribute id="VVFE1"/>
+      <viewAttribute id="KATR9"/>
+      <viewAttribute id="WWBU1"/>
+      <viewAttribute id="WWFC1"/>
+      <viewAttribute id="WWFC4"/>
+      <viewAttribute id="WWFC5"/>
+      <viewAttribute id="WWGP1"/>
+      <viewAttribute id="VVX30"/>
+      <viewAttribute id="VVX31"/>
+      <viewAttribute id="VVX32"/>
+      <viewAttribute id="VVX33"/>
+      <viewAttribute id="VVX34"/>
+      <viewAttribute id="VVX35"/>
+      <viewAttribute id="VVX36"/>
+      <viewAttribute id="VVX37"/>
+      <viewAttribute id="VVX38"/>
+      <viewAttribute id="VVX39"/>
+      <viewAttribute id="VVX40"/>
+      <viewAttribute id="VVX41"/>
+      <viewAttribute id="VVX42"/>
+      <viewAttribute id="VVX43"/>
+      <viewAttribute id="VVX44"/>
+      <viewAttribute id="VVX45"/>
+      <viewAttribute id="VVX46"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="TGT_CE1MFL1_02"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:UnionView" id="Union_1">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="PALEDGER"/>
+      <viewAttribute id="VRGAR"/>
+      <viewAttribute id="VERSI"/>
+      <viewAttribute id="PERIO"/>
+      <viewAttribute id="PAOBJNR"/>
+      <viewAttribute id="PASUBNR"/>
+      <viewAttribute id="BELNR"/>
+      <viewAttribute id="POSNR"/>
+      <viewAttribute id="HZDAT"/>
+      <viewAttribute id="USNAM"/>
+      <viewAttribute id="GJAHR"/>
+      <viewAttribute id="PERDE"/>
+      <viewAttribute id="WADAT"/>
+      <viewAttribute id="FADAT"/>
+      <viewAttribute id="BUDAT"/>
+      <viewAttribute id="ALTPERIO"/>
+      <viewAttribute id="PAPAOBJNR"/>
+      <viewAttribute id="PAPASUBNR"/>
+      <viewAttribute id="KNDNR"/>
+      <viewAttribute id="ARTNR"/>
+      <viewAttribute id="FKART"/>
+      <viewAttribute id="FRWAE"/>
+      <viewAttribute id="KURSF"/>
+      <viewAttribute id="KURSBK"/>
+      <viewAttribute id="KURSKZ"/>
+      <viewAttribute id="REC_WAERS"/>
+      <viewAttribute id="KAUFN"/>
+      <viewAttribute id="KDPOS"/>
+      <viewAttribute id="RKAUFNR"/>
+      <viewAttribute id="SKOST"/>
+      <viewAttribute id="PRZNR"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="GSBER"/>
+      <viewAttribute id="VKORG"/>
+      <viewAttribute id="VTWEG"/>
+      <viewAttribute id="SPART"/>
+      <viewAttribute id="HRKFT"/>
+      <viewAttribute id="PLIKZ"/>
+      <viewAttribute id="KSTAR"/>
+      <viewAttribute id="PSPNR"/>
+      <viewAttribute id="KSTRG"/>
+      <viewAttribute id="RBELN"/>
+      <viewAttribute id="RPOSN"/>
+      <viewAttribute id="STO_BELNR"/>
+      <viewAttribute id="STO_POSNR"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="PPRCTR"/>
+      <viewAttribute id="RKESTATU"/>
+      <viewAttribute id="TIMESTMP"/>
+      <viewAttribute id="COPA_AWTYP"/>
+      <viewAttribute id="COPA_AWORG"/>
+      <viewAttribute id="COPA_BWZPT"/>
+      <viewAttribute id="COPA_AWSYS"/>
+      <viewAttribute id="AUGRU"/>
+      <viewAttribute id="BZIRK"/>
+      <viewAttribute id="KDGRP"/>
+      <viewAttribute id="KMLAND"/>
+      <viewAttribute id="KMVKBU"/>
+      <viewAttribute id="KMVKGR"/>
+      <viewAttribute id="KTGRD"/>
+      <viewAttribute id="KUNRE"/>
+      <viewAttribute id="KUNWE"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="PRODH"/>
+      <viewAttribute id="WWIND"/>
+      <viewAttribute id="WWMKT"/>
+      <viewAttribute id="WWBRD"/>
+      <viewAttribute id="CRMCSTY"/>
+      <viewAttribute id="CRMELEM"/>
+      <viewAttribute id="CRMFIGR"/>
+      <viewAttribute id="WWDES"/>
+      <viewAttribute id="WWPRG"/>
+      <viewAttribute id="KMHI01"/>
+      <viewAttribute id="KMHI02"/>
+      <viewAttribute id="KMHI03"/>
+      <viewAttribute id="WWPDA"/>
+      <viewAttribute id="VVXX1_ME"/>
+      <viewAttribute id="VVXX2_ME"/>
+      <viewAttribute id="VVX11"/>
+      <viewAttribute id="VVX12"/>
+      <viewAttribute id="VVXX1"/>
+      <viewAttribute id="VVXX2"/>
+      <viewAttribute id="VVXX3"/>
+      <viewAttribute id="VVXX4"/>
+      <viewAttribute id="VVXX5"/>
+      <viewAttribute id="VVXX6"/>
+      <viewAttribute id="VVXX7"/>
+      <viewAttribute id="VVX10"/>
+      <viewAttribute id="VVX21"/>
+      <viewAttribute id="VVX22"/>
+      <viewAttribute id="VVX23"/>
+      <viewAttribute id="VVX24"/>
+      <viewAttribute id="VVX25"/>
+      <viewAttribute id="VVX26"/>
+      <viewAttribute id="VVX27"/>
+      <viewAttribute id="VVX28"/>
+      <viewAttribute id="VVX29"/>
+      <viewAttribute id="VVXX9"/>
+      <viewAttribute id="VVX15"/>
+      <viewAttribute id="VVFB1"/>
+      <viewAttribute id="VVFC1"/>
+      <viewAttribute id="VVFD1"/>
+      <viewAttribute id="VVEE1"/>
+      <viewAttribute id="VVEF1"/>
+      <viewAttribute id="VVFA1"/>
+      <viewAttribute id="VVCB2"/>
+      <viewAttribute id="VVCB3"/>
+      <viewAttribute id="VVCB4"/>
+      <viewAttribute id="VVCC1"/>
+      <viewAttribute id="VVDA1"/>
+      <viewAttribute id="VVDA2"/>
+      <viewAttribute id="VVDB1"/>
+      <viewAttribute id="VVDC1"/>
+      <viewAttribute id="VVDE1"/>
+      <viewAttribute id="VVDF1"/>
+      <viewAttribute id="VVEA1"/>
+      <viewAttribute id="VVEB1"/>
+      <viewAttribute id="VVEC1"/>
+      <viewAttribute id="VVED1"/>
+      <viewAttribute id="VVBC1"/>
+      <viewAttribute id="VVBC2"/>
+      <viewAttribute id="VVBC3"/>
+      <viewAttribute id="VVBC4"/>
+      <viewAttribute id="VVBD1"/>
+      <viewAttribute id="VVBD2"/>
+      <viewAttribute id="VVBD3"/>
+      <viewAttribute id="VVBD4"/>
+      <viewAttribute id="VVBE1"/>
+      <viewAttribute id="VVBE2"/>
+      <viewAttribute id="VVBE3"/>
+      <viewAttribute id="VVBE4"/>
+      <viewAttribute id="VVBF1"/>
+      <viewAttribute id="VVCA1"/>
+      <viewAttribute id="VVCB1"/>
+      <viewAttribute id="VVAB1"/>
+      <viewAttribute id="VVBA1"/>
+      <viewAttribute id="VVBA2"/>
+      <viewAttribute id="VVBA3"/>
+      <viewAttribute id="VVBA4"/>
+      <viewAttribute id="VVBA5"/>
+      <viewAttribute id="VVBA6"/>
+      <viewAttribute id="VVBA7"/>
+      <viewAttribute id="VVBA8"/>
+      <viewAttribute id="VVBA9"/>
+      <viewAttribute id="VVBB1"/>
+      <viewAttribute id="VVBB2"/>
+      <viewAttribute id="VVBB3"/>
+      <viewAttribute id="VVBB4"/>
+      <viewAttribute id="VVAA1"/>
+      <viewAttribute id="VVBC5"/>
+      <viewAttribute id="VVBD5"/>
+      <viewAttribute id="VVBAA"/>
+      <viewAttribute id="VVBAB"/>
+      <viewAttribute id="VVBAC"/>
+      <viewAttribute id="VVBAD"/>
+      <viewAttribute id="VVBAE"/>
+      <viewAttribute id="VVBAF"/>
+      <viewAttribute id="VVBB5"/>
+      <viewAttribute id="VVBB6"/>
+      <viewAttribute id="VVBC6"/>
+      <viewAttribute id="VVBE5"/>
+      <viewAttribute id="VVBE6"/>
+      <viewAttribute id="VVBE7"/>
+      <viewAttribute id="VVFE1"/>
+      <viewAttribute id="KATR9"/>
+      <viewAttribute id="WWBU1"/>
+      <viewAttribute id="WWFC1"/>
+      <viewAttribute id="WWFC4"/>
+      <viewAttribute id="WWFC5"/>
+      <viewAttribute id="WWGP1"/>
+      <viewAttribute id="VVX30"/>
+      <viewAttribute id="VVX31"/>
+      <viewAttribute id="VVX32"/>
+      <viewAttribute id="VVX33"/>
+      <viewAttribute id="VVX34"/>
+      <viewAttribute id="VVX35"/>
+      <viewAttribute id="VVX36"/>
+      <viewAttribute id="VVX37"/>
+      <viewAttribute id="VVX38"/>
+      <viewAttribute id="VVX39"/>
+      <viewAttribute id="VVX40"/>
+      <viewAttribute id="VVX41"/>
+      <viewAttribute id="VVX42"/>
+      <viewAttribute id="VVX43"/>
+      <viewAttribute id="VVX44"/>
+      <viewAttribute id="VVX45"/>
+      <viewAttribute id="VVX46"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Projection_1" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PALEDGER" source="PALEDGER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VRGAR" source="VRGAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERSI" source="VERSI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PERIO" source="PERIO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAOBJNR" source="PAOBJNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PASUBNR" source="PASUBNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BELNR" source="BELNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POSNR" source="POSNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HZDAT" source="HZDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="USNAM" source="USNAM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GJAHR" source="GJAHR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PERDE" source="PERDE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WADAT" source="WADAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FADAT" source="FADAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUDAT" source="BUDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ALTPERIO" source="ALTPERIO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAPAOBJNR" source="PAPAOBJNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAPASUBNR" source="PAPASUBNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KNDNR" source="KNDNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ARTNR" source="ARTNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FKART" source="FKART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FRWAE" source="FRWAE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KURSF" source="KURSF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KURSBK" source="KURSBK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KURSKZ" source="KURSKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REC_WAERS" source="REC_WAERS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KAUFN" source="KAUFN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KDPOS" source="KDPOS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RKAUFNR" source="RKAUFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SKOST" source="SKOST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRZNR" source="PRZNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOKRS" source="KOKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GSBER" source="GSBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VKORG" source="VKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VTWEG" source="VTWEG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPART" source="SPART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HRKFT" source="HRKFT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PLIKZ" source="PLIKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KSTAR" source="KSTAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PSPNR" source="PSPNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KSTRG" source="KSTRG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RBELN" source="RBELN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RPOSN" source="RPOSN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STO_BELNR" source="STO_BELNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STO_POSNR" source="STO_POSNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRCTR" source="PRCTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PPRCTR" source="PPRCTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RKESTATU" source="RKESTATU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TIMESTMP" source="TIMESTMP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COPA_AWTYP" source="COPA_AWTYP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COPA_AWORG" source="COPA_AWORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COPA_BWZPT" source="COPA_BWZPT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COPA_AWSYS" source="COPA_AWSYS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AUGRU" source="AUGRU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BZIRK" source="BZIRK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KDGRP" source="KDGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KMLAND" source="KMLAND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KMVKBU" source="KMVKBU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KMVKGR" source="KMVKGR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KTGRD" source="KTGRD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KUNRE" source="KUNRE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KUNWE" source="KUNWE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL" source="MATKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRODH" source="PRODH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWIND" source="WWIND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWMKT" source="WWMKT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWBRD" source="WWBRD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CRMCSTY" source="CRMCSTY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CRMELEM" source="CRMELEM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CRMFIGR" source="CRMFIGR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWDES" source="WWDES"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWPRG" source="WWPRG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KMHI01" source="KMHI01"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KMHI02" source="KMHI02"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KMHI03" source="KMHI03"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWPDA" source="WWPDA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX1_ME" source="VVXX1_ME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX2_ME" source="VVXX2_ME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX11" source="VVX11"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX12" source="VVX12"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX1" source="VVXX1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX2" source="VVXX2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX3" source="VVXX3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX4" source="VVXX4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX5" source="VVXX5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX6" source="VVXX6"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX7" source="VVXX7"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX10" source="VVX10"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX21" source="VVX21"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX22" source="VVX22"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX23" source="VVX23"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX24" source="VVX24"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX25" source="VVX25"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX26" source="VVX26"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX27" source="VVX27"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX28" source="VVX28"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX29" source="VVX29"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX9" source="VVXX9"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX15" source="VVX15"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVFB1" source="VVFB1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVFC1" source="VVFC1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVFD1" source="VVFD1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVEE1" source="VVEE1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVEF1" source="VVEF1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVFA1" source="VVFA1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVCB2" source="VVCB2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVCB3" source="VVCB3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVCB4" source="VVCB4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVCC1" source="VVCC1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVDA1" source="VVDA1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVDA2" source="VVDA2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVDB1" source="VVDB1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVDC1" source="VVDC1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVDE1" source="VVDE1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVDF1" source="VVDF1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVEA1" source="VVEA1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVEB1" source="VVEB1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVEC1" source="VVEC1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVED1" source="VVED1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBC1" source="VVBC1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBC2" source="VVBC2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBC3" source="VVBC3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBC4" source="VVBC4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBD1" source="VVBD1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBD2" source="VVBD2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBD3" source="VVBD3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBD4" source="VVBD4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBE1" source="VVBE1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBE2" source="VVBE2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBE3" source="VVBE3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBE4" source="VVBE4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBF1" source="VVBF1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVCA1" source="VVCA1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVCB1" source="VVCB1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVAB1" source="VVAB1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA1" source="VVBA1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA2" source="VVBA2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA3" source="VVBA3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA4" source="VVBA4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA5" source="VVBA5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA6" source="VVBA6"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA7" source="VVBA7"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA8" source="VVBA8"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA9" source="VVBA9"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBB1" source="VVBB1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBB2" source="VVBB2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBB3" source="VVBB3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBB4" source="VVBB4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVAA1" source="VVAA1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBC5" source="VVBC5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBD5" source="VVBD5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBAA" source="VVBAA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBAB" source="VVBAB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBAC" source="VVBAC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBAD" source="VVBAD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBAE" source="VVBAE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBAF" source="VVBAF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBB5" source="VVBB5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBB6" source="VVBB6"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBC6" source="VVBC6"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBE5" source="VVBE5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBE6" source="VVBE6"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBE7" source="VVBE7"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVFE1" source="VVFE1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KATR9" source="KATR9"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWBU1" source="WWBU1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWFC1" source="WWFC1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWFC4" source="WWFC4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWFC5" source="WWFC5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWGP1" source="WWGP1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX30" source="VVX30"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX31" source="VVX31"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX32" source="VVX32"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX33" source="VVX33"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX34" source="VVX34"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX35" source="VVX35"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX36" source="VVX36"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX37" source="VVX37"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX38" source="VVX38"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX39" source="VVX39"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX40" source="VVX40"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX41" source="VVX41"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX42" source="VVX42"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX43" source="VVX43"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX44" source="VVX44"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX45" source="VVX45"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX46" source="VVX46"/>
+    </input>
+    <input node="Projection_2" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PALEDGER" source="PALEDGER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VRGAR" source="VRGAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERSI" source="VERSI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PERIO" source="PERIO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAOBJNR" source="PAOBJNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PASUBNR" source="PASUBNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BELNR" source="BELNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POSNR" source="POSNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HZDAT" source="HZDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="USNAM" source="USNAM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GJAHR" source="GJAHR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PERDE" source="PERDE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WADAT" source="WADAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FADAT" source="FADAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUDAT" source="BUDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ALTPERIO" source="ALTPERIO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAPAOBJNR" source="PAPAOBJNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAPASUBNR" source="PAPASUBNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KNDNR" source="KNDNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ARTNR" source="ARTNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FKART" source="FKART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FRWAE" source="FRWAE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KURSF" source="KURSF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KURSBK" source="KURSBK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KURSKZ" source="KURSKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REC_WAERS" source="REC_WAERS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KAUFN" source="KAUFN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KDPOS" source="KDPOS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RKAUFNR" source="RKAUFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SKOST" source="SKOST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRZNR" source="PRZNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOKRS" source="KOKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GSBER" source="GSBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VKORG" source="VKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VTWEG" source="VTWEG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPART" source="SPART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HRKFT" source="HRKFT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PLIKZ" source="PLIKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KSTAR" source="KSTAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PSPNR" source="PSPNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KSTRG" source="KSTRG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RBELN" source="RBELN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RPOSN" source="RPOSN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STO_BELNR" source="STO_BELNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STO_POSNR" source="STO_POSNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRCTR" source="PRCTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PPRCTR" source="PPRCTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RKESTATU" source="RKESTATU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TIMESTMP" source="TIMESTMP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COPA_AWTYP" source="COPA_AWTYP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COPA_AWORG" source="COPA_AWORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COPA_BWZPT" source="COPA_BWZPT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COPA_AWSYS" source="COPA_AWSYS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AUGRU" source="AUGRU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BZIRK" source="BZIRK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KDGRP" source="KDGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KMLAND" source="KMLAND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KMVKBU" source="KMVKBU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KMVKGR" source="KMVKGR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KTGRD" source="KTGRD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KUNRE" source="KUNRE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KUNWE" source="KUNWE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL" source="MATKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRODH" source="PRODH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWIND" source="WWIND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWMKT" source="WWMKT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWBRD" source="WWBRD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CRMCSTY" source="CRMCSTY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CRMELEM" source="CRMELEM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CRMFIGR" source="CRMFIGR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWDES" source="WWDES"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWPRG" source="WWPRG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KMHI01" source="KMHI01"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KMHI02" source="KMHI02"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KMHI03" source="KMHI03"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWPDA" source="WWPDA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX1_ME" source="VVXX1_ME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX2_ME" source="VVXX2_ME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX11" source="VVX11"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX12" source="VVX12"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX1" source="VVXX1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX2" source="VVXX2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX3" source="VVXX3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX4" source="VVXX4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX5" source="VVXX5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX6" source="VVXX6"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX7" source="VVXX7"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX10" source="VVX10"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX21" source="VVX21"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX22" source="VVX22"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX23" source="VVX23"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX24" source="VVX24"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX25" source="VVX25"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX26" source="VVX26"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX27" source="VVX27"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX28" source="VVX28"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX29" source="VVX29"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX9" source="VVXX9"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX15" source="VVX15"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVFB1" source="VVFB1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVFC1" source="VVFC1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVFD1" source="VVFD1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVEE1" source="VVEE1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVEF1" source="VVEF1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVFA1" source="VVFA1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVCB2" source="VVCB2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVCB3" source="VVCB3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVCB4" source="VVCB4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVCC1" source="VVCC1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVDA1" source="VVDA1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVDA2" source="VVDA2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVDB1" source="VVDB1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVDC1" source="VVDC1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVDE1" source="VVDE1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVDF1" source="VVDF1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVEA1" source="VVEA1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVEB1" source="VVEB1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVEC1" source="VVEC1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVED1" source="VVED1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBC1" source="VVBC1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBC2" source="VVBC2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBC3" source="VVBC3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBC4" source="VVBC4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBD1" source="VVBD1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBD2" source="VVBD2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBD3" source="VVBD3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBD4" source="VVBD4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBE1" source="VVBE1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBE2" source="VVBE2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBE3" source="VVBE3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBE4" source="VVBE4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBF1" source="VVBF1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVCA1" source="VVCA1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVCB1" source="VVCB1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVAB1" source="VVAB1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA1" source="VVBA1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA2" source="VVBA2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA3" source="VVBA3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA4" source="VVBA4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA5" source="VVBA5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA6" source="VVBA6"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA7" source="VVBA7"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA8" source="VVBA8"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA9" source="VVBA9"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBB1" source="VVBB1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBB2" source="VVBB2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBB3" source="VVBB3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBB4" source="VVBB4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVAA1" source="VVAA1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBC5" source="VVBC5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBD5" source="VVBD5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBAA" source="VVBAA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBAB" source="VVBAB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBAC" source="VVBAC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBAD" source="VVBAD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBAE" source="VVBAE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBAF" source="VVBAF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBB5" source="VVBB5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBB6" source="VVBB6"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBC6" source="VVBC6"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBE5" source="VVBE5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBE6" source="VVBE6"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBE7" source="VVBE7"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVFE1" source="VVFE1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KATR9" source="KATR9"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWBU1" source="WWBU1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWFC1" source="WWFC1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWFC4" source="WWFC4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWFC5" source="WWFC5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWGP1" source="WWGP1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX30" source="VVX30"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX31" source="VVX31"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX32" source="VVX32"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX33" source="VVX33"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX34" source="VVX34"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX35" source="VVX35"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX36" source="VVX36"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX37" source="VVX37"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX38" source="VVX38"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX39" source="VVX39"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX40" source="VVX40"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX41" source="VVX41"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX42" source="VVX42"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX43" source="VVX43"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX44" source="VVX44"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX45" source="VVX45"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX46" source="VVX46"/>
+    </input>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="Union_1">
+  <attributes>
+    <attribute id="MANDT" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MANDT"/>
+      <keyMapping columnObjectName="Union_1" columnName="MANDT"/>
+    </attribute>
+    <attribute id="PALEDGER" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PALEDGER"/>
+      <keyMapping columnObjectName="Union_1" columnName="PALEDGER"/>
+    </attribute>
+    <attribute id="VRGAR" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VRGAR"/>
+      <keyMapping columnObjectName="Union_1" columnName="VRGAR"/>
+    </attribute>
+    <attribute id="VERSI" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VERSI"/>
+      <keyMapping columnObjectName="Union_1" columnName="VERSI"/>
+    </attribute>
+    <attribute id="PERIO" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PERIO"/>
+      <keyMapping columnObjectName="Union_1" columnName="PERIO"/>
+    </attribute>
+    <attribute id="PAOBJNR" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PAOBJNR"/>
+      <keyMapping columnObjectName="Union_1" columnName="PAOBJNR"/>
+    </attribute>
+    <attribute id="PASUBNR" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PASUBNR"/>
+      <keyMapping columnObjectName="Union_1" columnName="PASUBNR"/>
+    </attribute>
+    <attribute id="BELNR" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BELNR"/>
+      <keyMapping columnObjectName="Union_1" columnName="BELNR"/>
+    </attribute>
+    <attribute id="POSNR" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="POSNR"/>
+      <keyMapping columnObjectName="Union_1" columnName="POSNR"/>
+    </attribute>
+    <attribute id="HZDAT" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="HZDAT"/>
+      <keyMapping columnObjectName="Union_1" columnName="HZDAT"/>
+    </attribute>
+    <attribute id="USNAM" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="USNAM"/>
+      <keyMapping columnObjectName="Union_1" columnName="USNAM"/>
+    </attribute>
+    <attribute id="GJAHR" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GJAHR"/>
+      <keyMapping columnObjectName="Union_1" columnName="GJAHR"/>
+    </attribute>
+    <attribute id="PERDE" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PERDE"/>
+      <keyMapping columnObjectName="Union_1" columnName="PERDE"/>
+    </attribute>
+    <attribute id="WADAT" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WADAT"/>
+      <keyMapping columnObjectName="Union_1" columnName="WADAT"/>
+    </attribute>
+    <attribute id="FADAT" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FADAT"/>
+      <keyMapping columnObjectName="Union_1" columnName="FADAT"/>
+    </attribute>
+    <attribute id="BUDAT" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BUDAT"/>
+      <keyMapping columnObjectName="Union_1" columnName="BUDAT"/>
+    </attribute>
+    <attribute id="ALTPERIO" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ALTPERIO"/>
+      <keyMapping columnObjectName="Union_1" columnName="ALTPERIO"/>
+    </attribute>
+    <attribute id="PAPAOBJNR" order="18" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PAPAOBJNR"/>
+      <keyMapping columnObjectName="Union_1" columnName="PAPAOBJNR"/>
+    </attribute>
+    <attribute id="PAPASUBNR" order="19" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PAPASUBNR"/>
+      <keyMapping columnObjectName="Union_1" columnName="PAPASUBNR"/>
+    </attribute>
+    <attribute id="KNDNR" order="20" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KNDNR"/>
+      <keyMapping columnObjectName="Union_1" columnName="KNDNR"/>
+    </attribute>
+    <attribute id="ARTNR" order="21" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ARTNR"/>
+      <keyMapping columnObjectName="Union_1" columnName="ARTNR"/>
+    </attribute>
+    <attribute id="FKART" order="22" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FKART"/>
+      <keyMapping columnObjectName="Union_1" columnName="FKART"/>
+    </attribute>
+    <attribute id="FRWAE" order="23" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FRWAE"/>
+      <keyMapping columnObjectName="Union_1" columnName="FRWAE"/>
+    </attribute>
+    <attribute id="KURSF" order="24" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KURSF"/>
+      <keyMapping columnObjectName="Union_1" columnName="KURSF"/>
+    </attribute>
+    <attribute id="KURSBK" order="25" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KURSBK"/>
+      <keyMapping columnObjectName="Union_1" columnName="KURSBK"/>
+    </attribute>
+    <attribute id="KURSKZ" order="26" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KURSKZ"/>
+      <keyMapping columnObjectName="Union_1" columnName="KURSKZ"/>
+    </attribute>
+    <attribute id="REC_WAERS" order="27" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="REC_WAERS"/>
+      <keyMapping columnObjectName="Union_1" columnName="REC_WAERS"/>
+    </attribute>
+    <attribute id="KAUFN" order="28" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KAUFN"/>
+      <keyMapping columnObjectName="Union_1" columnName="KAUFN"/>
+    </attribute>
+    <attribute id="KDPOS" order="29" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KDPOS"/>
+      <keyMapping columnObjectName="Union_1" columnName="KDPOS"/>
+    </attribute>
+    <attribute id="RKAUFNR" order="30" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="RKAUFNR"/>
+      <keyMapping columnObjectName="Union_1" columnName="RKAUFNR"/>
+    </attribute>
+    <attribute id="SKOST" order="31" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SKOST"/>
+      <keyMapping columnObjectName="Union_1" columnName="SKOST"/>
+    </attribute>
+    <attribute id="PRZNR" order="32" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PRZNR"/>
+      <keyMapping columnObjectName="Union_1" columnName="PRZNR"/>
+    </attribute>
+    <attribute id="BUKRS" order="33" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BUKRS"/>
+      <keyMapping columnObjectName="Union_1" columnName="BUKRS"/>
+    </attribute>
+    <attribute id="KOKRS" order="34" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KOKRS"/>
+      <keyMapping columnObjectName="Union_1" columnName="KOKRS"/>
+    </attribute>
+    <attribute id="WERKS" order="35" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WERKS"/>
+      <keyMapping columnObjectName="Union_1" columnName="WERKS"/>
+    </attribute>
+    <attribute id="GSBER" order="36" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GSBER"/>
+      <keyMapping columnObjectName="Union_1" columnName="GSBER"/>
+    </attribute>
+    <attribute id="VKORG" order="37" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VKORG"/>
+      <keyMapping columnObjectName="Union_1" columnName="VKORG"/>
+    </attribute>
+    <attribute id="VTWEG" order="38" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VTWEG"/>
+      <keyMapping columnObjectName="Union_1" columnName="VTWEG"/>
+    </attribute>
+    <attribute id="SPART" order="39" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SPART"/>
+      <keyMapping columnObjectName="Union_1" columnName="SPART"/>
+    </attribute>
+    <attribute id="HRKFT" order="40" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="HRKFT"/>
+      <keyMapping columnObjectName="Union_1" columnName="HRKFT"/>
+    </attribute>
+    <attribute id="PLIKZ" order="41" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PLIKZ"/>
+      <keyMapping columnObjectName="Union_1" columnName="PLIKZ"/>
+    </attribute>
+    <attribute id="KSTAR" order="42" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KSTAR"/>
+      <keyMapping columnObjectName="Union_1" columnName="KSTAR"/>
+    </attribute>
+    <attribute id="PSPNR" order="43" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PSPNR"/>
+      <keyMapping columnObjectName="Union_1" columnName="PSPNR"/>
+    </attribute>
+    <attribute id="KSTRG" order="44" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KSTRG"/>
+      <keyMapping columnObjectName="Union_1" columnName="KSTRG"/>
+    </attribute>
+    <attribute id="RBELN" order="45" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="RBELN"/>
+      <keyMapping columnObjectName="Union_1" columnName="RBELN"/>
+    </attribute>
+    <attribute id="RPOSN" order="46" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="RPOSN"/>
+      <keyMapping columnObjectName="Union_1" columnName="RPOSN"/>
+    </attribute>
+    <attribute id="STO_BELNR" order="47" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="STO_BELNR"/>
+      <keyMapping columnObjectName="Union_1" columnName="STO_BELNR"/>
+    </attribute>
+    <attribute id="STO_POSNR" order="48" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="STO_POSNR"/>
+      <keyMapping columnObjectName="Union_1" columnName="STO_POSNR"/>
+    </attribute>
+    <attribute id="PRCTR" order="49" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PRCTR"/>
+      <keyMapping columnObjectName="Union_1" columnName="PRCTR"/>
+    </attribute>
+    <attribute id="PPRCTR" order="50" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PPRCTR"/>
+      <keyMapping columnObjectName="Union_1" columnName="PPRCTR"/>
+    </attribute>
+    <attribute id="RKESTATU" order="51" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="RKESTATU"/>
+      <keyMapping columnObjectName="Union_1" columnName="RKESTATU"/>
+    </attribute>
+    <attribute id="TIMESTMP" order="52" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TIMESTMP"/>
+      <keyMapping columnObjectName="Union_1" columnName="TIMESTMP"/>
+    </attribute>
+    <attribute id="COPA_AWTYP" order="53" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="COPA_AWTYP"/>
+      <keyMapping columnObjectName="Union_1" columnName="COPA_AWTYP"/>
+    </attribute>
+    <attribute id="COPA_AWORG" order="54" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="COPA_AWORG"/>
+      <keyMapping columnObjectName="Union_1" columnName="COPA_AWORG"/>
+    </attribute>
+    <attribute id="COPA_BWZPT" order="55" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="COPA_BWZPT"/>
+      <keyMapping columnObjectName="Union_1" columnName="COPA_BWZPT"/>
+    </attribute>
+    <attribute id="COPA_AWSYS" order="56" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="COPA_AWSYS"/>
+      <keyMapping columnObjectName="Union_1" columnName="COPA_AWSYS"/>
+    </attribute>
+    <attribute id="AUGRU" order="57" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="AUGRU"/>
+      <keyMapping columnObjectName="Union_1" columnName="AUGRU"/>
+    </attribute>
+    <attribute id="BZIRK" order="58" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BZIRK"/>
+      <keyMapping columnObjectName="Union_1" columnName="BZIRK"/>
+    </attribute>
+    <attribute id="KDGRP" order="59" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KDGRP"/>
+      <keyMapping columnObjectName="Union_1" columnName="KDGRP"/>
+    </attribute>
+    <attribute id="KMLAND" order="60" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KMLAND"/>
+      <keyMapping columnObjectName="Union_1" columnName="KMLAND"/>
+    </attribute>
+    <attribute id="KMVKBU" order="61" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KMVKBU"/>
+      <keyMapping columnObjectName="Union_1" columnName="KMVKBU"/>
+    </attribute>
+    <attribute id="KMVKGR" order="62" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KMVKGR"/>
+      <keyMapping columnObjectName="Union_1" columnName="KMVKGR"/>
+    </attribute>
+    <attribute id="KTGRD" order="63" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KTGRD"/>
+      <keyMapping columnObjectName="Union_1" columnName="KTGRD"/>
+    </attribute>
+    <attribute id="KUNRE" order="64" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KUNRE"/>
+      <keyMapping columnObjectName="Union_1" columnName="KUNRE"/>
+    </attribute>
+    <attribute id="KUNWE" order="65" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KUNWE"/>
+      <keyMapping columnObjectName="Union_1" columnName="KUNWE"/>
+    </attribute>
+    <attribute id="MATKL" order="66" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MATKL"/>
+      <keyMapping columnObjectName="Union_1" columnName="MATKL"/>
+    </attribute>
+    <attribute id="PRODH" order="67" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PRODH"/>
+      <keyMapping columnObjectName="Union_1" columnName="PRODH"/>
+    </attribute>
+    <attribute id="WWIND" order="68" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WWIND"/>
+      <keyMapping columnObjectName="Union_1" columnName="WWIND"/>
+    </attribute>
+    <attribute id="WWMKT" order="69" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WWMKT"/>
+      <keyMapping columnObjectName="Union_1" columnName="WWMKT"/>
+    </attribute>
+    <attribute id="WWBRD" order="70" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WWBRD"/>
+      <keyMapping columnObjectName="Union_1" columnName="WWBRD"/>
+    </attribute>
+    <attribute id="CRMCSTY" order="71" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CRMCSTY"/>
+      <keyMapping columnObjectName="Union_1" columnName="CRMCSTY"/>
+    </attribute>
+    <attribute id="CRMELEM" order="72" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CRMELEM"/>
+      <keyMapping columnObjectName="Union_1" columnName="CRMELEM"/>
+    </attribute>
+    <attribute id="CRMFIGR" order="73" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CRMFIGR"/>
+      <keyMapping columnObjectName="Union_1" columnName="CRMFIGR"/>
+    </attribute>
+    <attribute id="WWDES" order="74" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WWDES"/>
+      <keyMapping columnObjectName="Union_1" columnName="WWDES"/>
+    </attribute>
+    <attribute id="WWPRG" order="75" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WWPRG"/>
+      <keyMapping columnObjectName="Union_1" columnName="WWPRG"/>
+    </attribute>
+    <attribute id="KMHI01" order="76" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KMHI01"/>
+      <keyMapping columnObjectName="Union_1" columnName="KMHI01"/>
+    </attribute>
+    <attribute id="KMHI02" order="77" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KMHI02"/>
+      <keyMapping columnObjectName="Union_1" columnName="KMHI02"/>
+    </attribute>
+    <attribute id="KMHI03" order="78" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KMHI03"/>
+      <keyMapping columnObjectName="Union_1" columnName="KMHI03"/>
+    </attribute>
+    <attribute id="WWPDA" order="79" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WWPDA"/>
+      <keyMapping columnObjectName="Union_1" columnName="WWPDA"/>
+    </attribute>
+    <attribute id="VVXX1_ME" order="80" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVXX1_ME"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVXX1_ME"/>
+    </attribute>
+    <attribute id="VVXX2_ME" order="81" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVXX2_ME"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVXX2_ME"/>
+    </attribute>
+    <attribute id="VVX11" order="82" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVX11"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVX11"/>
+    </attribute>
+    <attribute id="VVX12" order="83" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVX12"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVX12"/>
+    </attribute>
+    <attribute id="VVXX1" order="84" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVXX1"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVXX1"/>
+    </attribute>
+    <attribute id="VVXX2" order="85" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVXX2"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVXX2"/>
+    </attribute>
+    <attribute id="VVXX3" order="86" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVXX3"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVXX3"/>
+    </attribute>
+    <attribute id="VVXX4" order="87" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVXX4"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVXX4"/>
+    </attribute>
+    <attribute id="VVXX5" order="88" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVXX5"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVXX5"/>
+    </attribute>
+    <attribute id="VVXX6" order="89" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVXX6"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVXX6"/>
+    </attribute>
+    <attribute id="VVXX7" order="90" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVXX7"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVXX7"/>
+    </attribute>
+    <attribute id="VVX10" order="91" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVX10"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVX10"/>
+    </attribute>
+    <attribute id="VVX21" order="92" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVX21"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVX21"/>
+    </attribute>
+    <attribute id="VVX22" order="93" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVX22"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVX22"/>
+    </attribute>
+    <attribute id="VVX23" order="94" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVX23"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVX23"/>
+    </attribute>
+    <attribute id="VVX24" order="95" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVX24"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVX24"/>
+    </attribute>
+    <attribute id="VVX25" order="96" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVX25"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVX25"/>
+    </attribute>
+    <attribute id="VVX26" order="97" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVX26"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVX26"/>
+    </attribute>
+    <attribute id="VVX27" order="98" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVX27"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVX27"/>
+    </attribute>
+    <attribute id="VVX28" order="99" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVX28"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVX28"/>
+    </attribute>
+    <attribute id="VVX29" order="100" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVX29"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVX29"/>
+    </attribute>
+    <attribute id="VVXX9" order="101" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVXX9"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVXX9"/>
+    </attribute>
+    <attribute id="VVX15" order="102" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVX15"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVX15"/>
+    </attribute>
+    <attribute id="VVFB1" order="103" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVFB1"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVFB1"/>
+    </attribute>
+    <attribute id="VVFC1" order="104" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVFC1"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVFC1"/>
+    </attribute>
+    <attribute id="VVFD1" order="105" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVFD1"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVFD1"/>
+    </attribute>
+    <attribute id="VVEE1" order="106" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVEE1"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVEE1"/>
+    </attribute>
+    <attribute id="VVEF1" order="107" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVEF1"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVEF1"/>
+    </attribute>
+    <attribute id="VVFA1" order="108" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVFA1"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVFA1"/>
+    </attribute>
+    <attribute id="VVCB2" order="109" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVCB2"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVCB2"/>
+    </attribute>
+    <attribute id="VVCB3" order="110" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVCB3"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVCB3"/>
+    </attribute>
+    <attribute id="VVCB4" order="111" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVCB4"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVCB4"/>
+    </attribute>
+    <attribute id="VVCC1" order="112" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVCC1"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVCC1"/>
+    </attribute>
+    <attribute id="VVDA1" order="113" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVDA1"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVDA1"/>
+    </attribute>
+    <attribute id="VVDA2" order="114" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVDA2"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVDA2"/>
+    </attribute>
+    <attribute id="VVDB1" order="115" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVDB1"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVDB1"/>
+    </attribute>
+    <attribute id="VVDC1" order="116" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVDC1"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVDC1"/>
+    </attribute>
+    <attribute id="VVDE1" order="117" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVDE1"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVDE1"/>
+    </attribute>
+    <attribute id="VVDF1" order="118" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVDF1"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVDF1"/>
+    </attribute>
+    <attribute id="VVEA1" order="119" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVEA1"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVEA1"/>
+    </attribute>
+    <attribute id="VVEB1" order="120" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVEB1"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVEB1"/>
+    </attribute>
+    <attribute id="VVEC1" order="121" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVEC1"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVEC1"/>
+    </attribute>
+    <attribute id="VVED1" order="122" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVED1"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVED1"/>
+    </attribute>
+    <attribute id="VVBC1" order="123" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVBC1"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVBC1"/>
+    </attribute>
+    <attribute id="VVBC2" order="124" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVBC2"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVBC2"/>
+    </attribute>
+    <attribute id="VVBC3" order="125" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVBC3"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVBC3"/>
+    </attribute>
+    <attribute id="VVBC4" order="126" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVBC4"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVBC4"/>
+    </attribute>
+    <attribute id="VVBD1" order="127" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVBD1"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVBD1"/>
+    </attribute>
+    <attribute id="VVBD2" order="128" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVBD2"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVBD2"/>
+    </attribute>
+    <attribute id="VVBD3" order="129" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVBD3"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVBD3"/>
+    </attribute>
+    <attribute id="VVBD4" order="130" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVBD4"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVBD4"/>
+    </attribute>
+    <attribute id="VVBE1" order="131" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVBE1"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVBE1"/>
+    </attribute>
+    <attribute id="VVBE2" order="132" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVBE2"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVBE2"/>
+    </attribute>
+    <attribute id="VVBE3" order="133" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVBE3"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVBE3"/>
+    </attribute>
+    <attribute id="VVBE4" order="134" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVBE4"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVBE4"/>
+    </attribute>
+    <attribute id="VVBF1" order="135" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVBF1"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVBF1"/>
+    </attribute>
+    <attribute id="VVCA1" order="136" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVCA1"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVCA1"/>
+    </attribute>
+    <attribute id="VVCB1" order="137" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVCB1"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVCB1"/>
+    </attribute>
+    <attribute id="VVAB1" order="138" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVAB1"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVAB1"/>
+    </attribute>
+    <attribute id="VVBA1" order="139" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVBA1"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVBA1"/>
+    </attribute>
+    <attribute id="VVBA2" order="140" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVBA2"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVBA2"/>
+    </attribute>
+    <attribute id="VVBA3" order="141" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVBA3"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVBA3"/>
+    </attribute>
+    <attribute id="VVBA4" order="142" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVBA4"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVBA4"/>
+    </attribute>
+    <attribute id="VVBA5" order="143" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVBA5"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVBA5"/>
+    </attribute>
+    <attribute id="VVBA6" order="144" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVBA6"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVBA6"/>
+    </attribute>
+    <attribute id="VVBA7" order="145" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVBA7"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVBA7"/>
+    </attribute>
+    <attribute id="VVBA8" order="146" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVBA8"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVBA8"/>
+    </attribute>
+    <attribute id="VVBA9" order="147" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVBA9"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVBA9"/>
+    </attribute>
+    <attribute id="VVBB1" order="148" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVBB1"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVBB1"/>
+    </attribute>
+    <attribute id="VVBB2" order="149" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVBB2"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVBB2"/>
+    </attribute>
+    <attribute id="VVBB3" order="150" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVBB3"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVBB3"/>
+    </attribute>
+    <attribute id="VVBB4" order="151" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVBB4"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVBB4"/>
+    </attribute>
+    <attribute id="VVAA1" order="152" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVAA1"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVAA1"/>
+    </attribute>
+    <attribute id="VVBC5" order="153" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVBC5"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVBC5"/>
+    </attribute>
+    <attribute id="VVBD5" order="154" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVBD5"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVBD5"/>
+    </attribute>
+    <attribute id="VVBAA" order="155" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVBAA"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVBAA"/>
+    </attribute>
+    <attribute id="VVBAB" order="156" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVBAB"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVBAB"/>
+    </attribute>
+    <attribute id="VVBAC" order="157" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVBAC"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVBAC"/>
+    </attribute>
+    <attribute id="VVBAD" order="158" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVBAD"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVBAD"/>
+    </attribute>
+    <attribute id="VVBAE" order="159" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVBAE"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVBAE"/>
+    </attribute>
+    <attribute id="VVBAF" order="160" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVBAF"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVBAF"/>
+    </attribute>
+    <attribute id="VVBB5" order="161" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVBB5"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVBB5"/>
+    </attribute>
+    <attribute id="VVBB6" order="162" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVBB6"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVBB6"/>
+    </attribute>
+    <attribute id="VVBC6" order="163" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVBC6"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVBC6"/>
+    </attribute>
+    <attribute id="VVBE5" order="164" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVBE5"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVBE5"/>
+    </attribute>
+    <attribute id="VVBE6" order="165" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVBE6"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVBE6"/>
+    </attribute>
+    <attribute id="VVBE7" order="166" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVBE7"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVBE7"/>
+    </attribute>
+    <attribute id="VVFE1" order="167" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVFE1"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVFE1"/>
+    </attribute>
+    <attribute id="KATR9" order="168" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KATR9"/>
+      <keyMapping columnObjectName="Union_1" columnName="KATR9"/>
+    </attribute>
+    <attribute id="WWBU1" order="169" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WWBU1"/>
+      <keyMapping columnObjectName="Union_1" columnName="WWBU1"/>
+    </attribute>
+    <attribute id="WWFC1" order="170" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WWFC1"/>
+      <keyMapping columnObjectName="Union_1" columnName="WWFC1"/>
+    </attribute>
+    <attribute id="WWFC4" order="171" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WWFC4"/>
+      <keyMapping columnObjectName="Union_1" columnName="WWFC4"/>
+    </attribute>
+    <attribute id="WWFC5" order="172" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WWFC5"/>
+      <keyMapping columnObjectName="Union_1" columnName="WWFC5"/>
+    </attribute>
+    <attribute id="WWGP1" order="173" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WWGP1"/>
+      <keyMapping columnObjectName="Union_1" columnName="WWGP1"/>
+    </attribute>
+    <attribute id="VVX30" order="174" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVX30"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVX30"/>
+    </attribute>
+    <attribute id="VVX31" order="175" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVX31"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVX31"/>
+    </attribute>
+    <attribute id="VVX32" order="176" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVX32"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVX32"/>
+    </attribute>
+    <attribute id="VVX33" order="177" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVX33"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVX33"/>
+    </attribute>
+    <attribute id="VVX34" order="178" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVX34"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVX34"/>
+    </attribute>
+    <attribute id="VVX35" order="179" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVX35"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVX35"/>
+    </attribute>
+    <attribute id="VVX36" order="180" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVX36"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVX36"/>
+    </attribute>
+    <attribute id="VVX37" order="181" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVX37"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVX37"/>
+    </attribute>
+    <attribute id="VVX38" order="182" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVX38"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVX38"/>
+    </attribute>
+    <attribute id="VVX39" order="183" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVX39"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVX39"/>
+    </attribute>
+    <attribute id="VVX40" order="184" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVX40"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVX40"/>
+    </attribute>
+    <attribute id="VVX41" order="185" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVX41"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVX41"/>
+    </attribute>
+    <attribute id="VVX42" order="186" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVX42"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVX42"/>
+    </attribute>
+    <attribute id="VVX43" order="187" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVX43"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVX43"/>
+    </attribute>
+    <attribute id="VVX44" order="188" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVX44"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVX44"/>
+    </attribute>
+    <attribute id="VVX45" order="189" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVX45"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVX45"/>
+    </attribute>
+    <attribute id="VVX46" order="190" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVX46"/>
+      <keyMapping columnObjectName="Union_1" columnName="VVX46"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+    
+  
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="18" y="346"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_2" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="329" y="319"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Union_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="194" y="178"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

@@ -1,0 +1,820 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="mccain-shared::CV_MD_COMPONENT" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_MD_SKU"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="TGT_ZGRTR_BOMMAT_BPC">
+    <resourceUri>TGT_ZGRTR_BOMMAT_BPC</resourceUri>
+  </DataSource>
+  <DataSource id="TGT_MAKT">
+    <resourceUri>TGT_MAKT</resourceUri>
+  </DataSource>
+  <DataSource id="TGT_ZGRTR_MATMAS">
+    <resourceUri>TGT_ZGRTR_MATMAS</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_COMPONENT" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="STLAL"/>
+      <viewAttribute id="STLKN"/>
+      <viewAttribute id="IDNRK"/>
+      <viewAttribute id="BOM_UOM"/>
+      <viewAttribute id="BASE_UOM"/>
+      <viewAttribute id="ENGR_QTY"/>
+      <viewAttribute id="AUSCH"/>
+      <viewAttribute id="MENGE"/>
+      <viewAttribute id="YIELD"/>
+      <viewAttribute id="ALPGR"/>
+      <viewAttribute id="ALPRF"/>
+      <viewAttribute id="ALPST"/>
+      <viewAttribute id="EWAHR"/>
+      <viewAttribute id="MATBOM_UOM"/>
+      <viewAttribute id="COMP_TYPE"/>
+      <viewAttribute id="ANNAM"/>
+      <viewAttribute id="ANDAT"/>
+      <viewAttribute id="ANTIME"/>
+      <viewAttribute id="AENAM"/>
+      <viewAttribute id="AEDAT"/>
+      <viewAttribute id="AETIME"/>
+      <viewAttribute id="STATUS"/>
+      <viewAttribute id="ERROR_MSG"/>
+      <viewAttribute id="FILE_ID"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="TGT_ZGRTR_BOMMAT_BPC"/>
+    <filter>&quot;COMP_TYPE&quot;='ZRAW'</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_MAKT">
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="MAKTX"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="TGT_MAKT"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_COMPONENT" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="STLAL"/>
+      <viewAttribute id="STLKN"/>
+      <viewAttribute id="IDNRK"/>
+      <viewAttribute id="BOM_UOM"/>
+      <viewAttribute id="BASE_UOM"/>
+      <viewAttribute id="ENGR_QTY"/>
+      <viewAttribute id="AUSCH"/>
+      <viewAttribute id="MENGE"/>
+      <viewAttribute id="YIELD"/>
+      <viewAttribute id="ALPGR"/>
+      <viewAttribute id="ALPRF"/>
+      <viewAttribute id="ALPST"/>
+      <viewAttribute id="EWAHR"/>
+      <viewAttribute id="MATBOM_UOM"/>
+      <viewAttribute id="COMP_TYPE"/>
+      <viewAttribute id="ANNAM"/>
+      <viewAttribute id="ANDAT"/>
+      <viewAttribute id="ANTIME"/>
+      <viewAttribute id="AENAM"/>
+      <viewAttribute id="AEDAT"/>
+      <viewAttribute id="AETIME"/>
+      <viewAttribute id="STATUS"/>
+      <viewAttribute id="ERROR_MSG"/>
+      <viewAttribute id="FILE_ID"/>
+      <viewAttribute id="MAKTX"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="P_COMPONENT">
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STLAL" source="STLAL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STLKN" source="STLKN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IDNRK" source="IDNRK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BOM_UOM" source="BOM_UOM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BASE_UOM" source="BASE_UOM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ENGR_QTY" source="ENGR_QTY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AUSCH" source="AUSCH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MENGE" source="MENGE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="YIELD" source="YIELD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ALPGR" source="ALPGR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ALPRF" source="ALPRF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ALPST" source="ALPST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EWAHR" source="EWAHR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATBOM_UOM" source="MATBOM_UOM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COMP_TYPE" source="COMP_TYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANNAM" source="ANNAM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANDAT" source="ANDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANTIME" source="ANTIME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AENAM" source="AENAM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AEDAT" source="AEDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AETIME" source="AETIME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STATUS" source="STATUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERROR_MSG" source="ERROR_MSG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FILE_ID" source="FILE_ID"/>
+    </input>
+    <input node="P_MAKT">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAKTX" source="MAKTX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+    </input>
+    <joinAttribute name="MATNR"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_MATMAS">
+    <viewAttributes>
+      <viewAttribute id="ZBUKRS"/>
+      <viewAttribute id="ZWERKS"/>
+      <viewAttribute id="ZMATNR"/>
+      <viewAttribute id="ZMEINS_BASE"/>
+      <viewAttribute id="ZMEINS_BOM"/>
+      <viewAttribute id="ZST_PRICE"/>
+      <viewAttribute id="ZPRICE_UNIT"/>
+      <viewAttribute id="ZNET_WEIGHT"/>
+      <viewAttribute id="ZRECIPE_GR"/>
+      <viewAttribute id="ZRECIPE_COUNT"/>
+      <viewAttribute id="ZCONV_FACTOR"/>
+      <viewAttribute id="ZBOM_USAGE"/>
+      <viewAttribute id="ZBOM_ALT"/>
+      <viewAttribute id="ZBATCH_SIZE"/>
+      <viewAttribute id="ZCOST_LOT_SIZE"/>
+      <viewAttribute id="ZADDIT_COST"/>
+      <viewAttribute id="ZMTREF"/>
+      <viewAttribute id="ZCREATED_BY"/>
+      <viewAttribute id="ZCREATION_DT"/>
+      <viewAttribute id="ZCREATION_TIME"/>
+      <viewAttribute id="ZCHANGED_BY"/>
+      <viewAttribute id="ZCHANGE_DATE"/>
+      <viewAttribute id="ZCHANGE_TIME"/>
+      <viewAttribute id="ZSTATUS"/>
+      <viewAttribute id="ZER_MSG"/>
+      <viewAttribute id="ZFILE_ID"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="GEWEI"/>
+      <viewAttribute id="MVGR1"/>
+      <viewAttribute id="BKLAS"/>
+      <viewAttribute id="BRGEW"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="PRDHA"/>
+      <viewAttribute id="SOBSK"/>
+      <viewAttribute id="SPART"/>
+      <viewAttribute id="ZZLCLC"/>
+      <viewAttribute id="ZBUKRS_1"/>
+      <viewAttribute id="ZWERKS_1"/>
+      <viewAttribute id="ZMATNR_1"/>
+      <viewAttribute id="ZMEINS_BASE_1"/>
+      <viewAttribute id="ZMEINS_BOM_1"/>
+      <viewAttribute id="ZST_PRICE_1"/>
+      <viewAttribute id="ZPRICE_UNIT_1"/>
+      <viewAttribute id="ZNET_WEIGHT_1"/>
+      <viewAttribute id="ZRECIPE_GR_1"/>
+      <viewAttribute id="ZRECIPE_COUNT_1"/>
+      <viewAttribute id="ZCONV_FACTOR_1"/>
+      <viewAttribute id="ZBOM_USAGE_1"/>
+      <viewAttribute id="ZBOM_ALT_1"/>
+      <viewAttribute id="ZBATCH_SIZE_1"/>
+      <viewAttribute id="ZCOST_LOT_SIZE_1"/>
+      <viewAttribute id="ZADDIT_COST_1"/>
+      <viewAttribute id="ZMTREF_1"/>
+      <viewAttribute id="ZCREATED_BY_1"/>
+      <viewAttribute id="ZCREATION_DT_1"/>
+      <viewAttribute id="ZCREATION_TIME_1"/>
+      <viewAttribute id="ZCHANGED_BY_1"/>
+      <viewAttribute id="ZCHANGE_DATE_1"/>
+      <viewAttribute id="ZCHANGE_TIME_1"/>
+      <viewAttribute id="ZSTATUS_1"/>
+      <viewAttribute id="ZER_MSG_1"/>
+      <viewAttribute id="ZFILE_ID_1"/>
+      <viewAttribute id="MATKL_1"/>
+      <viewAttribute id="GEWEI_1"/>
+      <viewAttribute id="MVGR1_1"/>
+      <viewAttribute id="BKLAS_1"/>
+      <viewAttribute id="BRGEW_1"/>
+      <viewAttribute id="PRCTR_1"/>
+      <viewAttribute id="PRDHA_1"/>
+      <viewAttribute id="SOBSK_1"/>
+      <viewAttribute id="SPART_1"/>
+      <viewAttribute id="ZZLCLC_1"/>
+      <viewAttribute id="ZBUKRS_2"/>
+      <viewAttribute id="ZWERKS_2"/>
+      <viewAttribute id="ZMATNR_2"/>
+      <viewAttribute id="ZMEINS_BASE_2"/>
+      <viewAttribute id="ZMEINS_BOM_2"/>
+      <viewAttribute id="ZST_PRICE_2"/>
+      <viewAttribute id="ZPRICE_UNIT_2"/>
+      <viewAttribute id="ZNET_WEIGHT_2"/>
+      <viewAttribute id="ZRECIPE_GR_2"/>
+      <viewAttribute id="ZRECIPE_COUNT_2"/>
+      <viewAttribute id="ZCONV_FACTOR_2"/>
+      <viewAttribute id="ZBOM_USAGE_2"/>
+      <viewAttribute id="ZBOM_ALT_2"/>
+      <viewAttribute id="ZBATCH_SIZE_2"/>
+      <viewAttribute id="ZCOST_LOT_SIZE_2"/>
+      <viewAttribute id="ZADDIT_COST_2"/>
+      <viewAttribute id="ZMTREF_2"/>
+      <viewAttribute id="ZCREATED_BY_2"/>
+      <viewAttribute id="ZCREATION_DT_2"/>
+      <viewAttribute id="ZCREATION_TIME_2"/>
+      <viewAttribute id="ZCHANGED_BY_2"/>
+      <viewAttribute id="ZCHANGE_DATE_2"/>
+      <viewAttribute id="ZCHANGE_TIME_2"/>
+      <viewAttribute id="ZSTATUS_2"/>
+      <viewAttribute id="ZER_MSG_2"/>
+      <viewAttribute id="ZFILE_ID_2"/>
+      <viewAttribute id="MATKL_2"/>
+      <viewAttribute id="GEWEI_2"/>
+      <viewAttribute id="MVGR1_2"/>
+      <viewAttribute id="BKLAS_2"/>
+      <viewAttribute id="BRGEW_2"/>
+      <viewAttribute id="PRCTR_2"/>
+      <viewAttribute id="PRDHA_2"/>
+      <viewAttribute id="SOBSK_2"/>
+      <viewAttribute id="SPART_2"/>
+      <viewAttribute id="ZZLCLC_2"/>
+      <viewAttribute id="ZBUKRS_3"/>
+      <viewAttribute id="ZWERKS_3"/>
+      <viewAttribute id="ZMATNR_3"/>
+      <viewAttribute id="ZMEINS_BASE_3"/>
+      <viewAttribute id="ZMEINS_BOM_3"/>
+      <viewAttribute id="ZST_PRICE_3"/>
+      <viewAttribute id="ZPRICE_UNIT_3"/>
+      <viewAttribute id="ZNET_WEIGHT_3"/>
+      <viewAttribute id="ZRECIPE_GR_3"/>
+      <viewAttribute id="ZRECIPE_COUNT_3"/>
+      <viewAttribute id="ZCONV_FACTOR_3"/>
+      <viewAttribute id="ZBOM_USAGE_3"/>
+      <viewAttribute id="ZBOM_ALT_3"/>
+      <viewAttribute id="ZBATCH_SIZE_3"/>
+      <viewAttribute id="ZCOST_LOT_SIZE_3"/>
+      <viewAttribute id="ZADDIT_COST_3"/>
+      <viewAttribute id="ZMTREF_3"/>
+      <viewAttribute id="ZCREATED_BY_3"/>
+      <viewAttribute id="ZCREATION_DT_3"/>
+      <viewAttribute id="ZCREATION_TIME_3"/>
+      <viewAttribute id="ZCHANGED_BY_3"/>
+      <viewAttribute id="ZCHANGE_DATE_3"/>
+      <viewAttribute id="ZCHANGE_TIME_3"/>
+      <viewAttribute id="ZSTATUS_3"/>
+      <viewAttribute id="ZER_MSG_3"/>
+      <viewAttribute id="ZFILE_ID_3"/>
+      <viewAttribute id="MATKL_3"/>
+      <viewAttribute id="GEWEI_3"/>
+      <viewAttribute id="MVGR1_3"/>
+      <viewAttribute id="BKLAS_3"/>
+      <viewAttribute id="BRGEW_3"/>
+      <viewAttribute id="PRCTR_3"/>
+      <viewAttribute id="PRDHA_3"/>
+      <viewAttribute id="SOBSK_3"/>
+      <viewAttribute id="SPART_3"/>
+      <viewAttribute id="ZZLCLC_3"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="TGT_ZGRTR_MATMAS">
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZBUKRS_1" source="ZBUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZWERKS_1" source="ZWERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZMATNR_1" source="ZMATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZMEINS_BASE_1" source="ZMEINS_BASE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZMEINS_BOM_1" source="ZMEINS_BOM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZST_PRICE_1" source="ZST_PRICE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZPRICE_UNIT_1" source="ZPRICE_UNIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZNET_WEIGHT_1" source="ZNET_WEIGHT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZRECIPE_GR_1" source="ZRECIPE_GR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZRECIPE_COUNT_1" source="ZRECIPE_COUNT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZCONV_FACTOR_1" source="ZCONV_FACTOR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZBOM_USAGE_1" source="ZBOM_USAGE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZBOM_ALT_1" source="ZBOM_ALT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZBATCH_SIZE_1" source="ZBATCH_SIZE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZCOST_LOT_SIZE_1" source="ZCOST_LOT_SIZE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZADDIT_COST_1" source="ZADDIT_COST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZMTREF_1" source="ZMTREF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZCREATED_BY_1" source="ZCREATED_BY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZCREATION_DT_1" source="ZCREATION_DT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZCREATION_TIME_1" source="ZCREATION_TIME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZCHANGED_BY_1" source="ZCHANGED_BY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZCHANGE_DATE_1" source="ZCHANGE_DATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZCHANGE_TIME_1" source="ZCHANGE_TIME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZSTATUS_1" source="ZSTATUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZER_MSG_1" source="ZER_MSG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZFILE_ID_1" source="ZFILE_ID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL_1" source="MATKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEWEI_1" source="GEWEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MVGR1_1" source="MVGR1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BKLAS_1" source="BKLAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRGEW_1" source="BRGEW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRCTR_1" source="PRCTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRDHA_1" source="PRDHA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SOBSK_1" source="SOBSK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPART_1" source="SPART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZZLCLC_1" source="ZZLCLC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZBUKRS_2" source="ZBUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZWERKS_2" source="ZWERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZMATNR_2" source="ZMATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZMEINS_BASE_2" source="ZMEINS_BASE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZMEINS_BOM_2" source="ZMEINS_BOM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZST_PRICE_2" source="ZST_PRICE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZPRICE_UNIT_2" source="ZPRICE_UNIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZNET_WEIGHT_2" source="ZNET_WEIGHT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZRECIPE_GR_2" source="ZRECIPE_GR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZRECIPE_COUNT_2" source="ZRECIPE_COUNT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZCONV_FACTOR_2" source="ZCONV_FACTOR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZBOM_USAGE_2" source="ZBOM_USAGE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZBOM_ALT_2" source="ZBOM_ALT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZBATCH_SIZE_2" source="ZBATCH_SIZE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZCOST_LOT_SIZE_2" source="ZCOST_LOT_SIZE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZADDIT_COST_2" source="ZADDIT_COST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZMTREF_2" source="ZMTREF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZCREATED_BY_2" source="ZCREATED_BY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZCREATION_DT_2" source="ZCREATION_DT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZCREATION_TIME_2" source="ZCREATION_TIME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZCHANGED_BY_2" source="ZCHANGED_BY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZCHANGE_DATE_2" source="ZCHANGE_DATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZCHANGE_TIME_2" source="ZCHANGE_TIME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZSTATUS_2" source="ZSTATUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZER_MSG_2" source="ZER_MSG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZFILE_ID_2" source="ZFILE_ID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL_2" source="MATKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEWEI_2" source="GEWEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MVGR1_2" source="MVGR1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BKLAS_2" source="BKLAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRGEW_2" source="BRGEW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRCTR_2" source="PRCTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRDHA_2" source="PRDHA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SOBSK_2" source="SOBSK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPART_2" source="SPART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZZLCLC_2" source="ZZLCLC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZBUKRS_3" source="ZBUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZWERKS_3" source="ZWERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZMATNR_3" source="ZMATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZMEINS_BASE_3" source="ZMEINS_BASE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZMEINS_BOM_3" source="ZMEINS_BOM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZST_PRICE_3" source="ZST_PRICE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZPRICE_UNIT_3" source="ZPRICE_UNIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZNET_WEIGHT_3" source="ZNET_WEIGHT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZRECIPE_GR_3" source="ZRECIPE_GR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZRECIPE_COUNT_3" source="ZRECIPE_COUNT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZCONV_FACTOR_3" source="ZCONV_FACTOR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZBOM_USAGE_3" source="ZBOM_USAGE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZBOM_ALT_3" source="ZBOM_ALT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZBATCH_SIZE_3" source="ZBATCH_SIZE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZCOST_LOT_SIZE_3" source="ZCOST_LOT_SIZE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZADDIT_COST_3" source="ZADDIT_COST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZMTREF_3" source="ZMTREF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZCREATED_BY_3" source="ZCREATED_BY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZCREATION_DT_3" source="ZCREATION_DT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZCREATION_TIME_3" source="ZCREATION_TIME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZCHANGED_BY_3" source="ZCHANGED_BY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZCHANGE_DATE_3" source="ZCHANGE_DATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZCHANGE_TIME_3" source="ZCHANGE_TIME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZSTATUS_3" source="ZSTATUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZER_MSG_3" source="ZER_MSG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZFILE_ID_3" source="ZFILE_ID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL_3" source="MATKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEWEI_3" source="GEWEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MVGR1_3" source="MVGR1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BKLAS_3" source="BKLAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRGEW_3" source="BRGEW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRCTR_3" source="PRCTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRDHA_3" source="PRDHA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SOBSK_3" source="SOBSK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPART_3" source="SPART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZZLCLC_3" source="ZZLCLC"/>
+    </input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_FINAL" cardinality="C1_N" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="STLAL"/>
+      <viewAttribute id="STLKN"/>
+      <viewAttribute id="IDNRK"/>
+      <viewAttribute id="BOM_UOM"/>
+      <viewAttribute id="BASE_UOM"/>
+      <viewAttribute id="ENGR_QTY"/>
+      <viewAttribute id="AUSCH"/>
+      <viewAttribute id="MENGE"/>
+      <viewAttribute id="YIELD"/>
+      <viewAttribute id="ALPGR"/>
+      <viewAttribute id="ALPRF"/>
+      <viewAttribute id="ALPST"/>
+      <viewAttribute id="EWAHR"/>
+      <viewAttribute id="MATBOM_UOM"/>
+      <viewAttribute id="COMP_TYPE"/>
+      <viewAttribute id="ANNAM"/>
+      <viewAttribute id="ANDAT"/>
+      <viewAttribute id="ANTIME"/>
+      <viewAttribute id="AENAM"/>
+      <viewAttribute id="AEDAT"/>
+      <viewAttribute id="AETIME"/>
+      <viewAttribute id="STATUS"/>
+      <viewAttribute id="ERROR_MSG"/>
+      <viewAttribute id="FILE_ID"/>
+      <viewAttribute id="MAKTX"/>
+      <viewAttribute id="ZBUKRS"/>
+      <viewAttribute id="ZWERKS"/>
+      <viewAttribute id="ZMATNR"/>
+      <viewAttribute id="ZMEINS_BASE"/>
+      <viewAttribute id="ZMEINS_BOM"/>
+      <viewAttribute id="ZST_PRICE"/>
+      <viewAttribute id="ZPRICE_UNIT"/>
+      <viewAttribute id="ZNET_WEIGHT"/>
+      <viewAttribute id="ZRECIPE_GR"/>
+      <viewAttribute id="ZRECIPE_COUNT"/>
+      <viewAttribute id="ZCONV_FACTOR"/>
+      <viewAttribute id="ZBOM_USAGE"/>
+      <viewAttribute id="ZBOM_ALT"/>
+      <viewAttribute id="ZBATCH_SIZE"/>
+      <viewAttribute id="ZCOST_LOT_SIZE"/>
+      <viewAttribute id="ZADDIT_COST"/>
+      <viewAttribute id="ZMTREF"/>
+      <viewAttribute id="ZCREATED_BY"/>
+      <viewAttribute id="ZCREATION_DT"/>
+      <viewAttribute id="ZCREATION_TIME"/>
+      <viewAttribute id="ZCHANGED_BY"/>
+      <viewAttribute id="ZCHANGE_DATE"/>
+      <viewAttribute id="ZCHANGE_TIME"/>
+      <viewAttribute id="ZSTATUS"/>
+      <viewAttribute id="ZER_MSG"/>
+      <viewAttribute id="ZFILE_ID"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="GEWEI"/>
+      <viewAttribute id="MVGR1"/>
+      <viewAttribute id="BKLAS"/>
+      <viewAttribute id="BRGEW"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="PRDHA"/>
+      <viewAttribute id="SOBSK"/>
+      <viewAttribute id="SPART"/>
+      <viewAttribute id="ZZLCLC"/>
+      <viewAttribute id="ZBUKRS_1"/>
+      <viewAttribute id="ZWERKS_1"/>
+      <viewAttribute id="ZMATNR_1"/>
+      <viewAttribute id="ZMEINS_BASE_1"/>
+      <viewAttribute id="ZMEINS_BOM_1"/>
+      <viewAttribute id="ZST_PRICE_1"/>
+      <viewAttribute id="ZPRICE_UNIT_1"/>
+      <viewAttribute id="ZNET_WEIGHT_1"/>
+      <viewAttribute id="ZRECIPE_GR_1"/>
+      <viewAttribute id="ZRECIPE_COUNT_1"/>
+      <viewAttribute id="ZCONV_FACTOR_1"/>
+      <viewAttribute id="ZBOM_USAGE_1"/>
+      <viewAttribute id="ZBOM_ALT_1"/>
+      <viewAttribute id="ZBATCH_SIZE_1"/>
+      <viewAttribute id="ZCOST_LOT_SIZE_1"/>
+      <viewAttribute id="ZADDIT_COST_1"/>
+      <viewAttribute id="ZMTREF_1"/>
+      <viewAttribute id="ZCREATED_BY_1"/>
+      <viewAttribute id="ZCREATION_DT_1"/>
+      <viewAttribute id="ZCREATION_TIME_1"/>
+      <viewAttribute id="ZCHANGED_BY_1"/>
+      <viewAttribute id="ZCHANGE_DATE_1"/>
+      <viewAttribute id="ZCHANGE_TIME_1"/>
+      <viewAttribute id="ZSTATUS_1"/>
+      <viewAttribute id="ZER_MSG_1"/>
+      <viewAttribute id="ZFILE_ID_1"/>
+      <viewAttribute id="MATKL_1"/>
+      <viewAttribute id="GEWEI_1"/>
+      <viewAttribute id="MVGR1_1"/>
+      <viewAttribute id="BKLAS_1"/>
+      <viewAttribute id="BRGEW_1"/>
+      <viewAttribute id="PRCTR_1"/>
+      <viewAttribute id="PRDHA_1"/>
+      <viewAttribute id="SOBSK_1"/>
+      <viewAttribute id="SPART_1"/>
+      <viewAttribute id="ZZLCLC_1"/>
+      <viewAttribute id="ZBUKRS_2"/>
+      <viewAttribute id="ZWERKS_2"/>
+      <viewAttribute id="ZMATNR_2"/>
+      <viewAttribute id="ZMEINS_BASE_2"/>
+      <viewAttribute id="ZMEINS_BOM_2"/>
+      <viewAttribute id="ZST_PRICE_2"/>
+      <viewAttribute id="ZPRICE_UNIT_2"/>
+      <viewAttribute id="ZNET_WEIGHT_2"/>
+      <viewAttribute id="ZRECIPE_GR_2"/>
+      <viewAttribute id="ZRECIPE_COUNT_2"/>
+      <viewAttribute id="ZCONV_FACTOR_2"/>
+      <viewAttribute id="ZBOM_USAGE_2"/>
+      <viewAttribute id="ZBOM_ALT_2"/>
+      <viewAttribute id="ZBATCH_SIZE_2"/>
+      <viewAttribute id="ZCOST_LOT_SIZE_2"/>
+      <viewAttribute id="ZADDIT_COST_2"/>
+      <viewAttribute id="ZMTREF_2"/>
+      <viewAttribute id="ZCREATED_BY_2"/>
+      <viewAttribute id="ZCREATION_DT_2"/>
+      <viewAttribute id="ZCREATION_TIME_2"/>
+      <viewAttribute id="ZCHANGED_BY_2"/>
+      <viewAttribute id="ZCHANGE_DATE_2"/>
+      <viewAttribute id="ZCHANGE_TIME_2"/>
+      <viewAttribute id="ZSTATUS_2"/>
+      <viewAttribute id="ZER_MSG_2"/>
+      <viewAttribute id="ZFILE_ID_2"/>
+      <viewAttribute id="MATKL_2"/>
+      <viewAttribute id="GEWEI_2"/>
+      <viewAttribute id="MVGR1_2"/>
+      <viewAttribute id="BKLAS_2"/>
+      <viewAttribute id="BRGEW_2"/>
+      <viewAttribute id="PRCTR_2"/>
+      <viewAttribute id="PRDHA_2"/>
+      <viewAttribute id="SOBSK_2"/>
+      <viewAttribute id="SPART_2"/>
+      <viewAttribute id="ZZLCLC_2"/>
+      <viewAttribute id="ZBUKRS_3"/>
+      <viewAttribute id="ZWERKS_3"/>
+      <viewAttribute id="ZMATNR_3"/>
+      <viewAttribute id="ZMEINS_BASE_3"/>
+      <viewAttribute id="ZMEINS_BOM_3"/>
+      <viewAttribute id="ZST_PRICE_3"/>
+      <viewAttribute id="ZPRICE_UNIT_3"/>
+      <viewAttribute id="ZNET_WEIGHT_3"/>
+      <viewAttribute id="ZRECIPE_GR_3"/>
+      <viewAttribute id="ZRECIPE_COUNT_3"/>
+      <viewAttribute id="ZCONV_FACTOR_3"/>
+      <viewAttribute id="ZBOM_USAGE_3"/>
+      <viewAttribute id="ZBOM_ALT_3"/>
+      <viewAttribute id="ZBATCH_SIZE_3"/>
+      <viewAttribute id="ZCOST_LOT_SIZE_3"/>
+      <viewAttribute id="ZADDIT_COST_3"/>
+      <viewAttribute id="ZMTREF_3"/>
+      <viewAttribute id="ZCREATED_BY_3"/>
+      <viewAttribute id="ZCREATION_DT_3"/>
+      <viewAttribute id="ZCREATION_TIME_3"/>
+      <viewAttribute id="ZCHANGED_BY_3"/>
+      <viewAttribute id="ZCHANGE_DATE_3"/>
+      <viewAttribute id="ZCHANGE_TIME_3"/>
+      <viewAttribute id="ZSTATUS_3"/>
+      <viewAttribute id="ZER_MSG_3"/>
+      <viewAttribute id="ZFILE_ID_3"/>
+      <viewAttribute id="MATKL_3"/>
+      <viewAttribute id="GEWEI_3"/>
+      <viewAttribute id="MVGR1_3"/>
+      <viewAttribute id="BKLAS_3"/>
+      <viewAttribute id="BRGEW_3"/>
+      <viewAttribute id="PRCTR_3"/>
+      <viewAttribute id="PRDHA_3"/>
+      <viewAttribute id="SOBSK_3"/>
+      <viewAttribute id="SPART_3"/>
+      <viewAttribute id="ZZLCLC_3"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="J_COMPONENT">
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STLAL" source="STLAL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STLKN" source="STLKN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IDNRK" source="IDNRK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BOM_UOM" source="BOM_UOM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BASE_UOM" source="BASE_UOM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ENGR_QTY" source="ENGR_QTY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AUSCH" source="AUSCH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MENGE" source="MENGE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="YIELD" source="YIELD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ALPGR" source="ALPGR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ALPRF" source="ALPRF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ALPST" source="ALPST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EWAHR" source="EWAHR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATBOM_UOM" source="MATBOM_UOM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COMP_TYPE" source="COMP_TYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANNAM" source="ANNAM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANDAT" source="ANDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANTIME" source="ANTIME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AENAM" source="AENAM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AEDAT" source="AEDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AETIME" source="AETIME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STATUS" source="STATUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERROR_MSG" source="ERROR_MSG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FILE_ID" source="FILE_ID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAKTX" source="MAKTX"/>
+    </input>
+    <input node="P_MATMAS">
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZBUKRS" source="ZBUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZWERKS" source="ZWERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZMATNR" source="ZMATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZMEINS_BASE" source="ZMEINS_BASE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZMEINS_BOM" source="ZMEINS_BOM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZST_PRICE" source="ZST_PRICE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZPRICE_UNIT" source="ZPRICE_UNIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZNET_WEIGHT" source="ZNET_WEIGHT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZRECIPE_GR" source="ZRECIPE_GR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZRECIPE_COUNT" source="ZRECIPE_COUNT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZCONV_FACTOR" source="ZCONV_FACTOR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZBOM_USAGE" source="ZBOM_USAGE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZBOM_ALT" source="ZBOM_ALT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZBATCH_SIZE" source="ZBATCH_SIZE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZCOST_LOT_SIZE" source="ZCOST_LOT_SIZE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZADDIT_COST" source="ZADDIT_COST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZMTREF" source="ZMTREF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZCREATED_BY" source="ZCREATED_BY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZCREATION_DT" source="ZCREATION_DT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZCREATION_TIME" source="ZCREATION_TIME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZCHANGED_BY" source="ZCHANGED_BY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZCHANGE_DATE" source="ZCHANGE_DATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZCHANGE_TIME" source="ZCHANGE_TIME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZSTATUS" source="ZSTATUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZER_MSG" source="ZER_MSG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZFILE_ID" source="ZFILE_ID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL" source="MATKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEWEI" source="GEWEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MVGR1" source="MVGR1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BKLAS" source="BKLAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRGEW" source="BRGEW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRCTR" source="PRCTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRDHA" source="PRDHA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SOBSK" source="SOBSK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPART" source="SPART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZZLCLC" source="ZZLCLC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZBUKRS_1" source="ZBUKRS_1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZWERKS_1" source="ZWERKS_1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZMATNR_1" source="ZMATNR_1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZMEINS_BASE_1" source="ZMEINS_BASE_1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZMEINS_BOM_1" source="ZMEINS_BOM_1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZST_PRICE_1" source="ZST_PRICE_1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZPRICE_UNIT_1" source="ZPRICE_UNIT_1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZNET_WEIGHT_1" source="ZNET_WEIGHT_1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZRECIPE_GR_1" source="ZRECIPE_GR_1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZRECIPE_COUNT_1" source="ZRECIPE_COUNT_1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZCONV_FACTOR_1" source="ZCONV_FACTOR_1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZBOM_USAGE_1" source="ZBOM_USAGE_1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZBOM_ALT_1" source="ZBOM_ALT_1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZBATCH_SIZE_1" source="ZBATCH_SIZE_1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZCOST_LOT_SIZE_1" source="ZCOST_LOT_SIZE_1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZADDIT_COST_1" source="ZADDIT_COST_1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZMTREF_1" source="ZMTREF_1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZCREATED_BY_1" source="ZCREATED_BY_1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZCREATION_DT_1" source="ZCREATION_DT_1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZCREATION_TIME_1" source="ZCREATION_TIME_1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZCHANGED_BY_1" source="ZCHANGED_BY_1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZCHANGE_DATE_1" source="ZCHANGE_DATE_1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZCHANGE_TIME_1" source="ZCHANGE_TIME_1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZSTATUS_1" source="ZSTATUS_1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZER_MSG_1" source="ZER_MSG_1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZFILE_ID_1" source="ZFILE_ID_1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL_1" source="MATKL_1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEWEI_1" source="GEWEI_1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MVGR1_1" source="MVGR1_1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BKLAS_1" source="BKLAS_1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRGEW_1" source="BRGEW_1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRCTR_1" source="PRCTR_1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRDHA_1" source="PRDHA_1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SOBSK_1" source="SOBSK_1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPART_1" source="SPART_1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZZLCLC_1" source="ZZLCLC_1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZBUKRS_2" source="ZBUKRS_2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZWERKS_2" source="ZWERKS_2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZMATNR_2" source="ZMATNR_2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZMEINS_BASE_2" source="ZMEINS_BASE_2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZMEINS_BOM_2" source="ZMEINS_BOM_2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZST_PRICE_2" source="ZST_PRICE_2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZPRICE_UNIT_2" source="ZPRICE_UNIT_2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZNET_WEIGHT_2" source="ZNET_WEIGHT_2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZRECIPE_GR_2" source="ZRECIPE_GR_2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZRECIPE_COUNT_2" source="ZRECIPE_COUNT_2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZCONV_FACTOR_2" source="ZCONV_FACTOR_2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZBOM_USAGE_2" source="ZBOM_USAGE_2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZBOM_ALT_2" source="ZBOM_ALT_2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZBATCH_SIZE_2" source="ZBATCH_SIZE_2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZCOST_LOT_SIZE_2" source="ZCOST_LOT_SIZE_2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZADDIT_COST_2" source="ZADDIT_COST_2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZMTREF_2" source="ZMTREF_2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZCREATED_BY_2" source="ZCREATED_BY_2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZCREATION_DT_2" source="ZCREATION_DT_2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZCREATION_TIME_2" source="ZCREATION_TIME_2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZCHANGED_BY_2" source="ZCHANGED_BY_2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZCHANGE_DATE_2" source="ZCHANGE_DATE_2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZCHANGE_TIME_2" source="ZCHANGE_TIME_2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZSTATUS_2" source="ZSTATUS_2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZER_MSG_2" source="ZER_MSG_2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZFILE_ID_2" source="ZFILE_ID_2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL_2" source="MATKL_2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEWEI_2" source="GEWEI_2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MVGR1_2" source="MVGR1_2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BKLAS_2" source="BKLAS_2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRGEW_2" source="BRGEW_2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRCTR_2" source="PRCTR_2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRDHA_2" source="PRDHA_2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SOBSK_2" source="SOBSK_2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPART_2" source="SPART_2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZZLCLC_2" source="ZZLCLC_2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZBUKRS_3" source="ZBUKRS_3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZWERKS_3" source="ZWERKS_3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZMATNR_3" source="ZMATNR_3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZMEINS_BASE_3" source="ZMEINS_BASE_3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZMEINS_BOM_3" source="ZMEINS_BOM_3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZST_PRICE_3" source="ZST_PRICE_3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZPRICE_UNIT_3" source="ZPRICE_UNIT_3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZNET_WEIGHT_3" source="ZNET_WEIGHT_3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZRECIPE_GR_3" source="ZRECIPE_GR_3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZRECIPE_COUNT_3" source="ZRECIPE_COUNT_3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZCONV_FACTOR_3" source="ZCONV_FACTOR_3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZBOM_USAGE_3" source="ZBOM_USAGE_3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZBOM_ALT_3" source="ZBOM_ALT_3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZBATCH_SIZE_3" source="ZBATCH_SIZE_3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZCOST_LOT_SIZE_3" source="ZCOST_LOT_SIZE_3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZADDIT_COST_3" source="ZADDIT_COST_3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZMTREF_3" source="ZMTREF_3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZCREATED_BY_3" source="ZCREATED_BY_3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZCREATION_DT_3" source="ZCREATION_DT_3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZCREATION_TIME_3" source="ZCREATION_TIME_3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZCHANGED_BY_3" source="ZCHANGED_BY_3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZCHANGE_DATE_3" source="ZCHANGE_DATE_3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZCHANGE_TIME_3" source="ZCHANGE_TIME_3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZSTATUS_3" source="ZSTATUS_3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZER_MSG_3" source="ZER_MSG_3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZFILE_ID_3" source="ZFILE_ID_3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL_3" source="MATKL_3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEWEI_3" source="GEWEI_3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MVGR1_3" source="MVGR1_3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BKLAS_3" source="BKLAS_3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRGEW_3" source="BRGEW_3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRCTR_3" source="PRCTR_3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRDHA_3" source="PRDHA_3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SOBSK_3" source="SOBSK_3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPART_3" source="SPART_3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZZLCLC_3" source="ZZLCLC_3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="ZWERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="ZBUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="ZMATNR"/>
+    </input>
+    <joinAttribute name="WERKS"/>
+    <joinAttribute name="BUKRS"/>
+    <joinAttribute name="MATNR"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="J_FINAL">
+  <attributes>
+    <attribute id="MATNR" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MATNR"/>
+      <keyMapping columnObjectName="J_FINAL" columnName="MATNR"/>
+    </attribute>
+    <attribute id="MAKTX" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MAKTX"/>
+      <keyMapping columnObjectName="J_FINAL" columnName="MAKTX"/>
+    </attribute>
+    <attribute id="COMP_TYPE" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="COMP_TYPE"/>
+      <keyMapping columnObjectName="J_FINAL" columnName="COMP_TYPE"/>
+    </attribute>
+    <attribute id="MATKL" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MATKL"/>
+      <keyMapping columnObjectName="J_FINAL" columnName="MATKL"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="false" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="328" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    
+  
+    <shape expanded="false" modelObjectName="P_COMPONENT" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="516"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="false" modelObjectName="P_MAKT" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302" y="516"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="false" modelObjectName="J_COMPONENT" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="118" y="356"/>
+      <rectangleSize height="30" width="170"/>
+    </shape>
+    <shape modelObjectName="P_COMPONENT" modelObjectNameSpace="J_COMPONENT" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="516" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="P_MAKT" modelObjectNameSpace="J_COMPONENT" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="816" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+  
+    <shape expanded="false" modelObjectName="P_MATMAS" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="395" y="356"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="false" modelObjectName="J_FINAL" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="328" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="J_COMPONENT" modelObjectNameSpace="J_FINAL" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="P_MATMAS" modelObjectNameSpace="J_FINAL" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="193"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

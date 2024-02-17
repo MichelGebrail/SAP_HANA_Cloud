@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="mccain-shared::CV_COSS" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_COSS"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="TGT_COSS">
+    <resourceUri>TGT_COSS</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+    <viewAttributes>
+      <viewAttribute id="LEDNR"/>
+      <viewAttribute id="OBJNR"/>
+      <viewAttribute id="GJAHR"/>
+      <viewAttribute id="WRTTP"/>
+      <viewAttribute id="VERSN"/>
+      <viewAttribute id="KSTAR"/>
+      <viewAttribute id="HRKFT"/>
+      <viewAttribute id="VRGNG"/>
+      <viewAttribute id="PAROB"/>
+      <viewAttribute id="USPOB"/>
+      <viewAttribute id="BEKNZ"/>
+      <viewAttribute id="TWAER"/>
+      <viewAttribute id="PERBL"/>
+      <viewAttribute id="MEINH"/>
+      <viewAttribute id="BELTP"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="FKBER"/>
+      <viewAttribute id="SEGMENT"/>
+      <viewAttribute id="GEBER"/>
+      <viewAttribute id="GRANT_NBR"/>
+    
+      <viewAttribute id="WOG001"/>
+      <viewAttribute id="WOG002"/>
+      <viewAttribute id="WOG003"/>
+      <viewAttribute id="WOG004"/>
+      <viewAttribute id="WOG005"/>
+      <viewAttribute id="WOG006"/>
+      <viewAttribute id="WOG007"/>
+      <viewAttribute id="WOG008"/>
+      <viewAttribute id="WOG009"/>
+      <viewAttribute id="WOG010"/>
+      <viewAttribute id="WOG011"/>
+      <viewAttribute id="WOG012"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="WOG_YTD" datatype="DECIMAL" length="23" scale="2" expressionLanguage="SQL">
+        <formula>&quot;WOG001&quot;+&quot;WOG002&quot;+&quot;WOG003&quot;+&quot;WOG004&quot;+&quot;WOG005&quot;+&quot;WOG006&quot;+&quot;WOG007&quot;+&quot;WOG008&quot;+&quot;WOG009&quot;+&quot;WOG010&quot;+&quot;WOG011&quot;+&quot;WOG012&quot;</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="TGT_COSS"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="Projection_1">
+  <attributes>
+    <attribute id="LEDNR" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LEDNR"/>
+      <keyMapping columnObjectName="Projection_1" columnName="LEDNR"/>
+    </attribute>
+    <attribute id="OBJNR" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="OBJNR"/>
+      <keyMapping columnObjectName="Projection_1" columnName="OBJNR"/>
+    </attribute>
+    <attribute id="GJAHR" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GJAHR"/>
+      <keyMapping columnObjectName="Projection_1" columnName="GJAHR"/>
+    </attribute>
+    <attribute id="WRTTP" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WRTTP"/>
+      <keyMapping columnObjectName="Projection_1" columnName="WRTTP"/>
+    </attribute>
+    <attribute id="VERSN" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VERSN"/>
+      <keyMapping columnObjectName="Projection_1" columnName="VERSN"/>
+    </attribute>
+    <attribute id="KSTAR" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KSTAR"/>
+      <keyMapping columnObjectName="Projection_1" columnName="KSTAR"/>
+    </attribute>
+    <attribute id="HRKFT" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="HRKFT"/>
+      <keyMapping columnObjectName="Projection_1" columnName="HRKFT"/>
+    </attribute>
+    <attribute id="VRGNG" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VRGNG"/>
+      <keyMapping columnObjectName="Projection_1" columnName="VRGNG"/>
+    </attribute>
+    <attribute id="PAROB" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PAROB"/>
+      <keyMapping columnObjectName="Projection_1" columnName="PAROB"/>
+    </attribute>
+    <attribute id="USPOB" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="USPOB"/>
+      <keyMapping columnObjectName="Projection_1" columnName="USPOB"/>
+    </attribute>
+    <attribute id="BEKNZ" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BEKNZ"/>
+      <keyMapping columnObjectName="Projection_1" columnName="BEKNZ"/>
+    </attribute>
+    <attribute id="TWAER" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TWAER"/>
+      <keyMapping columnObjectName="Projection_1" columnName="TWAER"/>
+    </attribute>
+    <attribute id="PERBL" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PERBL"/>
+      <keyMapping columnObjectName="Projection_1" columnName="PERBL"/>
+    </attribute>
+    <attribute id="MEINH" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MEINH"/>
+      <keyMapping columnObjectName="Projection_1" columnName="MEINH"/>
+    </attribute>
+    <attribute id="BELTP" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BELTP"/>
+      <keyMapping columnObjectName="Projection_1" columnName="BELTP"/>
+    </attribute>
+    <attribute id="BUKRS" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BUKRS"/>
+      <keyMapping columnObjectName="Projection_1" columnName="BUKRS"/>
+    </attribute>
+    <attribute id="FKBER" order="18" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FKBER"/>
+      <keyMapping columnObjectName="Projection_1" columnName="FKBER"/>
+    </attribute>
+    <attribute id="SEGMENT" order="19" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SEGMENT"/>
+      <keyMapping columnObjectName="Projection_1" columnName="SEGMENT"/>
+    </attribute>
+    <attribute id="GEBER" order="20" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GEBER"/>
+      <keyMapping columnObjectName="Projection_1" columnName="GEBER"/>
+    </attribute>
+    <attribute id="GRANT_NBR" order="21" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GRANT_NBR"/>
+      <keyMapping columnObjectName="Projection_1" columnName="GRANT_NBR"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures>
+    <measure id="WOG_YTD" order="15" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="WOG_YTD"/>
+      <measureMapping columnObjectName="Projection_1" columnName="WOG_YTD"/>
+    </measure>
+  </baseMeasures>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+  <localDimensions/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+    
+  
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="100" y="212"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

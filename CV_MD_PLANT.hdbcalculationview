@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="mccain-shared::CV_MD_PLANT" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_MD_PLANT"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="TGT_T001W">
+    <resourceUri>TGT_T001W</resourceUri>
+  </DataSource>
+  <DataSource id="TGT_T001K">
+    <resourceUri>TGT_T001K</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:JoinView" id="J_PLANT" cardinality="C1_1" joinType="inner">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="BWKEY"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="BWKEY_1"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="BWMOD"/>
+      <viewAttribute id="XBKNG"/>
+      <viewAttribute id="MLBWA"/>
+      <viewAttribute id="MLBWV"/>
+      <viewAttribute id="XVKBW"/>
+      <viewAttribute id="ERKLAERKOM"/>
+      <viewAttribute id="UPROF"/>
+      <viewAttribute id="WBPRO"/>
+      <viewAttribute id="MLAST"/>
+      <viewAttribute id="MLASV"/>
+      <viewAttribute id="BDIFP"/>
+      <viewAttribute id="XLBPD"/>
+      <viewAttribute id="XEWRX"/>
+      <viewAttribute id="X2FDO"/>
+      <viewAttribute id="PRSFR"/>
+      <viewAttribute id="MLCCS"/>
+      <viewAttribute id="XEFRE"/>
+      <viewAttribute id="EFREJ"/>
+      <viewAttribute id="_FMP_PRSFR"/>
+      <viewAttribute id="_FMP_PRFRGR"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="P_T001W">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME1" source="NAME1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BWKEY" source="BWKEY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LAND1" source="LAND1"/>
+    </input>
+    <input node="P_T001K">
+      <mapping xsi:type="Calculation:AttributeMapping" target="BWKEY_1" source="BWKEY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BWMOD" source="BWMOD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XBKNG" source="XBKNG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MLBWA" source="MLBWA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MLBWV" source="MLBWV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XVKBW" source="XVKBW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERKLAERKOM" source="ERKLAERKOM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UPROF" source="UPROF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WBPRO" source="WBPRO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MLAST" source="MLAST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MLASV" source="MLASV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BDIFP" source="BDIFP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XLBPD" source="XLBPD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XEWRX" source="XEWRX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="X2FDO" source="X2FDO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRSFR" source="PRSFR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MLCCS" source="MLCCS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XEFRE" source="XEFRE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EFREJ" source="EFREJ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="_FMP_PRSFR" source="_FMP_PRSFR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="_FMP_PRFRGR" source="_FMP_PRFRGR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BWKEY" source="BWKEY"/>
+    </input>
+    <joinAttribute name="BWKEY"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_T001W">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="BWKEY"/>
+      <viewAttribute id="LAND1"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="TGT_T001W"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_T001K">
+    <viewAttributes>
+      <viewAttribute id="BWKEY"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="BWMOD"/>
+      <viewAttribute id="XBKNG"/>
+      <viewAttribute id="MLBWA"/>
+      <viewAttribute id="MLBWV"/>
+      <viewAttribute id="XVKBW"/>
+      <viewAttribute id="ERKLAERKOM"/>
+      <viewAttribute id="UPROF"/>
+      <viewAttribute id="WBPRO"/>
+      <viewAttribute id="MLAST"/>
+      <viewAttribute id="MLASV"/>
+      <viewAttribute id="BDIFP"/>
+      <viewAttribute id="XLBPD"/>
+      <viewAttribute id="XEWRX"/>
+      <viewAttribute id="X2FDO"/>
+      <viewAttribute id="PRSFR"/>
+      <viewAttribute id="MLCCS"/>
+      <viewAttribute id="XEFRE"/>
+      <viewAttribute id="EFREJ"/>
+      <viewAttribute id="_FMP_PRSFR"/>
+      <viewAttribute id="_FMP_PRFRGR"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="TGT_T001K">
+      <mapping xsi:type="Calculation:AttributeMapping" target="_FMP_PRSFR" source="/FMP/PRSFR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="_FMP_PRFRGR" source="/FMP/PRFRGR"/>
+    </input>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="J_PLANT">
+  <attributes>
+    <attribute id="BUKRS" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BUKRS"/>
+      <keyMapping columnObjectName="J_PLANT" columnName="BUKRS"/>
+    </attribute>
+    <attribute id="WERKS" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WERKS"/>
+      <keyMapping columnObjectName="J_PLANT" columnName="WERKS"/>
+    </attribute>
+    <attribute id="NAME1" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="NAME1"/>
+      <keyMapping columnObjectName="J_PLANT" columnName="NAME1"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+    
+  
+    <shape expanded="true" modelObjectName="J_PLANT" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="100" y="238"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="P_T001W" modelObjectNameSpace="J_PLANT" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="136"/>
+    </shape>
+    <shape modelObjectName="P_T001K" modelObjectNameSpace="J_PLANT" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="620" y="30"/>
+      <rectangleSize width="136"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_T001W" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="-78" y="413"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_T001K" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="202" y="430"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

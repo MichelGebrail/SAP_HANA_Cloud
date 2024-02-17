@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="mccain-shared::CV_MD_MATMAS" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_MD_MATMAS"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="mccain-shared::ZGRTR_MATMAS">
+    <resourceUri>mccain-shared::ZGRTR_MATMAS</resourceUri>
+  </DataSource>
+  <DataSource id="mccain-shared::MAKT">
+    <resourceUri>mccain-shared::MAKT</resourceUri>
+  </DataSource>
+  <DataSource id="mccain-shared::MARA">
+    <resourceUri>mccain-shared::MARA</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="ZTGRTR_MATMAS">
+    <viewAttributes>
+      <viewAttribute id="ZBUKRS"/>
+      <viewAttribute id="ZWERKS"/>
+      <viewAttribute id="ZMATNR"/>
+      <viewAttribute id="ZMEINS_BASE"/>
+      <viewAttribute id="ZMEINS_BOM"/>
+      <viewAttribute id="ZST_PRICE"/>
+      <viewAttribute id="ZPRICE_UNIT"/>
+      <viewAttribute id="ZNET_WEIGHT"/>
+      <viewAttribute id="ZRECIPE_GR"/>
+      <viewAttribute id="ZRECIPE_COUNT"/>
+      <viewAttribute id="ZCONV_FACTOR"/>
+      <viewAttribute id="ZBOM_USAGE"/>
+      <viewAttribute id="ZBOM_ALT"/>
+      <viewAttribute id="ZBATCH_SIZE"/>
+      <viewAttribute id="ZCOST_LOT_SIZE"/>
+      <viewAttribute id="ZADDIT_COST"/>
+      <viewAttribute id="ZMTREF"/>
+      <viewAttribute id="ZCREATED_BY"/>
+      <viewAttribute id="ZCREATION_DT"/>
+      <viewAttribute id="ZCREATION_TIME"/>
+      <viewAttribute id="ZCHANGED_BY"/>
+      <viewAttribute id="ZCHANGE_DATE"/>
+      <viewAttribute id="ZCHANGE_TIME"/>
+      <viewAttribute id="ZSTATUS"/>
+      <viewAttribute id="ZER_MSG"/>
+      <viewAttribute id="ZFILE_ID"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="GEWEI"/>
+      <viewAttribute id="MVGR1"/>
+      <viewAttribute id="BKLAS"/>
+      <viewAttribute id="BRGEW"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="PRDHA"/>
+      <viewAttribute id="SOBSK"/>
+      <viewAttribute id="SPART"/>
+      <viewAttribute id="ZZLCLC"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="mccain-shared::ZGRTR_MATMAS"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_1" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="ZMATNR"/>
+      <viewAttribute id="MAKTX"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="ZMEINS_BASE"/>
+      <viewAttribute id="ZNET_WEIGHT"/>
+      <viewAttribute id="GEWEI"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="ZTGRTR_MATMAS">
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZMATNR" source="ZMATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL" source="MATKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZMEINS_BASE" source="ZMEINS_BASE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZNET_WEIGHT" source="ZNET_WEIGHT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEWEI" source="GEWEI"/>
+    </input>
+    <input node="MAKT">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAKTX" source="MAKTX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZMATNR" source="MATNR"/>
+    </input>
+    <joinAttribute name="ZMATNR"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="MAKT">
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="MAKTX"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="mccain-shared::MAKT"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_2" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="ZMATNR"/>
+      <viewAttribute id="MAKTX"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="ZMEINS_BASE"/>
+      <viewAttribute id="ZNET_WEIGHT"/>
+      <viewAttribute id="GEWEI"/>
+      <viewAttribute id="MTART"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Join_1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZMATNR" source="ZMATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAKTX" source="MAKTX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL" source="MATKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZMEINS_BASE" source="ZMEINS_BASE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZNET_WEIGHT" source="ZNET_WEIGHT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEWEI" source="GEWEI"/>
+    </input>
+    <input node="MARA">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MTART" source="MTART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZMATNR" source="MATNR"/>
+    </input>
+    <joinAttribute name="ZMATNR"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="MARA">
+    <viewAttributes>
+      <viewAttribute id="MTART"/>
+      <viewAttribute id="MATNR"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="mccain-shared::MARA"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="Join_2">
+  <attributes>
+    <attribute id="ZMATNR" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ZMATNR"/>
+      <keyMapping columnObjectName="Join_2" columnName="ZMATNR"/>
+    </attribute>
+    <attribute id="MAKTX" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MAKTX"/>
+      <keyMapping columnObjectName="Join_2" columnName="MAKTX"/>
+    </attribute>
+    <attribute id="MTART" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MTART"/>
+      <keyMapping columnObjectName="Join_2" columnName="MTART"/>
+    </attribute>
+    <attribute id="MATKL" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MATKL"/>
+      <keyMapping columnObjectName="Join_2" columnName="MATKL"/>
+    </attribute>
+    <attribute id="ZMEINS_BASE" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ZMEINS_BASE"/>
+      <keyMapping columnObjectName="Join_2" columnName="ZMEINS_BASE"/>
+    </attribute>
+    <attribute id="ZNET_WEIGHT" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ZNET_WEIGHT"/>
+      <keyMapping columnObjectName="Join_2" columnName="ZNET_WEIGHT"/>
+    </attribute>
+    <attribute id="GEWEI" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GEWEI"/>
+      <keyMapping columnObjectName="Join_2" columnName="GEWEI"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/></logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="328.6900820831794" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    
+  
+    <shape expanded="true" modelObjectName="ZTGRTR_MATMAS" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="496.9999976158142"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="118.66666666666666" y="356.9999988079071"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="ZTGRTR_MATMAS" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="MAKT" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="136.0234375"/>
+    </shape>
+    <shape expanded="true" modelObjectName="MAKT" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302" y="496.9999976158142"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_2" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="328.6900820831794" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Join_1" modelObjectNameSpace="Join_2" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="MARA" modelObjectNameSpace="Join_2" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="136.0234375"/>
+    </shape>
+    <shape expanded="true" modelObjectName="MARA" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="395.83468516943316" y="356.9999988079071"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

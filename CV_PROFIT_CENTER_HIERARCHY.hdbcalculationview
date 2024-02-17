@@ -1,0 +1,739 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="mccain-shared::CV_PROFIT_CENTER_HIERARCHY" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_PROFIT_CENTER_HIER"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="TGT_SETHEADER">
+    <resourceUri>TGT_SETHEADER</resourceUri>
+  </DataSource>
+  <DataSource id="TGT_SETNODE">
+    <resourceUri>TGT_SETNODE</resourceUri>
+  </DataSource>
+  <DataSource id="TGT_SETLEAF">
+    <resourceUri>TGT_SETLEAF</resourceUri>
+  </DataSource>
+  <DataSource id="TGT_CEPCT">
+    <resourceUri>TGT_CEPCT</resourceUri>
+  </DataSource>
+  <DataSource id="TGT_SETHEADERT">
+    <resourceUri>TGT_SETHEADERT</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_SETHEADER" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="SETCLASS"/>
+      <viewAttribute id="SUBCLASS"/>
+      <viewAttribute id="SETNAME"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CC_HIER_NAME" datatype="NVARCHAR" length="24" expressionLanguage="SQL">
+        <formula>&quot;SETNAME&quot;
+</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="CC_IS_NODE" datatype="NVARCHAR" length="1" expressionLanguage="SQL">
+        <formula>'X'</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="TGT_SETHEADER"/>
+    <filter>&quot;SETNAME&quot; IN ('MCCAIN','MCCAINA','1065','1057','ANZ') and 
+&quot;SETCLASS&quot;='0106' AND 
+&quot;SUBCLASS&quot;='MFL1'</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_SETNODE" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="SETCLASS"/>
+      <viewAttribute id="SUBCLASS"/>
+      <viewAttribute id="SETNAME"/>
+      <viewAttribute id="SUBSETCLS"/>
+      <viewAttribute id="SUBSETSCLS"/>
+      <viewAttribute id="SUBSETNAME"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="TGT_SETNODE"/>
+    <filter>&quot;SUBCLASS&quot;='MFL1' AND &quot;SETCLASS&quot;='0106'</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="JOIN_LVL1" cardinality="C1_N" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="CC_HIER_NAME"/>
+      <viewAttribute id="CC_IS_NODE"/>
+      <viewAttribute id="SETNAME"/>
+      <viewAttribute id="SUBSETCLS"/>
+      <viewAttribute id="SUBSETSCLS"/>
+      <viewAttribute id="SUBSETNAME"/>
+      <viewAttribute hidden="true" id="JOIN$SETCLASS$SETCLASS"/>
+      <viewAttribute hidden="true" id="JOIN$SUBCLASS$SUBCLASS"/>
+      <viewAttribute hidden="true" id="JOIN$SETNAME$SETNAME"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="P_SETHEADER">
+      <mapping xsi:type="Calculation:AttributeMapping" target="CC_HIER_NAME" source="CC_HIER_NAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CC_IS_NODE" source="CC_IS_NODE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$SETCLASS$SETCLASS" source="SETCLASS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$SUBCLASS$SUBCLASS" source="SUBCLASS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$SETNAME$SETNAME" source="SETNAME"/>
+    </input>
+    <input node="P_SETNODE">
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUBSETCLS" source="SUBSETCLS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUBSETSCLS" source="SUBSETSCLS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUBSETNAME" source="SUBSETNAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SETNAME" source="SETNAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$SETCLASS$SETCLASS" source="SETCLASS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$SUBCLASS$SUBCLASS" source="SUBCLASS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$SETNAME$SETNAME" source="SETNAME"/>
+    </input>
+    <joinAttribute name="JOIN$SETCLASS$SETCLASS"/>
+    <joinAttribute name="JOIN$SUBCLASS$SUBCLASS"/>
+    <joinAttribute name="JOIN$SETNAME$SETNAME"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="JOIN_LVL2" cardinality="C1_N" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="CC_HIER_NAME"/>
+      <viewAttribute id="CC_IS_NODE"/>
+      <viewAttribute id="SETNAME"/>
+      <viewAttribute id="SUBSETCLS"/>
+      <viewAttribute id="SUBSETSCLS"/>
+      <viewAttribute id="SUBSETNAME"/>
+      <viewAttribute hidden="true" id="JOIN$SUBSETCLS$SETCLASS"/>
+      <viewAttribute hidden="true" id="JOIN$SUBSETSCLS$SUBCLASS"/>
+      <viewAttribute hidden="true" id="JOIN$SUBSETNAME$SETNAME"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="JOIN_LVL1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="CC_HIER_NAME" source="CC_HIER_NAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CC_IS_NODE" source="CC_IS_NODE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$SUBSETCLS$SETCLASS" source="SUBSETCLS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$SUBSETSCLS$SUBCLASS" source="SUBSETSCLS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$SUBSETNAME$SETNAME" source="SUBSETNAME"/>
+    </input>
+    <input node="P_SETNODE">
+      <mapping xsi:type="Calculation:AttributeMapping" target="SETNAME" source="SETNAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUBSETCLS" source="SUBSETCLS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUBSETSCLS" source="SUBSETSCLS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUBSETNAME" source="SUBSETNAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$SUBSETCLS$SETCLASS" source="SETCLASS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$SUBSETSCLS$SUBCLASS" source="SUBCLASS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$SUBSETNAME$SETNAME" source="SETNAME"/>
+    </input>
+    <joinAttribute name="JOIN$SUBSETCLS$SETCLASS"/>
+    <joinAttribute name="JOIN$SUBSETSCLS$SUBCLASS"/>
+    <joinAttribute name="JOIN$SUBSETNAME$SETNAME"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="JOIN_LVL3" cardinality="C1_N" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="CC_HIER_NAME"/>
+      <viewAttribute id="CC_IS_NODE"/>
+      <viewAttribute id="SETNAME"/>
+      <viewAttribute id="SUBSETCLS"/>
+      <viewAttribute id="SUBSETSCLS"/>
+      <viewAttribute id="SUBSETNAME"/>
+      <viewAttribute hidden="true" id="JOIN$SUBSETCLS$SETCLASS"/>
+      <viewAttribute hidden="true" id="JOIN$SUBSETSCLS$SUBCLASS"/>
+      <viewAttribute hidden="true" id="JOIN$SUBSETNAME$SETNAME"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="JOIN_LVL2">
+      <mapping xsi:type="Calculation:AttributeMapping" target="CC_HIER_NAME" source="CC_HIER_NAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CC_IS_NODE" source="CC_IS_NODE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$SUBSETCLS$SETCLASS" source="SUBSETCLS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$SUBSETSCLS$SUBCLASS" source="SUBSETSCLS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$SUBSETNAME$SETNAME" source="SUBSETNAME"/>
+    </input>
+    <input node="P_SETNODE">
+      <mapping xsi:type="Calculation:AttributeMapping" target="SETNAME" source="SETNAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUBSETCLS" source="SUBSETCLS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUBSETSCLS" source="SUBSETSCLS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUBSETNAME" source="SUBSETNAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$SUBSETCLS$SETCLASS" source="SETCLASS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$SUBSETSCLS$SUBCLASS" source="SUBCLASS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$SUBSETNAME$SETNAME" source="SETNAME"/>
+    </input>
+    <joinAttribute name="JOIN$SUBSETCLS$SETCLASS"/>
+    <joinAttribute name="JOIN$SUBSETSCLS$SUBCLASS"/>
+    <joinAttribute name="JOIN$SUBSETNAME$SETNAME"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="JOIN_LVL4" cardinality="C1_N" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="CC_HIER_NAME"/>
+      <viewAttribute id="CC_IS_NODE"/>
+      <viewAttribute id="SETNAME"/>
+      <viewAttribute id="SUBSETCLS"/>
+      <viewAttribute id="SUBSETSCLS"/>
+      <viewAttribute id="SUBSETNAME"/>
+      <viewAttribute hidden="true" id="JOIN$SUBSETCLS$SETCLASS"/>
+      <viewAttribute hidden="true" id="JOIN$SUBSETSCLS$SUBCLASS"/>
+      <viewAttribute hidden="true" id="JOIN$SUBSETNAME$SETNAME"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="JOIN_LVL3">
+      <mapping xsi:type="Calculation:AttributeMapping" target="CC_HIER_NAME" source="CC_HIER_NAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CC_IS_NODE" source="CC_IS_NODE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$SUBSETCLS$SETCLASS" source="SUBSETCLS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$SUBSETSCLS$SUBCLASS" source="SUBSETSCLS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$SUBSETNAME$SETNAME" source="SUBSETNAME"/>
+    </input>
+    <input node="P_SETNODE">
+      <mapping xsi:type="Calculation:AttributeMapping" target="SETNAME" source="SETNAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUBSETCLS" source="SUBSETCLS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUBSETSCLS" source="SUBSETSCLS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUBSETNAME" source="SUBSETNAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$SUBSETCLS$SETCLASS" source="SETCLASS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$SUBSETSCLS$SUBCLASS" source="SUBCLASS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$SUBSETNAME$SETNAME" source="SETNAME"/>
+    </input>
+    <joinAttribute name="JOIN$SUBSETCLS$SETCLASS"/>
+    <joinAttribute name="JOIN$SUBSETSCLS$SUBCLASS"/>
+    <joinAttribute name="JOIN$SUBSETNAME$SETNAME"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:UnionView" id="UNION_NODES">
+    <viewAttributes>
+      <viewAttribute id="CC_HIER_NAME"/>
+      <viewAttribute id="CC_IS_NODE"/>
+      <viewAttribute id="SETNAME"/>
+      <viewAttribute id="SUBSETCLS"/>
+      <viewAttribute id="SUBSETSCLS"/>
+      <viewAttribute id="SUBSETNAME"/></viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="JOIN_LVL3" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="CC_HIER_NAME" source="CC_HIER_NAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CC_IS_NODE" source="CC_IS_NODE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SETNAME" source="SETNAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUBSETCLS" source="SUBSETCLS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUBSETSCLS" source="SUBSETSCLS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUBSETNAME" source="SUBSETNAME"/></input>
+    <input node="JOIN_LVL2" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="CC_HIER_NAME" source="CC_HIER_NAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CC_IS_NODE" source="CC_IS_NODE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SETNAME" source="SETNAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUBSETCLS" source="SUBSETCLS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUBSETSCLS" source="SUBSETSCLS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUBSETNAME" source="SUBSETNAME"/></input>
+    <input node="JOIN_LVL1" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="CC_HIER_NAME" source="CC_HIER_NAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CC_IS_NODE" source="CC_IS_NODE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SETNAME" source="SETNAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUBSETCLS" source="SUBSETCLS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUBSETSCLS" source="SUBSETSCLS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUBSETNAME" source="SUBSETNAME"/></input>
+  
+    <input node="P_LVL5" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="CC_HIER_NAME" source="CC_HIER_NAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CC_IS_NODE" source="CC_IS_NODE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SETNAME" source="SETNAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUBSETCLS" source="SUBSETCLS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUBSETSCLS" source="SUBSETSCLS"/>
+  
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUBSETNAME" source="SUBSETNAME"/></input>
+    <input node="JOIN_LVL4" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="CC_HIER_NAME" source="CC_HIER_NAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CC_IS_NODE" source="CC_IS_NODE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SETNAME" source="SETNAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUBSETCLS" source="SUBSETCLS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUBSETSCLS" source="SUBSETSCLS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUBSETNAME" source="SUBSETNAME"/></input>
+    <input node="P_SETHEADER" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="CC_HIER_NAME" source="CC_HIER_NAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CC_IS_NODE" source="CC_IS_NODE"/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="SETNAME" null="true" value=""/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUBSETCLS" source="SETCLASS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUBSETSCLS" source="SUBCLASS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUBSETNAME" source="SETNAME"/>
+    </input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_LVL5" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="CC_HIER_NAME"/>
+      <viewAttribute id="CC_IS_NODE"/>
+      <viewAttribute id="SETNAME"/>
+      <viewAttribute id="SUBSETCLS"/>
+      <viewAttribute id="SUBSETSCLS"/>
+      <viewAttribute id="SUBSETNAME"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="JOIN_LVL5"/>
+    <filter>&quot;SETNAME&quot;!=''</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="JOIN_LVL5" cardinality="C1_N" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="CC_HIER_NAME"/>
+      <viewAttribute id="CC_IS_NODE"/>
+      <viewAttribute id="SETNAME"/>
+      <viewAttribute id="SUBSETCLS"/>
+      <viewAttribute id="SUBSETSCLS"/>
+      <viewAttribute id="SUBSETNAME"/>
+      <viewAttribute hidden="true" id="JOIN$SUBSETCLS$SETCLASS"/>
+      <viewAttribute hidden="true" id="JOIN$SUBSETSCLS$SUBCLASS"/>
+      <viewAttribute hidden="true" id="JOIN$SUBSETNAME$SETNAME"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="JOIN_LVL4">
+      <mapping xsi:type="Calculation:AttributeMapping" target="CC_HIER_NAME" source="CC_HIER_NAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CC_IS_NODE" source="CC_IS_NODE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$SUBSETCLS$SETCLASS" source="SUBSETCLS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$SUBSETSCLS$SUBCLASS" source="SUBSETSCLS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$SUBSETNAME$SETNAME" source="SUBSETNAME"/>
+    </input>
+    <input node="P_SETNODE">
+      <mapping xsi:type="Calculation:AttributeMapping" target="SETNAME" source="SETNAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUBSETCLS" source="SUBSETCLS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUBSETSCLS" source="SUBSETSCLS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUBSETNAME" source="SUBSETNAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$SUBSETCLS$SETCLASS" source="SETCLASS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$SUBSETSCLS$SUBCLASS" source="SUBCLASS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$SUBSETNAME$SETNAME" source="SETNAME"/>
+    </input>
+    <joinAttribute name="JOIN$SUBSETCLS$SETCLASS"/>
+    <joinAttribute name="JOIN$SUBSETSCLS$SUBCLASS"/>
+    <joinAttribute name="JOIN$SUBSETNAME$SETNAME"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="JOIN_ROOT_NODE" cardinality="C1_N" joinType="leftOuter" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="SUBSETCLS"/>
+      <viewAttribute id="SUBSETSCLS"/>
+      <viewAttribute id="SETNAME"/>
+      <viewAttribute id="CC_HIER_NAME"/>
+    
+      <viewAttribute id="VALFROM"/>
+      <viewAttribute id="LTEXT"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CC_IS_NODE1" datatype="NVARCHAR" length="1" expressionLanguage="SQL">
+        <formula>' '</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="P_SETHEADER">
+      <mapping xsi:type="Calculation:AttributeMapping" target="CC_HIER_NAME" source="CC_HIER_NAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SETNAME" source="SETNAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUBSETCLS" source="SETCLASS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUBSETSCLS" source="SUBCLASS"/>
+    </input>
+    <input node="JOIN_LEAF_NODES_TEXT">
+      <mapping xsi:type="Calculation:AttributeMapping" target="VALFROM" source="VALFROM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LTEXT" source="LTEXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUBSETCLS" source="SETCLASS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUBSETSCLS" source="SUBCLASS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SETNAME" source="SETNAME"/>
+    </input>
+    <filter>&quot;VALFROM&quot;!=''</filter>
+    <joinAttribute name="SUBSETCLS"/>
+    <joinAttribute name="SUBSETSCLS"/>
+    <joinAttribute name="SETNAME"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="JOIN_LEAF_NODES_TEXT" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="VALFROM"/>
+      <viewAttribute id="LTEXT"/>
+    
+      <viewAttribute id="SETCLASS"/>
+      <viewAttribute id="SUBCLASS"/>
+    
+      <viewAttribute id="SETNAME"/>
+      <viewAttribute id="CC_IS_NODE"/>
+      <viewAttribute id="VALTO"/>
+      <viewAttribute id="SEQNR"/>
+      <viewAttribute id="CC_PRCTR"/>
+      <viewAttribute hidden="true" id="JOIN$SUBCLASS$KOKRS"/>
+      <viewAttribute hidden="true" id="JOIN$CC_PRCTR$PRCTR"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="P_SETLEAF">
+      <mapping xsi:type="Calculation:AttributeMapping" target="SETNAME" source="SETNAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VALFROM" source="VALFROM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VALTO" source="VALTO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SEQNR" source="SEQNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CC_IS_NODE" source="CC_IS_NODE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SETCLASS" source="SETCLASS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$SUBCLASS$KOKRS" source="SUBCLASS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$CC_PRCTR$PRCTR" source="CC_PRCTR"/>
+    </input>
+    <input node="P_CEPCT">
+      <mapping xsi:type="Calculation:AttributeMapping" target="LTEXT" source="LTEXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CC_PRCTR" source="PRCTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUBCLASS" source="KOKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$SUBCLASS$KOKRS" source="KOKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$CC_PRCTR$PRCTR" source="PRCTR"/>
+    </input>
+    <joinAttribute name="JOIN$SUBCLASS$KOKRS"/>
+    <joinAttribute name="JOIN$CC_PRCTR$PRCTR"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_SETLEAF" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="SETNAME"/>
+      <viewAttribute id="VALFROM"/>
+      <viewAttribute id="VALTO"/>
+      <viewAttribute id="SEQNR"/>
+    
+      <viewAttribute id="SETCLASS"/>
+      <viewAttribute id="SUBCLASS"/></viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CC_IS_NODE" datatype="NVARCHAR" length="1" expressionLanguage="SQL">
+        <formula>' '</formula>
+      </calculatedViewAttribute>
+    
+      <calculatedViewAttribute id="CC_PRCTR" datatype="NVARCHAR" length="10" expressionLanguage="SQL">
+    
+        <formula>&quot;VALFROM&quot;</formula>
+    
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="TGT_SETLEAF"/>
+    <filter>&quot;SUBCLASS&quot;='MFL1' AND &quot;SETCLASS&quot;='0106'</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_CEPCT" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="LTEXT"/>
+      <viewAttribute id="PRCTR"/>
+    
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="DATBI"/></viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="TGT_CEPCT"/>
+    <filter>&quot;KOKRS&quot;='MFL1'</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="JOIN_SETLEAF" cardinality="C1_N" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="VALFROM"/>
+      <viewAttribute id="CC_HIER_NAME"/>
+      <viewAttribute id="CC_IS_NODE"/>
+      <viewAttribute id="SETNAME"/>
+      <viewAttribute id="LTEXT"/>
+      <viewAttribute hidden="true" id="JOIN$SUBSETCLS$SETCLASS"/>
+      <viewAttribute hidden="true" id="JOIN$SUBSETSCLS$SUBCLASS"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="P_ALL_NODES">
+      <mapping xsi:type="Calculation:AttributeMapping" target="CC_HIER_NAME" source="CC_HIER_NAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SETNAME" source="SUBSETNAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$SUBSETCLS$SETCLASS" source="SUBSETCLS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$SUBSETSCLS$SUBCLASS" source="SUBSETSCLS"/>
+    </input>
+    <input node="JOIN_LEAF_NODES_TEXT">
+      <mapping xsi:type="Calculation:AttributeMapping" target="VALFROM" source="VALFROM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CC_IS_NODE" source="CC_IS_NODE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LTEXT" source="LTEXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$SUBSETCLS$SETCLASS" source="SETCLASS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$SUBSETSCLS$SUBCLASS" source="SUBCLASS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SETNAME" source="SETNAME"/>
+    </input>
+    <joinAttribute name="JOIN$SUBSETCLS$SETCLASS"/>
+    <joinAttribute name="JOIN$SUBSETSCLS$SUBCLASS"/>
+    <joinAttribute name="SETNAME"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_ALL_NODES" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="CC_HIER_NAME"/>
+      <viewAttribute id="SUBSETNAME"/>
+    
+      <viewAttribute id="SUBSETCLS"/>
+      <viewAttribute id="SUBSETSCLS"/>
+      <viewAttribute id="CC_IS_NODE"/>
+      <viewAttribute id="SETNAME"/></viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="UNION_NODES"/>
+    <filter>&quot;SUBSETNAME&quot;!=''</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:UnionView" id="UNION_PC_HIER">
+    <viewAttributes>
+      <viewAttribute id="CC_HIER_NAME"/>
+      <viewAttribute id="CC_IS_NODE"/>
+      <viewAttribute id="SETNAME"/>
+      <viewAttribute id="VALFROM"/>
+      <viewAttribute id="LTEXT"/>
+      <viewAttribute datatype="NVARCHAR" length="5" id="DESCRIPT"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CC_COUNTER" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>1</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="A_SETLEAF" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="CC_HIER_NAME" source="CC_HIER_NAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CC_IS_NODE" source="CC_IS_NODE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SETNAME" source="SETNAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VALFROM" source="VALFROM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LTEXT" source="LTEXT"/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="DESCRIPT" null="false" value="LEAF"/>
+    </input>
+  
+    <input node="JOIN_NODES" emptyUnionBehavior="NO_ROW">
+  
+      <mapping xsi:type="Calculation:AttributeMapping" target="CC_HIER_NAME" source="CC_HIER_NAME"/>
+  
+      <mapping xsi:type="Calculation:AttributeMapping" target="CC_IS_NODE" source="CC_IS_NODE"/>
+  
+      <mapping xsi:type="Calculation:AttributeMapping" target="SETNAME" source="SETNAME"/>
+  
+      <mapping xsi:type="Calculation:AttributeMapping" target="VALFROM" source="SUBSETNAME"/>
+  
+      <mapping xsi:type="Calculation:AttributeMapping" target="LTEXT" source="DESCRIPT"/>
+  
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="DESCRIPT" null="false" value="NODES"/>
+  
+    </input>
+    <input node="JOIN_ROOT_NODE" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="CC_HIER_NAME" source="CC_HIER_NAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CC_IS_NODE" source="CC_IS_NODE1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SETNAME" source="SETNAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VALFROM" source="VALFROM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LTEXT" source="LTEXT"/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="DESCRIPT" null="false" value="ROOT"/>
+    </input></calculationView>
+  <calculationView xsi:type="Calculation:AggregationView" id="A_SETLEAF" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="CC_HIER_NAME"/>
+      <viewAttribute id="CC_IS_NODE"/>
+      <viewAttribute id="SETNAME"/>
+    
+    
+      <viewAttribute id="VALFROM"/>
+      <viewAttribute id="LTEXT"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CC_COUNTER" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>1</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <restrictedViewAttributes/>
+    <input node="JOIN_SETLEAF"/>
+    <filter>&quot;VALFROM&quot;!='' OR &quot;LTEXT&quot;!=''</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="JOIN_NODES" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="CC_HIER_NAME"/>
+      <viewAttribute id="CC_IS_NODE"/>
+      <viewAttribute id="SETNAME"/>
+      <viewAttribute id="SUBSETNAME"/>
+      <viewAttribute id="DESCRIPT"/>
+    
+      <viewAttribute id="SUBSETCLS"/>
+      <viewAttribute id="SUBSETSCLS"/></viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="P_ALL_NODES">
+      <mapping xsi:type="Calculation:AttributeMapping" target="CC_HIER_NAME" source="CC_HIER_NAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUBSETNAME" source="SUBSETNAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUBSETCLS" source="SUBSETCLS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUBSETSCLS" source="SUBSETSCLS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CC_IS_NODE" source="CC_IS_NODE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SETNAME" source="SETNAME"/>
+    </input>
+    <input node="P_NODE_TEXT">
+      <mapping xsi:type="Calculation:AttributeMapping" target="DESCRIPT" source="DESCRIPT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUBSETCLS" source="SETCLASS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUBSETSCLS" source="SUBCLASS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUBSETNAME" source="SETNAME"/>
+    </input>
+    <joinAttribute name="SUBSETCLS"/>
+    <joinAttribute name="SUBSETSCLS"/>
+    <joinAttribute name="SUBSETNAME"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_NODE_TEXT">
+    <viewAttributes>
+      <viewAttribute id="DESCRIPT"/>
+    
+      <viewAttribute id="SETCLASS"/>
+      <viewAttribute id="SUBCLASS"/>
+      <viewAttribute id="SETNAME"/></viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="TGT_SETHEADERT"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="UNION_PC_HIER">
+  <attributes>
+    <attribute id="HIERARCHY_NAME" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="HIERARCHY_NAME"/>
+      <keyMapping columnObjectName="UNION_PC_HIER" columnName="CC_HIER_NAME"/>
+    </attribute>
+    <attribute id="IS_NODE" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="IS_NODE"/>
+      <keyMapping columnObjectName="UNION_PC_HIER" columnName="CC_IS_NODE"/>
+    </attribute>
+    <attribute id="PARENT_VALUE" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PARENT"/>
+      <keyMapping columnObjectName="UNION_PC_HIER" columnName="SETNAME"/>
+    </attribute>
+    <attribute id="VALUE" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CHILD"/>
+      <keyMapping columnObjectName="UNION_PC_HIER" columnName="VALFROM"/>
+    </attribute>
+    <attribute id="DESCRIPTION" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DESCRIPTION"/>
+      <keyMapping columnObjectName="UNION_PC_HIER" columnName="LTEXT"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="326.7784234089686" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    
+  
+    <shape expanded="false" modelObjectName="P_SETHEADER" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="97.650133546919" y="2121.999986886978"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_SETNODE" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="444.44643553785534" y="2121.999986886978"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="JOIN_LVL1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="292.4721826797977" y="1921.999988079071"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="P_SETHEADER" modelObjectNameSpace="JOIN_LVL1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="152"/>
+    </shape>
+    <shape modelObjectName="P_SETNODE" modelObjectNameSpace="JOIN_LVL1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="144"/>
+    </shape>
+    <shape expanded="true" modelObjectName="JOIN_LVL2" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="416.23177202159366" y="1761.999989271164"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="JOIN_LVL1" modelObjectNameSpace="JOIN_LVL2" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="P_SETNODE" modelObjectNameSpace="JOIN_LVL2" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="161"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="JOIN_LVL3" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="469.565105354927" y="1601.9999904632568"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="JOIN_LVL2" modelObjectNameSpace="JOIN_LVL3" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="P_SETNODE" modelObjectNameSpace="JOIN_LVL3" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="161"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="JOIN_LVL4" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="701.8928290134675" y="1421.9999916553497"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="JOIN_LVL3" modelObjectNameSpace="JOIN_LVL4" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="P_SETNODE" modelObjectNameSpace="JOIN_LVL4" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="161"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="UNION_NODES" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="613.6501329508724" y="856.9999940395355"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_LVL5" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="603.3052764432709" y="1136.9999928474426"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="JOIN_LVL5" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="603.3052764432709" y="1261.9999928474426"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="JOIN_LVL4" modelObjectNameSpace="JOIN_LVL5" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="P_SETNODE" modelObjectNameSpace="JOIN_LVL5" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="JOIN_ROOT_NODE" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="536.9999964237213"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="P_SETHEADER" modelObjectNameSpace="JOIN_ROOT_NODE" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="JOIN_LEAF_NODES_TEXT" modelObjectNameSpace="JOIN_ROOT_NODE" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="620" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape expanded="true" modelObjectName="JOIN_LEAF_NODES_TEXT" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="194.46956348477562" y="696.9999952316284"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="P_SETLEAF" modelObjectNameSpace="JOIN_LEAF_NODES_TEXT" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="P_CEPCT" modelObjectNameSpace="JOIN_LEAF_NODES_TEXT" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+  
+  
+  
+    <shape expanded="true" modelObjectName="P_SETLEAF" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="193.6501329508725" y="856.9999940395355"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_CEPCT" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="403.65013295087243" y="856.9999940395355"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="false" modelObjectName="JOIN_SETLEAF" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="301.99999999999994" y="536.9999964237213"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="P_ALL_NODES" modelObjectNameSpace="JOIN_SETLEAF" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="172"/>
+    </shape>
+    <shape modelObjectName="JOIN_LEAF_NODES_TEXT" modelObjectNameSpace="JOIN_SETLEAF" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="144"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_ALL_NODES" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="420.1426498424273" y="701.9999952316284"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="UNION_PC_HIER" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="295.8770392662927" y="236.9999988079071"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="A_SETLEAF" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="295.8770392662927" y="391.9999976158142"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="JOIN_NODES" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="512.3205724641541" y="536.9999964237213"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="P_ALL_NODES" modelObjectNameSpace="JOIN_NODES" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="136"/>
+    </shape>
+    <shape modelObjectName="P_NODE_TEXT" modelObjectNameSpace="JOIN_NODES" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="620" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_NODE_TEXT" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="630.1426498424273" y="696.9999952316284"/>
+      <rectangleSize height="30" width="160"/>
+    </shape></shapes>
+</layout>
+</Calculation:scenario>

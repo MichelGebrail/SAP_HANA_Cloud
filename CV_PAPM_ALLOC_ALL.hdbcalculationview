@@ -1,0 +1,1801 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="mccain-shared::CV_PAPM_ALLOC_ALL" applyPrivilegeType="NONE" dataCategory="CUBE" dimensionType="STANDARD" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_PAPM_ALLOC_ALL"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="mccain-shared::ZCP_TGT_ALLOC">
+    <resourceUri>mccain-shared::ZCP_TGT_ALLOC</resourceUri>
+  </DataSource>
+  <DataSource id="mccain-shared::CV_ECC_COPA_DATA">
+    <resourceUri>mccain-shared::CV_ECC_COPA_DATA</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:AggregationView" id="P_ALLOC">
+    <viewAttributes>
+      <viewAttribute id="PALEDGER"/>
+      <viewAttribute id="VRGAR"/>
+      <viewAttribute id="VERSI"/>
+      <viewAttribute id="PERIO"/>
+      <viewAttribute id="PAOBJNR"/>
+      <viewAttribute id="PASUBNR"/>
+      <viewAttribute id="BELNR"/>
+      <viewAttribute id="POSNR"/>
+      <viewAttribute id="TIMESTAMP" aggregationType="max"/>
+      <viewAttribute id="HZDAT"/>
+      <viewAttribute id="USNAM"/>
+      <viewAttribute id="GJAHR"/>
+      <viewAttribute id="PERDE"/>
+      <viewAttribute id="WADAT"/>
+      <viewAttribute id="FADAT"/>
+      <viewAttribute id="BUDAT"/>
+      <viewAttribute id="ALTPERIO"/>
+      <viewAttribute id="PAPAOBJNR"/>
+      <viewAttribute id="PAPASUBNR"/>
+      <viewAttribute id="KNDNR"/>
+      <viewAttribute id="ARTNR"/>
+      <viewAttribute id="FKART"/>
+      <viewAttribute id="FRWAE"/>
+      <viewAttribute id="KURSF" aggregationType="sum"/>
+      <viewAttribute id="KURSBK" aggregationType="sum"/>
+      <viewAttribute id="KURSKZ" aggregationType="sum"/>
+      <viewAttribute id="REC_WAERS"/>
+      <viewAttribute id="KAUFN"/>
+      <viewAttribute id="KDPOS"/>
+      <viewAttribute id="RKAUFNR"/>
+      <viewAttribute id="SKOST"/>
+      <viewAttribute id="PRZNR"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="GSBER"/>
+      <viewAttribute id="VKORG"/>
+      <viewAttribute id="VTWEG"/>
+      <viewAttribute id="SPART"/>
+      <viewAttribute id="HRKFT"/>
+      <viewAttribute id="PLIKZ"/>
+      <viewAttribute id="KSTAR"/>
+      <viewAttribute id="PSPNR"/>
+      <viewAttribute id="KSTRG"/>
+      <viewAttribute id="RBELN"/>
+      <viewAttribute id="RPOSN"/>
+      <viewAttribute id="STO_BELNR"/>
+      <viewAttribute id="STO_POSNR"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="PPRCTR"/>
+      <viewAttribute id="RKESTATU"/>
+      <viewAttribute id="TIMESTMP" aggregationType="sum"/>
+      <viewAttribute id="COPA_AWTYP"/>
+      <viewAttribute id="COPA_AWORG"/>
+      <viewAttribute id="COPA_BWZPT"/>
+      <viewAttribute id="COPA_AWSYS"/>
+      <viewAttribute id="AUGRU"/>
+      <viewAttribute id="BZIRK"/>
+      <viewAttribute id="KDGRP"/>
+      <viewAttribute id="KMLAND"/>
+      <viewAttribute id="KMVKBU"/>
+      <viewAttribute id="KMVKGR"/>
+      <viewAttribute id="KTGRD"/>
+      <viewAttribute id="KUNRE"/>
+      <viewAttribute id="KUNWE"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="PRODH"/>
+      <viewAttribute id="WWIND"/>
+      <viewAttribute id="WWMKT"/>
+      <viewAttribute id="WWBRD"/>
+      <viewAttribute id="CRMCSTY"/>
+      <viewAttribute id="CRMELEM"/>
+      <viewAttribute id="CRMFIGR"/>
+      <viewAttribute id="WWDES"/>
+      <viewAttribute id="WWPRG"/>
+      <viewAttribute id="KMHI01"/>
+      <viewAttribute id="KMHI02"/>
+      <viewAttribute id="KMHI03"/>
+      <viewAttribute id="WWPDA"/>
+      <viewAttribute id="KATR9"/>
+      <viewAttribute id="WWBU1"/>
+      <viewAttribute id="WWFC1"/>
+      <viewAttribute id="WWFC4"/>
+      <viewAttribute id="WWFC5"/>
+      <viewAttribute id="WWGP1"/>
+      <viewAttribute id="VVXX1_ME"/>
+      <viewAttribute id="VVXX2_ME"/>
+      <viewAttribute id="VVX11" aggregationType="sum"/>
+      <viewAttribute id="VVX12" aggregationType="sum"/>
+      <viewAttribute id="VVXX1" aggregationType="sum"/>
+      <viewAttribute id="VVXX2" aggregationType="sum"/>
+      <viewAttribute id="VVXX3" aggregationType="sum"/>
+      <viewAttribute id="VVXX4" aggregationType="sum"/>
+      <viewAttribute id="VVXX5" aggregationType="sum"/>
+      <viewAttribute id="VVXX6" aggregationType="sum"/>
+      <viewAttribute id="VVXX7" aggregationType="sum"/>
+      <viewAttribute id="VVX10" aggregationType="sum"/>
+      <viewAttribute id="VVX21" aggregationType="sum"/>
+      <viewAttribute id="VVX22" aggregationType="sum"/>
+      <viewAttribute id="VVX23" aggregationType="sum"/>
+      <viewAttribute id="VVX24" aggregationType="sum"/>
+      <viewAttribute id="VVX25" aggregationType="sum"/>
+      <viewAttribute id="VVX26" aggregationType="sum"/>
+      <viewAttribute id="VVX27" aggregationType="sum"/>
+      <viewAttribute id="VVX28" aggregationType="sum"/>
+      <viewAttribute id="VVX29" aggregationType="sum"/>
+      <viewAttribute id="VVXX9" aggregationType="sum"/>
+      <viewAttribute id="VVX15" aggregationType="sum"/>
+      <viewAttribute id="VVFB1" aggregationType="sum"/>
+      <viewAttribute id="VVFC1" aggregationType="sum"/>
+      <viewAttribute id="VVFD1" aggregationType="sum"/>
+      <viewAttribute id="VVEE1" aggregationType="sum"/>
+      <viewAttribute id="VVEF1" aggregationType="sum"/>
+      <viewAttribute id="VVFA1" aggregationType="sum"/>
+      <viewAttribute id="VVCB2" aggregationType="sum"/>
+      <viewAttribute id="VVCB3" aggregationType="sum"/>
+      <viewAttribute id="VVCB4" aggregationType="sum"/>
+      <viewAttribute id="VVCC1" aggregationType="sum"/>
+      <viewAttribute id="VVDA1" aggregationType="sum"/>
+      <viewAttribute id="VVDA2" aggregationType="sum"/>
+      <viewAttribute id="VVDB1" aggregationType="sum"/>
+      <viewAttribute id="VVDC1" aggregationType="sum"/>
+      <viewAttribute id="VVDE1" aggregationType="sum"/>
+      <viewAttribute id="VVDF1" aggregationType="sum"/>
+      <viewAttribute id="VVEA1" aggregationType="sum"/>
+      <viewAttribute id="VVEB1" aggregationType="sum"/>
+      <viewAttribute id="VVEC1" aggregationType="sum"/>
+      <viewAttribute id="VVED1" aggregationType="sum"/>
+      <viewAttribute id="VVBC1" aggregationType="sum"/>
+      <viewAttribute id="VVBC2" aggregationType="sum"/>
+      <viewAttribute id="VVBC3" aggregationType="sum"/>
+      <viewAttribute id="VVBC4" aggregationType="sum"/>
+      <viewAttribute id="VVBD1" aggregationType="sum"/>
+      <viewAttribute id="VVBD2" aggregationType="sum"/>
+      <viewAttribute id="VVBD3" aggregationType="sum"/>
+      <viewAttribute id="VVBD4" aggregationType="sum"/>
+      <viewAttribute id="VVBE1" aggregationType="sum"/>
+      <viewAttribute id="VVBE2" aggregationType="sum"/>
+      <viewAttribute id="VVBE3" aggregationType="sum"/>
+      <viewAttribute id="VVBE4" aggregationType="sum"/>
+      <viewAttribute id="VVBF1" aggregationType="sum"/>
+      <viewAttribute id="VVCA1" aggregationType="sum"/>
+      <viewAttribute id="VVCB1" aggregationType="sum"/>
+      <viewAttribute id="VVAB1" aggregationType="sum"/>
+      <viewAttribute id="VVBA1" aggregationType="sum"/>
+      <viewAttribute id="VVBA2" aggregationType="sum"/>
+      <viewAttribute id="VVBA3" aggregationType="sum"/>
+      <viewAttribute id="VVBA4" aggregationType="sum"/>
+      <viewAttribute id="VVBA5" aggregationType="sum"/>
+      <viewAttribute id="VVBA6" aggregationType="sum"/>
+      <viewAttribute id="VVBA7" aggregationType="sum"/>
+      <viewAttribute id="VVBA8" aggregationType="sum"/>
+      <viewAttribute id="VVBA9" aggregationType="sum"/>
+      <viewAttribute id="VVBB1" aggregationType="sum"/>
+      <viewAttribute id="VVBB2" aggregationType="sum"/>
+      <viewAttribute id="VVBB3" aggregationType="sum"/>
+      <viewAttribute id="VVBB4" aggregationType="sum"/>
+      <viewAttribute id="VVAA1" aggregationType="sum"/>
+      <viewAttribute id="VVBC5" aggregationType="sum"/>
+      <viewAttribute id="VVBD5" aggregationType="sum"/>
+      <viewAttribute id="VVBAA" aggregationType="sum"/>
+      <viewAttribute id="VVBAB" aggregationType="sum"/>
+      <viewAttribute id="VVBAC" aggregationType="sum"/>
+      <viewAttribute id="VVBAD" aggregationType="sum"/>
+      <viewAttribute id="VVBAE" aggregationType="sum"/>
+      <viewAttribute id="VVBAF" aggregationType="sum"/>
+      <viewAttribute id="VVBB5" aggregationType="sum"/>
+      <viewAttribute id="VVBB6" aggregationType="sum"/>
+      <viewAttribute id="VVBC6" aggregationType="sum"/>
+      <viewAttribute id="VVBE5" aggregationType="sum"/>
+      <viewAttribute id="VVBE6" aggregationType="sum"/>
+      <viewAttribute id="VVBE7" aggregationType="sum"/>
+      <viewAttribute id="VVFE1" aggregationType="sum"/>
+      <viewAttribute id="VVX30" aggregationType="sum"/>
+      <viewAttribute id="VVX31" aggregationType="sum"/>
+      <viewAttribute id="VVX32" aggregationType="sum"/>
+      <viewAttribute id="VVX33" aggregationType="sum"/>
+      <viewAttribute id="VVX34" aggregationType="sum"/>
+      <viewAttribute id="VVX35" aggregationType="sum"/>
+      <viewAttribute id="VVX36" aggregationType="sum"/>
+      <viewAttribute id="VVX37" aggregationType="sum"/>
+      <viewAttribute id="VVX38" aggregationType="sum"/>
+      <viewAttribute id="VVX39" aggregationType="sum"/>
+      <viewAttribute id="VVX40" aggregationType="sum"/>
+      <viewAttribute id="VVX41" aggregationType="sum"/>
+      <viewAttribute id="VVX42" aggregationType="sum"/>
+      <viewAttribute id="VVX43" aggregationType="sum"/>
+      <viewAttribute id="VVX44" aggregationType="sum"/>
+      <viewAttribute id="VVX45" aggregationType="sum"/>
+      <viewAttribute id="VVX46" aggregationType="sum"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <restrictedViewAttributes/>
+    <input node="mccain-shared::ZCP_TGT_ALLOC"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_MFL1_MFL2">
+    <viewAttributes>
+      <viewAttribute id="PALEDGER"/>
+      <viewAttribute id="VRGAR"/>
+      <viewAttribute id="VERSI"/>
+      <viewAttribute id="PERIO"/>
+      <viewAttribute id="PAOBJNR"/>
+      <viewAttribute id="PASUBNR"/>
+      <viewAttribute id="BELNR"/>
+      <viewAttribute id="POSNR"/>
+      <viewAttribute id="HZDAT"/>
+      <viewAttribute id="USNAM"/>
+      <viewAttribute id="GJAHR"/>
+      <viewAttribute id="PERDE"/>
+      <viewAttribute id="WADAT"/>
+      <viewAttribute id="FADAT"/>
+      <viewAttribute id="BUDAT"/>
+      <viewAttribute id="ALTPERIO"/>
+      <viewAttribute id="PAPAOBJNR"/>
+      <viewAttribute id="PAPASUBNR"/>
+      <viewAttribute id="KNDNR"/>
+      <viewAttribute id="ARTNR"/>
+      <viewAttribute id="FKART"/>
+      <viewAttribute id="FRWAE"/>
+      <viewAttribute id="KURSF"/>
+      <viewAttribute id="KURSBK"/>
+      <viewAttribute id="KURSKZ"/>
+      <viewAttribute id="REC_WAERS"/>
+      <viewAttribute id="KAUFN"/>
+      <viewAttribute id="KDPOS"/>
+      <viewAttribute id="RKAUFNR"/>
+      <viewAttribute id="SKOST"/>
+      <viewAttribute id="PRZNR"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="GSBER"/>
+      <viewAttribute id="VKORG"/>
+      <viewAttribute id="VTWEG"/>
+      <viewAttribute id="SPART"/>
+      <viewAttribute id="HRKFT"/>
+      <viewAttribute id="PLIKZ"/>
+      <viewAttribute id="KSTAR"/>
+      <viewAttribute id="PSPNR"/>
+      <viewAttribute id="KSTRG"/>
+      <viewAttribute id="RBELN"/>
+      <viewAttribute id="RPOSN"/>
+      <viewAttribute id="STO_BELNR"/>
+      <viewAttribute id="STO_POSNR"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="PPRCTR"/>
+      <viewAttribute id="RKESTATU"/>
+      <viewAttribute id="TIMESTMP"/>
+      <viewAttribute id="COPA_AWTYP"/>
+      <viewAttribute id="COPA_AWORG"/>
+      <viewAttribute id="COPA_BWZPT"/>
+      <viewAttribute id="COPA_AWSYS"/>
+      <viewAttribute id="AUGRU"/>
+      <viewAttribute id="BZIRK"/>
+      <viewAttribute id="KDGRP"/>
+      <viewAttribute id="KMLAND"/>
+      <viewAttribute id="KMVKBU"/>
+      <viewAttribute id="KMVKGR"/>
+      <viewAttribute id="KTGRD"/>
+      <viewAttribute id="KUNRE"/>
+      <viewAttribute id="KUNWE"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="PRODH"/>
+      <viewAttribute id="WWIND"/>
+      <viewAttribute id="WWMKT"/>
+      <viewAttribute id="WWBRD"/>
+      <viewAttribute id="CRMCSTY"/>
+      <viewAttribute id="CRMELEM"/>
+      <viewAttribute id="CRMFIGR"/>
+      <viewAttribute id="WWDES"/>
+      <viewAttribute id="WWPRG"/>
+      <viewAttribute id="KMHI01"/>
+      <viewAttribute id="KMHI02"/>
+      <viewAttribute id="KMHI03"/>
+      <viewAttribute id="WWPDA"/>
+      <viewAttribute id="KATR9"/>
+      <viewAttribute id="WWBU1"/>
+      <viewAttribute id="WWFC1"/>
+      <viewAttribute id="WWFC4"/>
+      <viewAttribute id="WWFC5"/>
+      <viewAttribute id="WWGP1"/>
+      <viewAttribute id="VVXX1_ME"/>
+      <viewAttribute id="VVXX2_ME"/>
+      <viewAttribute id="VVX11"/>
+      <viewAttribute id="VVX12"/>
+      <viewAttribute id="VVXX1"/>
+      <viewAttribute id="VVXX2"/>
+      <viewAttribute id="VVXX3"/>
+      <viewAttribute id="VVXX4"/>
+      <viewAttribute id="VVXX5"/>
+      <viewAttribute id="VVXX6"/>
+      <viewAttribute id="VVXX7"/>
+      <viewAttribute id="VVX10"/>
+      <viewAttribute id="VVX21"/>
+      <viewAttribute id="VVX22"/>
+      <viewAttribute id="VVX23"/>
+      <viewAttribute id="VVX24"/>
+      <viewAttribute id="VVX25"/>
+      <viewAttribute id="VVX26"/>
+      <viewAttribute id="VVX27"/>
+      <viewAttribute id="VVX28"/>
+      <viewAttribute id="VVX29"/>
+      <viewAttribute id="VVXX9"/>
+      <viewAttribute id="VVX15"/>
+      <viewAttribute id="VVFB1"/>
+      <viewAttribute id="VVFC1"/>
+      <viewAttribute id="VVFD1"/>
+      <viewAttribute id="VVEE1"/>
+      <viewAttribute id="VVEF1"/>
+      <viewAttribute id="VVFA1"/>
+      <viewAttribute id="VVCB2"/>
+      <viewAttribute id="VVCB3"/>
+      <viewAttribute id="VVCB4"/>
+      <viewAttribute id="VVCC1"/>
+      <viewAttribute id="VVDA1"/>
+      <viewAttribute id="VVDA2"/>
+      <viewAttribute id="VVDB1"/>
+      <viewAttribute id="VVDC1"/>
+      <viewAttribute id="VVDE1"/>
+      <viewAttribute id="VVDF1"/>
+      <viewAttribute id="VVEA1"/>
+      <viewAttribute id="VVEB1"/>
+      <viewAttribute id="VVEC1"/>
+      <viewAttribute id="VVED1"/>
+      <viewAttribute id="VVBC1"/>
+      <viewAttribute id="VVBC2"/>
+      <viewAttribute id="VVBC3"/>
+      <viewAttribute id="VVBC4"/>
+      <viewAttribute id="VVBD1"/>
+      <viewAttribute id="VVBD2"/>
+      <viewAttribute id="VVBD3"/>
+      <viewAttribute id="VVBD4"/>
+      <viewAttribute id="VVBE1"/>
+      <viewAttribute id="VVBE2"/>
+      <viewAttribute id="VVBE3"/>
+      <viewAttribute id="VVBE4"/>
+      <viewAttribute id="VVBF1"/>
+      <viewAttribute id="VVCA1"/>
+      <viewAttribute id="VVCB1"/>
+      <viewAttribute id="VVAB1"/>
+      <viewAttribute id="VVBA1"/>
+      <viewAttribute id="VVBA2"/>
+      <viewAttribute id="VVBA3"/>
+      <viewAttribute id="VVBA4"/>
+      <viewAttribute id="VVBA5"/>
+      <viewAttribute id="VVBA6"/>
+      <viewAttribute id="VVBA7"/>
+      <viewAttribute id="VVBA8"/>
+      <viewAttribute id="VVBA9"/>
+      <viewAttribute id="VVBB1"/>
+      <viewAttribute id="VVBB2"/>
+      <viewAttribute id="VVBB3"/>
+      <viewAttribute id="VVBB4"/>
+      <viewAttribute id="VVAA1"/>
+      <viewAttribute id="VVBC5"/>
+      <viewAttribute id="VVBD5"/>
+      <viewAttribute id="VVBAA"/>
+      <viewAttribute id="VVBAB"/>
+      <viewAttribute id="VVBAC"/>
+      <viewAttribute id="VVBAD"/>
+      <viewAttribute id="VVBAE"/>
+      <viewAttribute id="VVBAF"/>
+      <viewAttribute id="VVBB5"/>
+      <viewAttribute id="VVBB6"/>
+      <viewAttribute id="VVBC6"/>
+      <viewAttribute id="VVBE5"/>
+      <viewAttribute id="VVBE6"/>
+      <viewAttribute id="VVBE7"/>
+      <viewAttribute id="VVFE1"/>
+      <viewAttribute id="VVX30"/>
+      <viewAttribute id="VVX31"/>
+      <viewAttribute id="VVX32"/>
+      <viewAttribute id="VVX33"/>
+      <viewAttribute id="VVX34"/>
+      <viewAttribute id="VVX35"/>
+      <viewAttribute id="VVX36"/>
+      <viewAttribute id="VVX37"/>
+      <viewAttribute id="VVX38"/>
+      <viewAttribute id="VVX39"/>
+      <viewAttribute id="VVX40"/>
+      <viewAttribute id="VVX41"/>
+      <viewAttribute id="VVX42"/>
+      <viewAttribute id="VVX43"/>
+      <viewAttribute id="VVX44"/>
+      <viewAttribute id="VVX45"/>
+      <viewAttribute id="VVX46"/>
+    
+      <viewAttribute id="MANDT"/></viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="mccain-shared::CV_ECC_COPA_DATA"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:UnionView" id="UNION_COPA_PAPM">
+    <viewAttributes>
+      <viewAttribute id="PALEDGER"/>
+      <viewAttribute id="VRGAR"/>
+      <viewAttribute id="VERSI"/>
+      <viewAttribute id="PERIO"/>
+      <viewAttribute id="PAOBJNR"/>
+      <viewAttribute id="PASUBNR"/>
+      <viewAttribute id="BELNR"/>
+      <viewAttribute id="POSNR"/>
+      <viewAttribute id="TIMESTAMP" aggregationType="max"/>
+      <viewAttribute id="HZDAT"/>
+      <viewAttribute id="USNAM"/>
+      <viewAttribute id="GJAHR"/>
+      <viewAttribute id="PERDE"/>
+      <viewAttribute id="WADAT"/>
+      <viewAttribute id="FADAT"/>
+      <viewAttribute id="BUDAT"/>
+      <viewAttribute id="ALTPERIO"/>
+      <viewAttribute id="PAPAOBJNR"/>
+      <viewAttribute id="PAPASUBNR"/>
+      <viewAttribute id="KNDNR"/>
+      <viewAttribute id="ARTNR"/>
+      <viewAttribute id="FKART"/>
+      <viewAttribute id="FRWAE"/>
+      <viewAttribute id="KURSF" aggregationType="sum"/>
+      <viewAttribute id="KURSBK" aggregationType="sum"/>
+      <viewAttribute id="KURSKZ" aggregationType="sum"/>
+      <viewAttribute id="REC_WAERS"/>
+      <viewAttribute id="KAUFN"/>
+      <viewAttribute id="KDPOS"/>
+      <viewAttribute id="RKAUFNR"/>
+      <viewAttribute id="SKOST"/>
+      <viewAttribute id="PRZNR"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="GSBER"/>
+      <viewAttribute id="VKORG"/>
+      <viewAttribute id="VTWEG"/>
+      <viewAttribute id="SPART"/>
+      <viewAttribute id="HRKFT"/>
+      <viewAttribute id="PLIKZ"/>
+      <viewAttribute id="KSTAR"/>
+      <viewAttribute id="PSPNR"/>
+      <viewAttribute id="KSTRG"/>
+      <viewAttribute id="RBELN"/>
+      <viewAttribute id="RPOSN"/>
+      <viewAttribute id="STO_BELNR"/>
+      <viewAttribute id="STO_POSNR"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="PPRCTR"/>
+      <viewAttribute id="RKESTATU"/>
+      <viewAttribute id="TIMESTMP" aggregationType="sum"/>
+      <viewAttribute id="COPA_AWTYP"/>
+      <viewAttribute id="COPA_AWORG"/>
+      <viewAttribute id="COPA_BWZPT"/>
+      <viewAttribute id="COPA_AWSYS"/>
+      <viewAttribute id="AUGRU"/>
+      <viewAttribute id="BZIRK"/>
+      <viewAttribute id="KDGRP"/>
+      <viewAttribute id="KMLAND"/>
+      <viewAttribute id="KMVKBU"/>
+      <viewAttribute id="KMVKGR"/>
+      <viewAttribute id="KTGRD"/>
+      <viewAttribute id="KUNRE"/>
+      <viewAttribute id="KUNWE"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="PRODH"/>
+      <viewAttribute id="WWIND"/>
+      <viewAttribute id="WWMKT"/>
+      <viewAttribute id="WWBRD"/>
+      <viewAttribute id="CRMCSTY"/>
+      <viewAttribute id="CRMELEM"/>
+      <viewAttribute id="CRMFIGR"/>
+      <viewAttribute id="WWDES"/>
+      <viewAttribute id="WWPRG"/>
+      <viewAttribute id="KMHI01"/>
+      <viewAttribute id="KMHI02"/>
+      <viewAttribute id="KMHI03"/>
+      <viewAttribute id="WWPDA"/>
+      <viewAttribute id="KATR9"/>
+      <viewAttribute id="WWBU1"/>
+      <viewAttribute id="WWFC1"/>
+      <viewAttribute id="WWFC4"/>
+      <viewAttribute id="WWFC5"/>
+      <viewAttribute id="WWGP1"/>
+      <viewAttribute id="VVXX1_ME"/>
+      <viewAttribute id="VVXX2_ME"/>
+      <viewAttribute id="VVX11" aggregationType="sum"/>
+      <viewAttribute id="VVX12" aggregationType="sum"/>
+      <viewAttribute id="VVXX1" aggregationType="sum"/>
+      <viewAttribute id="VVXX2" aggregationType="sum"/>
+      <viewAttribute id="VVXX3" aggregationType="sum"/>
+      <viewAttribute id="VVXX4" aggregationType="sum"/>
+      <viewAttribute id="VVXX5" aggregationType="sum"/>
+      <viewAttribute id="VVXX6" aggregationType="sum"/>
+      <viewAttribute id="VVXX7" aggregationType="sum"/>
+      <viewAttribute id="VVX10" aggregationType="sum"/>
+      <viewAttribute id="VVX21" aggregationType="sum"/>
+      <viewAttribute id="VVX22" aggregationType="sum"/>
+      <viewAttribute id="VVX23" aggregationType="sum"/>
+      <viewAttribute id="VVX24" aggregationType="sum"/>
+      <viewAttribute id="VVX25" aggregationType="sum"/>
+      <viewAttribute id="VVX26" aggregationType="sum"/>
+      <viewAttribute id="VVX27" aggregationType="sum"/>
+      <viewAttribute id="VVX28" aggregationType="sum"/>
+      <viewAttribute id="VVX29" aggregationType="sum"/>
+      <viewAttribute id="VVXX9" aggregationType="sum"/>
+      <viewAttribute id="VVX15" aggregationType="sum"/>
+      <viewAttribute id="VVFB1" aggregationType="sum"/>
+      <viewAttribute id="VVFC1" aggregationType="sum"/>
+      <viewAttribute id="VVFD1" aggregationType="sum"/>
+      <viewAttribute id="VVEE1" aggregationType="sum"/>
+      <viewAttribute id="VVEF1" aggregationType="sum"/>
+      <viewAttribute id="VVFA1" aggregationType="sum"/>
+      <viewAttribute id="VVCB2" aggregationType="sum"/>
+      <viewAttribute id="VVCB3" aggregationType="sum"/>
+      <viewAttribute id="VVCB4" aggregationType="sum"/>
+      <viewAttribute id="VVCC1" aggregationType="sum"/>
+      <viewAttribute id="VVDA1" aggregationType="sum"/>
+      <viewAttribute id="VVDA2" aggregationType="sum"/>
+      <viewAttribute id="VVDB1" aggregationType="sum"/>
+      <viewAttribute id="VVDC1" aggregationType="sum"/>
+      <viewAttribute id="VVDE1" aggregationType="sum"/>
+      <viewAttribute id="VVDF1" aggregationType="sum"/>
+      <viewAttribute id="VVEA1" aggregationType="sum"/>
+      <viewAttribute id="VVEB1" aggregationType="sum"/>
+      <viewAttribute id="VVEC1" aggregationType="sum"/>
+      <viewAttribute id="VVED1" aggregationType="sum"/>
+      <viewAttribute id="VVBC1" aggregationType="sum"/>
+      <viewAttribute id="VVBC2" aggregationType="sum"/>
+      <viewAttribute id="VVBC3" aggregationType="sum"/>
+      <viewAttribute id="VVBC4" aggregationType="sum"/>
+      <viewAttribute id="VVBD1" aggregationType="sum"/>
+      <viewAttribute id="VVBD2" aggregationType="sum"/>
+      <viewAttribute id="VVBD3" aggregationType="sum"/>
+      <viewAttribute id="VVBD4" aggregationType="sum"/>
+      <viewAttribute id="VVBE1" aggregationType="sum"/>
+      <viewAttribute id="VVBE2" aggregationType="sum"/>
+      <viewAttribute id="VVBE3" aggregationType="sum"/>
+      <viewAttribute id="VVBE4" aggregationType="sum"/>
+      <viewAttribute id="VVBF1" aggregationType="sum"/>
+      <viewAttribute id="VVCA1" aggregationType="sum"/>
+      <viewAttribute id="VVCB1" aggregationType="sum"/>
+      <viewAttribute id="VVAB1" aggregationType="sum"/>
+      <viewAttribute id="VVBA1" aggregationType="sum"/>
+      <viewAttribute id="VVBA2" aggregationType="sum"/>
+      <viewAttribute id="VVBA3" aggregationType="sum"/>
+      <viewAttribute id="VVBA4" aggregationType="sum"/>
+      <viewAttribute id="VVBA5" aggregationType="sum"/>
+      <viewAttribute id="VVBA6" aggregationType="sum"/>
+      <viewAttribute id="VVBA7" aggregationType="sum"/>
+      <viewAttribute id="VVBA8" aggregationType="sum"/>
+      <viewAttribute id="VVBA9" aggregationType="sum"/>
+      <viewAttribute id="VVBB1" aggregationType="sum"/>
+      <viewAttribute id="VVBB2" aggregationType="sum"/>
+      <viewAttribute id="VVBB3" aggregationType="sum"/>
+      <viewAttribute id="VVBB4" aggregationType="sum"/>
+      <viewAttribute id="VVAA1" aggregationType="sum"/>
+      <viewAttribute id="VVBC5" aggregationType="sum"/>
+      <viewAttribute id="VVBD5" aggregationType="sum"/>
+      <viewAttribute id="VVBAA" aggregationType="sum"/>
+      <viewAttribute id="VVBAB" aggregationType="sum"/>
+      <viewAttribute id="VVBAC" aggregationType="sum"/>
+      <viewAttribute id="VVBAD" aggregationType="sum"/>
+      <viewAttribute id="VVBAE" aggregationType="sum"/>
+      <viewAttribute id="VVBAF" aggregationType="sum"/>
+      <viewAttribute id="VVBB5" aggregationType="sum"/>
+      <viewAttribute id="VVBB6" aggregationType="sum"/>
+      <viewAttribute id="VVBC6" aggregationType="sum"/>
+      <viewAttribute id="VVBE5" aggregationType="sum"/>
+      <viewAttribute id="VVBE6" aggregationType="sum"/>
+      <viewAttribute id="VVBE7" aggregationType="sum"/>
+      <viewAttribute id="VVFE1" aggregationType="sum"/>
+      <viewAttribute id="VVX30" aggregationType="sum"/>
+      <viewAttribute id="VVX31" aggregationType="sum"/>
+      <viewAttribute id="VVX32" aggregationType="sum"/>
+      <viewAttribute id="VVX33" aggregationType="sum"/>
+      <viewAttribute id="VVX34" aggregationType="sum"/>
+      <viewAttribute id="VVX35" aggregationType="sum"/>
+      <viewAttribute id="VVX36" aggregationType="sum"/>
+      <viewAttribute id="VVX37" aggregationType="sum"/>
+      <viewAttribute id="VVX38" aggregationType="sum"/>
+      <viewAttribute id="VVX39" aggregationType="sum"/>
+      <viewAttribute id="VVX40" aggregationType="sum"/>
+      <viewAttribute id="VVX41" aggregationType="sum"/>
+      <viewAttribute id="VVX42" aggregationType="sum"/>
+      <viewAttribute id="VVX43" aggregationType="sum"/>
+      <viewAttribute id="VVX44" aggregationType="sum"/>
+      <viewAttribute id="VVX45" aggregationType="sum"/>
+      <viewAttribute id="VVX46" aggregationType="sum"/>
+    
+      <viewAttribute id="MANDT"/>
+    
+      <viewAttribute id="HZDAT_1"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="P_ALLOC" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="PALEDGER" source="PALEDGER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VRGAR" source="VRGAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERSI" source="VERSI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PERIO" source="PERIO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAOBJNR" source="PAOBJNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PASUBNR" source="PASUBNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BELNR" source="BELNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POSNR" source="POSNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TIMESTAMP" source="TIMESTAMP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HZDAT" source="HZDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="USNAM" source="USNAM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GJAHR" source="GJAHR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PERDE" source="PERDE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WADAT" source="WADAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FADAT" source="FADAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUDAT" source="BUDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ALTPERIO" source="ALTPERIO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAPAOBJNR" source="PAPAOBJNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAPASUBNR" source="PAPASUBNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KNDNR" source="KNDNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ARTNR" source="ARTNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FKART" source="FKART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FRWAE" source="FRWAE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KURSF" source="KURSF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KURSBK" source="KURSBK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KURSKZ" source="KURSKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REC_WAERS" source="REC_WAERS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KAUFN" source="KAUFN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KDPOS" source="KDPOS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RKAUFNR" source="RKAUFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SKOST" source="SKOST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRZNR" source="PRZNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOKRS" source="KOKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GSBER" source="GSBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VKORG" source="VKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VTWEG" source="VTWEG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPART" source="SPART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HRKFT" source="HRKFT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PLIKZ" source="PLIKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KSTAR" source="KSTAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PSPNR" source="PSPNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KSTRG" source="KSTRG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RBELN" source="RBELN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RPOSN" source="RPOSN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STO_BELNR" source="STO_BELNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STO_POSNR" source="STO_POSNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRCTR" source="PRCTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PPRCTR" source="PPRCTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RKESTATU" source="RKESTATU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TIMESTMP" source="TIMESTMP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COPA_AWTYP" source="COPA_AWTYP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COPA_AWORG" source="COPA_AWORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COPA_BWZPT" source="COPA_BWZPT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COPA_AWSYS" source="COPA_AWSYS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AUGRU" source="AUGRU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BZIRK" source="BZIRK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KDGRP" source="KDGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KMLAND" source="KMLAND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KMVKBU" source="KMVKBU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KMVKGR" source="KMVKGR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KTGRD" source="KTGRD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KUNRE" source="KUNRE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KUNWE" source="KUNWE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL" source="MATKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRODH" source="PRODH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWIND" source="WWIND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWMKT" source="WWMKT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWBRD" source="WWBRD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CRMCSTY" source="CRMCSTY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CRMELEM" source="CRMELEM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CRMFIGR" source="CRMFIGR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWDES" source="WWDES"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWPRG" source="WWPRG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KMHI01" source="KMHI01"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KMHI02" source="KMHI02"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KMHI03" source="KMHI03"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWPDA" source="WWPDA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KATR9" source="KATR9"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWBU1" source="WWBU1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWFC1" source="WWFC1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWFC4" source="WWFC4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWFC5" source="WWFC5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWGP1" source="WWGP1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX1_ME" source="VVXX1_ME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX2_ME" source="VVXX2_ME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX11" source="VVX11"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX12" source="VVX12"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX1" source="VVXX1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX2" source="VVXX2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX3" source="VVXX3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX4" source="VVXX4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX5" source="VVXX5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX6" source="VVXX6"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX7" source="VVXX7"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX10" source="VVX10"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX21" source="VVX21"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX22" source="VVX22"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX23" source="VVX23"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX24" source="VVX24"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX25" source="VVX25"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX26" source="VVX26"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX27" source="VVX27"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX28" source="VVX28"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX29" source="VVX29"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX9" source="VVXX9"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX15" source="VVX15"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVFB1" source="VVFB1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVFC1" source="VVFC1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVFD1" source="VVFD1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVEE1" source="VVEE1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVEF1" source="VVEF1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVFA1" source="VVFA1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVCB2" source="VVCB2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVCB3" source="VVCB3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVCB4" source="VVCB4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVCC1" source="VVCC1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVDA1" source="VVDA1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVDA2" source="VVDA2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVDB1" source="VVDB1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVDC1" source="VVDC1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVDE1" source="VVDE1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVDF1" source="VVDF1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVEA1" source="VVEA1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVEB1" source="VVEB1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVEC1" source="VVEC1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVED1" source="VVED1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBC1" source="VVBC1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBC2" source="VVBC2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBC3" source="VVBC3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBC4" source="VVBC4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBD1" source="VVBD1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBD2" source="VVBD2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBD3" source="VVBD3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBD4" source="VVBD4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBE1" source="VVBE1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBE2" source="VVBE2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBE3" source="VVBE3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBE4" source="VVBE4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBF1" source="VVBF1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVCA1" source="VVCA1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVCB1" source="VVCB1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVAB1" source="VVAB1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA1" source="VVBA1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA2" source="VVBA2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA3" source="VVBA3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA4" source="VVBA4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA5" source="VVBA5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA6" source="VVBA6"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA7" source="VVBA7"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA8" source="VVBA8"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA9" source="VVBA9"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBB1" source="VVBB1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBB2" source="VVBB2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBB3" source="VVBB3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBB4" source="VVBB4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVAA1" source="VVAA1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBC5" source="VVBC5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBD5" source="VVBD5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBAA" source="VVBAA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBAB" source="VVBAB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBAC" source="VVBAC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBAD" source="VVBAD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBAE" source="VVBAE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBAF" source="VVBAF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBB5" source="VVBB5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBB6" source="VVBB6"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBC6" source="VVBC6"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBE5" source="VVBE5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBE6" source="VVBE6"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBE7" source="VVBE7"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVFE1" source="VVFE1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX30" source="VVX30"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX31" source="VVX31"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX32" source="VVX32"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX33" source="VVX33"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX34" source="VVX34"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX35" source="VVX35"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX36" source="VVX36"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX37" source="VVX37"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX38" source="VVX38"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX39" source="VVX39"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX40" source="VVX40"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX41" source="VVX41"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX42" source="VVX42"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX43" source="VVX43"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX44" source="VVX44"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX45" source="VVX45"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX46" source="VVX46"/>
+    
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="MANDT" null="true" value=""/>
+    
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="HZDAT_1" null="true" value=""/>
+    </input>
+  
+    <input node="P_MFL1_MFL2" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="PALEDGER" source="PALEDGER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VRGAR" source="VRGAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERSI" source="VERSI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PERIO" source="PERIO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAOBJNR" source="PAOBJNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PASUBNR" source="PASUBNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BELNR" source="BELNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POSNR" source="POSNR"/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="TIMESTAMP" null="true" value=""/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HZDAT" source="HZDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="USNAM" source="USNAM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GJAHR" source="GJAHR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PERDE" source="PERDE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WADAT" source="WADAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FADAT" source="FADAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUDAT" source="BUDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ALTPERIO" source="ALTPERIO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAPAOBJNR" source="PAPAOBJNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAPASUBNR" source="PAPASUBNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KNDNR" source="KNDNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ARTNR" source="ARTNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FKART" source="FKART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FRWAE" source="FRWAE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KURSF" source="KURSF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KURSBK" source="KURSBK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KURSKZ" source="KURSKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REC_WAERS" source="REC_WAERS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KAUFN" source="KAUFN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KDPOS" source="KDPOS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RKAUFNR" source="RKAUFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SKOST" source="SKOST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRZNR" source="PRZNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOKRS" source="KOKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GSBER" source="GSBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VKORG" source="VKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VTWEG" source="VTWEG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPART" source="SPART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HRKFT" source="HRKFT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PLIKZ" source="PLIKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KSTAR" source="KSTAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PSPNR" source="PSPNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KSTRG" source="KSTRG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RBELN" source="RBELN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RPOSN" source="RPOSN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STO_BELNR" source="STO_BELNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STO_POSNR" source="STO_POSNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRCTR" source="PRCTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PPRCTR" source="PPRCTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RKESTATU" source="RKESTATU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TIMESTMP" source="TIMESTMP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COPA_AWTYP" source="COPA_AWTYP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COPA_AWORG" source="COPA_AWORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COPA_BWZPT" source="COPA_BWZPT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COPA_AWSYS" source="COPA_AWSYS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AUGRU" source="AUGRU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BZIRK" source="BZIRK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KDGRP" source="KDGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KMLAND" source="KMLAND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KMVKBU" source="KMVKBU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KMVKGR" source="KMVKGR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KTGRD" source="KTGRD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KUNRE" source="KUNRE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KUNWE" source="KUNWE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL" source="MATKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRODH" source="PRODH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWIND" source="WWIND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWMKT" source="WWMKT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWBRD" source="WWBRD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CRMCSTY" source="CRMCSTY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CRMELEM" source="CRMELEM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CRMFIGR" source="CRMFIGR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWDES" source="WWDES"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWPRG" source="WWPRG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KMHI01" source="KMHI01"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KMHI02" source="KMHI02"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KMHI03" source="KMHI03"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWPDA" source="WWPDA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KATR9" source="KATR9"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWBU1" source="WWBU1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWFC1" source="WWFC1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWFC4" source="WWFC4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWFC5" source="WWFC5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWGP1" source="WWGP1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX1_ME" source="VVXX1_ME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX2_ME" source="VVXX2_ME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX11" source="VVX11"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX12" source="VVX12"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX1" source="VVXX1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX2" source="VVXX2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX3" source="VVXX3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX4" source="VVXX4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX5" source="VVXX5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX6" source="VVXX6"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX7" source="VVXX7"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX10" source="VVX10"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX21" source="VVX21"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX22" source="VVX22"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX23" source="VVX23"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX24" source="VVX24"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX25" source="VVX25"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX26" source="VVX26"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX27" source="VVX27"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX28" source="VVX28"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX29" source="VVX29"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX9" source="VVXX9"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX15" source="VVX15"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVFB1" source="VVFB1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVFC1" source="VVFC1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVFD1" source="VVFD1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVEE1" source="VVEE1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVEF1" source="VVEF1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVFA1" source="VVFA1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVCB2" source="VVCB2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVCB3" source="VVCB3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVCB4" source="VVCB4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVCC1" source="VVCC1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVDA1" source="VVDA1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVDA2" source="VVDA2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVDB1" source="VVDB1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVDC1" source="VVDC1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVDE1" source="VVDE1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVDF1" source="VVDF1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVEA1" source="VVEA1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVEB1" source="VVEB1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVEC1" source="VVEC1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVED1" source="VVED1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBC1" source="VVBC1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBC2" source="VVBC2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBC3" source="VVBC3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBC4" source="VVBC4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBD1" source="VVBD1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBD2" source="VVBD2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBD3" source="VVBD3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBD4" source="VVBD4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBE1" source="VVBE1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBE2" source="VVBE2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBE3" source="VVBE3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBE4" source="VVBE4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBF1" source="VVBF1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVCA1" source="VVCA1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVCB1" source="VVCB1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVAB1" source="VVAB1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA1" source="VVBA1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA2" source="VVBA2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA3" source="VVBA3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA4" source="VVBA4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA5" source="VVBA5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA6" source="VVBA6"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA7" source="VVBA7"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA8" source="VVBA8"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA9" source="VVBA9"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBB1" source="VVBB1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBB2" source="VVBB2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBB3" source="VVBB3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBB4" source="VVBB4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVAA1" source="VVAA1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBC5" source="VVBC5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBD5" source="VVBD5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBAA" source="VVBAA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBAB" source="VVBAB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBAC" source="VVBAC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBAD" source="VVBAD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBAE" source="VVBAE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBAF" source="VVBAF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBB5" source="VVBB5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBB6" source="VVBB6"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBC6" source="VVBC6"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBE5" source="VVBE5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBE6" source="VVBE6"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBE7" source="VVBE7"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVFE1" source="VVFE1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX30" source="VVX30"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX31" source="VVX31"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX32" source="VVX32"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX33" source="VVX33"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX34" source="VVX34"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX35" source="VVX35"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX36" source="VVX36"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX37" source="VVX37"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX38" source="VVX38"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX39" source="VVX39"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX40" source="VVX40"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX41" source="VVX41"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX42" source="VVX42"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX43" source="VVX43"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX44" source="VVX44"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX45" source="VVX45"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX46" source="VVX46"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+    
+  
+      <mapping xsi:type="Calculation:AttributeMapping" target="HZDAT_1" source="HZDAT"/>
+  
+    </input>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="UNION_COPA_PAPM">
+  <attributes>
+    <attribute id="PALEDGER" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PALEDGER"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="PALEDGER"/>
+    </attribute>
+    <attribute id="VRGAR" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VRGAR"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="VRGAR"/>
+    </attribute>
+    <attribute id="VERSI" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VERSI"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="VERSI"/>
+    </attribute>
+    <attribute id="PERIO" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PERIO"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="PERIO"/>
+    </attribute>
+    <attribute id="PAOBJNR" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PAOBJNR"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="PAOBJNR"/>
+    </attribute>
+    <attribute id="PASUBNR" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PASUBNR"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="PASUBNR"/>
+    </attribute>
+    <attribute id="BELNR" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BELNR"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="BELNR"/>
+    </attribute>
+    <attribute id="POSNR" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="POSNR"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="POSNR"/>
+    </attribute>
+    <attribute id="HZDAT" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="HZDAT"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="HZDAT"/>
+    </attribute>
+    <attribute id="USNAM" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="USNAM"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="USNAM"/>
+    </attribute>
+    <attribute id="GJAHR" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GJAHR"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="GJAHR"/>
+    </attribute>
+    <attribute id="PERDE" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PERDE"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="PERDE"/>
+    </attribute>
+    <attribute id="WADAT" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WADAT"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="WADAT"/>
+    </attribute>
+    <attribute id="FADAT" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FADAT"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="FADAT"/>
+    </attribute>
+    <attribute id="BUDAT" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BUDAT"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="BUDAT"/>
+    </attribute>
+    <attribute id="ALTPERIO" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ALTPERIO"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="ALTPERIO"/>
+    </attribute>
+    <attribute id="PAPAOBJNR" order="18" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PAPAOBJNR"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="PAPAOBJNR"/>
+    </attribute>
+    <attribute id="PAPASUBNR" order="19" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PAPASUBNR"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="PAPASUBNR"/>
+    </attribute>
+    <attribute id="KNDNR" order="20" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KNDNR"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="KNDNR"/>
+    </attribute>
+    <attribute id="ARTNR" order="21" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ARTNR"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="ARTNR"/>
+    </attribute>
+    <attribute id="FKART" order="22" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FKART"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="FKART"/>
+    </attribute>
+    <attribute id="FRWAE" order="23" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FRWAE"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="FRWAE"/>
+    </attribute>
+    <attribute id="REC_WAERS" order="27" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="REC_WAERS"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="REC_WAERS"/>
+    </attribute>
+    <attribute id="KAUFN" order="28" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KAUFN"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="KAUFN"/>
+    </attribute>
+    <attribute id="KDPOS" order="29" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KDPOS"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="KDPOS"/>
+    </attribute>
+    <attribute id="RKAUFNR" order="30" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="RKAUFNR"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="RKAUFNR"/>
+    </attribute>
+    <attribute id="SKOST" order="31" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SKOST"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="SKOST"/>
+    </attribute>
+    <attribute id="PRZNR" order="32" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PRZNR"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="PRZNR"/>
+    </attribute>
+    <attribute id="BUKRS" order="33" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BUKRS"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="BUKRS"/>
+    </attribute>
+    <attribute id="KOKRS" order="34" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KOKRS"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="KOKRS"/>
+    </attribute>
+    <attribute id="WERKS" order="35" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WERKS"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="WERKS"/>
+    </attribute>
+    <attribute id="GSBER" order="36" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GSBER"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="GSBER"/>
+    </attribute>
+    <attribute id="VKORG" order="37" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VKORG"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="VKORG"/>
+    </attribute>
+    <attribute id="VTWEG" order="38" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VTWEG"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="VTWEG"/>
+    </attribute>
+    <attribute id="SPART" order="39" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SPART"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="SPART"/>
+    </attribute>
+    <attribute id="HRKFT" order="40" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="HRKFT"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="HRKFT"/>
+    </attribute>
+    <attribute id="PLIKZ" order="41" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PLIKZ"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="PLIKZ"/>
+    </attribute>
+    <attribute id="KSTAR" order="42" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KSTAR"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="KSTAR"/>
+    </attribute>
+    <attribute id="PSPNR" order="43" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PSPNR"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="PSPNR"/>
+    </attribute>
+    <attribute id="KSTRG" order="44" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KSTRG"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="KSTRG"/>
+    </attribute>
+    <attribute id="RBELN" order="45" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="RBELN"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="RBELN"/>
+    </attribute>
+    <attribute id="RPOSN" order="46" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="RPOSN"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="RPOSN"/>
+    </attribute>
+    <attribute id="STO_BELNR" order="47" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="STO_BELNR"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="STO_BELNR"/>
+    </attribute>
+    <attribute id="STO_POSNR" order="48" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="STO_POSNR"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="STO_POSNR"/>
+    </attribute>
+    <attribute id="PRCTR" order="49" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PRCTR"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="PRCTR"/>
+    </attribute>
+    <attribute id="PPRCTR" order="50" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PPRCTR"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="PPRCTR"/>
+    </attribute>
+    <attribute id="RKESTATU" order="51" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="RKESTATU"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="RKESTATU"/>
+    </attribute>
+    <attribute id="COPA_AWTYP" order="53" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="COPA_AWTYP"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="COPA_AWTYP"/>
+    </attribute>
+    <attribute id="COPA_AWORG" order="54" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="COPA_AWORG"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="COPA_AWORG"/>
+    </attribute>
+    <attribute id="COPA_BWZPT" order="55" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="COPA_BWZPT"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="COPA_BWZPT"/>
+    </attribute>
+    <attribute id="COPA_AWSYS" order="56" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="COPA_AWSYS"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="COPA_AWSYS"/>
+    </attribute>
+    <attribute id="AUGRU" order="57" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="AUGRU"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="AUGRU"/>
+    </attribute>
+    <attribute id="BZIRK" order="58" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BZIRK"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="BZIRK"/>
+    </attribute>
+    <attribute id="KDGRP" order="59" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KDGRP"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="KDGRP"/>
+    </attribute>
+    <attribute id="KMLAND" order="60" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KMLAND"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="KMLAND"/>
+    </attribute>
+    <attribute id="KMVKBU" order="61" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KMVKBU"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="KMVKBU"/>
+    </attribute>
+    <attribute id="KMVKGR" order="62" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KMVKGR"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="KMVKGR"/>
+    </attribute>
+    <attribute id="KTGRD" order="63" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KTGRD"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="KTGRD"/>
+    </attribute>
+    <attribute id="KUNRE" order="64" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KUNRE"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="KUNRE"/>
+    </attribute>
+    <attribute id="KUNWE" order="65" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KUNWE"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="KUNWE"/>
+    </attribute>
+    <attribute id="MATKL" order="66" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MATKL"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="MATKL"/>
+    </attribute>
+    <attribute id="PRODH" order="67" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PRODH"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="PRODH"/>
+    </attribute>
+    <attribute id="WWIND" order="68" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WWIND"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="WWIND"/>
+    </attribute>
+    <attribute id="WWMKT" order="69" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WWMKT"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="WWMKT"/>
+    </attribute>
+    <attribute id="WWBRD" order="70" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WWBRD"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="WWBRD"/>
+    </attribute>
+    <attribute id="CRMCSTY" order="71" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CRMCSTY"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="CRMCSTY"/>
+    </attribute>
+    <attribute id="CRMELEM" order="72" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CRMELEM"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="CRMELEM"/>
+    </attribute>
+    <attribute id="CRMFIGR" order="73" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CRMFIGR"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="CRMFIGR"/>
+    </attribute>
+    <attribute id="WWDES" order="74" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WWDES"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="WWDES"/>
+    </attribute>
+    <attribute id="WWPRG" order="75" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WWPRG"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="WWPRG"/>
+    </attribute>
+    <attribute id="KMHI01" order="76" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KMHI01"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="KMHI01"/>
+    </attribute>
+    <attribute id="KMHI02" order="77" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KMHI02"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="KMHI02"/>
+    </attribute>
+    <attribute id="KMHI03" order="78" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KMHI03"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="KMHI03"/>
+    </attribute>
+    <attribute id="WWPDA" order="79" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WWPDA"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="WWPDA"/>
+    </attribute>
+    <attribute id="KATR9" order="80" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KATR9"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="KATR9"/>
+    </attribute>
+    <attribute id="WWBU1" order="81" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WWBU1"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="WWBU1"/>
+    </attribute>
+    <attribute id="WWFC1" order="82" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WWFC1"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="WWFC1"/>
+    </attribute>
+    <attribute id="WWFC4" order="83" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WWFC4"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="WWFC4"/>
+    </attribute>
+    <attribute id="WWFC5" order="84" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WWFC5"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="WWFC5"/>
+    </attribute>
+    <attribute id="WWGP1" order="85" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WWGP1"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="WWGP1"/>
+    </attribute>
+    <attribute id="VVXX1_ME" order="86" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVXX1_ME"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="VVXX1_ME"/>
+    </attribute>
+    <attribute id="VVXX2_ME" order="87" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VVXX2_ME"/>
+      <keyMapping columnObjectName="UNION_COPA_PAPM" columnName="VVXX2_ME"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures>
+    <measure id="TIMESTAMP" order="9" aggregationType="min" measureType="simple">
+      <descriptions defaultDescription="TIMESTAMP"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="TIMESTAMP"/>
+    </measure>
+    <measure id="KURSF" order="24" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="KURSF"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="KURSF"/>
+    </measure>
+    <measure id="KURSBK" order="25" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="KURSBK"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="KURSBK"/>
+    </measure>
+    <measure id="KURSKZ" order="26" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="KURSKZ"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="KURSKZ"/>
+    </measure>
+    <measure id="TIMESTMP" order="52" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="TIMESTMP"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="TIMESTMP"/>
+    </measure>
+    <measure id="VVX11" order="88" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVX11"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVX11"/>
+    </measure>
+    <measure id="VVX12" order="89" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVX12"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVX12"/>
+    </measure>
+    <measure id="VVXX1" order="90" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVXX1"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVXX1"/>
+    </measure>
+    <measure id="VVXX2" order="91" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVXX2"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVXX2"/>
+    </measure>
+    <measure id="VVXX3" order="92" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVXX3"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVXX3"/>
+    </measure>
+    <measure id="VVXX4" order="93" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVXX4"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVXX4"/>
+    </measure>
+    <measure id="VVXX5" order="94" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVXX5"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVXX5"/>
+    </measure>
+    <measure id="VVXX6" order="95" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVXX6"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVXX6"/>
+    </measure>
+    <measure id="VVXX7" order="96" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVXX7"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVXX7"/>
+    </measure>
+    <measure id="VVX10" order="97" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVX10"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVX10"/>
+    </measure>
+    <measure id="VVX21" order="98" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVX21"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVX21"/>
+    </measure>
+    <measure id="VVX22" order="99" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVX22"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVX22"/>
+    </measure>
+    <measure id="VVX23" order="100" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVX23"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVX23"/>
+    </measure>
+    <measure id="VVX24" order="101" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVX24"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVX24"/>
+    </measure>
+    <measure id="VVX25" order="102" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVX25"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVX25"/>
+    </measure>
+    <measure id="VVX26" order="103" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVX26"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVX26"/>
+    </measure>
+    <measure id="VVX27" order="104" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVX27"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVX27"/>
+    </measure>
+    <measure id="VVX28" order="105" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVX28"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVX28"/>
+    </measure>
+    <measure id="VVX29" order="106" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVX29"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVX29"/>
+    </measure>
+    <measure id="VVXX9" order="107" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVXX9"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVXX9"/>
+    </measure>
+    <measure id="VVX15" order="108" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVX15"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVX15"/>
+    </measure>
+    <measure id="VVFB1" order="109" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVFB1"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVFB1"/>
+    </measure>
+    <measure id="VVFC1" order="110" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVFC1"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVFC1"/>
+    </measure>
+    <measure id="VVFD1" order="111" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVFD1"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVFD1"/>
+    </measure>
+    <measure id="VVEE1" order="112" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVEE1"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVEE1"/>
+    </measure>
+    <measure id="VVEF1" order="113" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVEF1"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVEF1"/>
+    </measure>
+    <measure id="VVFA1" order="114" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVFA1"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVFA1"/>
+    </measure>
+    <measure id="VVCB2" order="115" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVCB2"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVCB2"/>
+    </measure>
+    <measure id="VVCB3" order="116" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVCB3"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVCB3"/>
+    </measure>
+    <measure id="VVCB4" order="117" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVCB4"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVCB4"/>
+    </measure>
+    <measure id="VVCC1" order="118" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVCC1"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVCC1"/>
+    </measure>
+    <measure id="VVDA1" order="119" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVDA1"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVDA1"/>
+    </measure>
+    <measure id="VVDA2" order="120" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVDA2"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVDA2"/>
+    </measure>
+    <measure id="VVDB1" order="121" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVDB1"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVDB1"/>
+    </measure>
+    <measure id="VVDC1" order="122" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVDC1"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVDC1"/>
+    </measure>
+    <measure id="VVDE1" order="123" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVDE1"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVDE1"/>
+    </measure>
+    <measure id="VVDF1" order="124" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVDF1"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVDF1"/>
+    </measure>
+    <measure id="VVEA1" order="125" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVEA1"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVEA1"/>
+    </measure>
+    <measure id="VVEB1" order="126" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVEB1"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVEB1"/>
+    </measure>
+    <measure id="VVEC1" order="127" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVEC1"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVEC1"/>
+    </measure>
+    <measure id="VVED1" order="128" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVED1"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVED1"/>
+    </measure>
+    <measure id="VVBC1" order="129" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVBC1"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVBC1"/>
+    </measure>
+    <measure id="VVBC2" order="130" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVBC2"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVBC2"/>
+    </measure>
+    <measure id="VVBC3" order="131" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVBC3"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVBC3"/>
+    </measure>
+    <measure id="VVBC4" order="132" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVBC4"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVBC4"/>
+    </measure>
+    <measure id="VVBD1" order="133" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVBD1"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVBD1"/>
+    </measure>
+    <measure id="VVBD2" order="134" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVBD2"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVBD2"/>
+    </measure>
+    <measure id="VVBD3" order="135" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVBD3"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVBD3"/>
+    </measure>
+    <measure id="VVBD4" order="136" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVBD4"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVBD4"/>
+    </measure>
+    <measure id="VVBE1" order="137" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVBE1"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVBE1"/>
+    </measure>
+    <measure id="VVBE2" order="138" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVBE2"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVBE2"/>
+    </measure>
+    <measure id="VVBE3" order="139" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVBE3"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVBE3"/>
+    </measure>
+    <measure id="VVBE4" order="140" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVBE4"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVBE4"/>
+    </measure>
+    <measure id="VVBF1" order="141" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVBF1"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVBF1"/>
+    </measure>
+    <measure id="VVCA1" order="142" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVCA1"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVCA1"/>
+    </measure>
+    <measure id="VVCB1" order="143" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVCB1"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVCB1"/>
+    </measure>
+    <measure id="VVAB1" order="144" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVAB1"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVAB1"/>
+    </measure>
+    <measure id="VVBA1" order="145" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVBA1"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVBA1"/>
+    </measure>
+    <measure id="VVBA2" order="146" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVBA2"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVBA2"/>
+    </measure>
+    <measure id="VVBA3" order="147" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVBA3"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVBA3"/>
+    </measure>
+    <measure id="VVBA4" order="148" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVBA4"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVBA4"/>
+    </measure>
+    <measure id="VVBA5" order="149" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVBA5"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVBA5"/>
+    </measure>
+    <measure id="VVBA6" order="150" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVBA6"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVBA6"/>
+    </measure>
+    <measure id="VVBA7" order="151" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVBA7"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVBA7"/>
+    </measure>
+    <measure id="VVBA8" order="152" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVBA8"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVBA8"/>
+    </measure>
+    <measure id="VVBA9" order="153" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVBA9"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVBA9"/>
+    </measure>
+    <measure id="VVBB1" order="154" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVBB1"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVBB1"/>
+    </measure>
+    <measure id="VVBB2" order="155" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVBB2"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVBB2"/>
+    </measure>
+    <measure id="VVBB3" order="156" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVBB3"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVBB3"/>
+    </measure>
+    <measure id="VVBB4" order="157" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVBB4"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVBB4"/>
+    </measure>
+    <measure id="VVAA1" order="158" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVAA1"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVAA1"/>
+    </measure>
+    <measure id="VVBC5" order="159" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVBC5"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVBC5"/>
+    </measure>
+    <measure id="VVBD5" order="160" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVBD5"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVBD5"/>
+    </measure>
+    <measure id="VVBAA" order="161" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVBAA"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVBAA"/>
+    </measure>
+    <measure id="VVBAB" order="162" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVBAB"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVBAB"/>
+    </measure>
+    <measure id="VVBAC" order="163" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVBAC"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVBAC"/>
+    </measure>
+    <measure id="VVBAD" order="164" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVBAD"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVBAD"/>
+    </measure>
+    <measure id="VVBAE" order="165" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVBAE"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVBAE"/>
+    </measure>
+    <measure id="VVBAF" order="166" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVBAF"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVBAF"/>
+    </measure>
+    <measure id="VVBB5" order="167" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVBB5"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVBB5"/>
+    </measure>
+    <measure id="VVBB6" order="168" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVBB6"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVBB6"/>
+    </measure>
+    <measure id="VVBC6" order="169" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVBC6"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVBC6"/>
+    </measure>
+    <measure id="VVBE5" order="170" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVBE5"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVBE5"/>
+    </measure>
+    <measure id="VVBE6" order="171" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVBE6"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVBE6"/>
+    </measure>
+    <measure id="VVBE7" order="172" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVBE7"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVBE7"/>
+    </measure>
+    <measure id="VVFE1" order="173" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVFE1"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVFE1"/>
+    </measure>
+    <measure id="VVX30" order="174" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVX30"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVX30"/>
+    </measure>
+    <measure id="VVX31" order="175" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVX31"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVX31"/>
+    </measure>
+    <measure id="VVX32" order="176" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVX32"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVX32"/>
+    </measure>
+    <measure id="VVX33" order="177" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVX33"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVX33"/>
+    </measure>
+    <measure id="VVX34" order="178" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVX34"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVX34"/>
+    </measure>
+    <measure id="VVX35" order="179" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVX35"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVX35"/>
+    </measure>
+    <measure id="VVX36" order="180" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVX36"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVX36"/>
+    </measure>
+    <measure id="VVX37" order="181" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVX37"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVX37"/>
+    </measure>
+    <measure id="VVX38" order="182" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVX38"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVX38"/>
+    </measure>
+    <measure id="VVX39" order="183" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVX39"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVX39"/>
+    </measure>
+    <measure id="VVX40" order="184" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVX40"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVX40"/>
+    </measure>
+    <measure id="VVX41" order="185" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVX41"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVX41"/>
+    </measure>
+    <measure id="VVX42" order="186" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVX42"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVX42"/>
+    </measure>
+    <measure id="VVX43" order="187" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVX43"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVX43"/>
+    </measure>
+    <measure id="VVX44" order="188" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVX44"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVX44"/>
+    </measure>
+    <measure id="VVX45" order="189" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVX45"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVX45"/>
+    </measure>
+    <measure id="VVX46" order="190" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VVX46"/>
+      <measureMapping columnObjectName="UNION_COPA_PAPM" columnName="VVX46"/>
+    </measure>
+  </baseMeasures>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+
+
+  <localDimensions/>
+
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="222" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    
+  
+    <shape expanded="true" modelObjectName="P_ALLOC" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="356"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="P_MFL1_MFL2" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302" y="356"/>
+      <rectangleSize height="30" width="305"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="UNION_COPA_PAPM" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="202" y="217"/>
+      <rectangleSize height="30" width="199"/>
+    </shape></shapes>
+</layout>
+</Calculation:scenario>

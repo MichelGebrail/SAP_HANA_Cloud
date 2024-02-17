@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="mccain-shared::CV_FAGLFLEXT" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_FAGLFLEXT"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="TGT_FAGLFLEXT">
+    <resourceUri>TGT_FAGLFLEXT</resourceUri>
+  </DataSource>
+  <DataSource id="PriorYear$$$$TGT_FAGLFLEXT$$">
+    <resourceUri>TGT_FAGLFLEXT</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="CurrentYear" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="RYEAR"/>
+      <viewAttribute id="DRCRK"/>
+      <viewAttribute id="RPMAX"/>
+      <viewAttribute id="ACTIV"/>
+      <viewAttribute id="RMVCT"/>
+      <viewAttribute id="RTCUR"/>
+      <viewAttribute id="RUNIT"/>
+      <viewAttribute id="AWTYP"/>
+      <viewAttribute id="RLDNR"/>
+      <viewAttribute id="RRCTY"/>
+      <viewAttribute id="RVERS"/>
+      <viewAttribute id="RACCT"/>
+      <viewAttribute id="COST_ELEM"/>
+      <viewAttribute id="RBUKRS"/>
+      <viewAttribute id="SCNTR"/>
+      <viewAttribute id="PPRCTR"/>
+      <viewAttribute id="SFAREA"/>
+      <viewAttribute id="SBUSA"/>
+      <viewAttribute id="RASSC"/>
+      <viewAttribute id="PSEGMENT"/>
+      <viewAttribute id="HSLVT"/>
+      <viewAttribute id="HSL01"/>
+      <viewAttribute id="HSL02"/>
+      <viewAttribute id="HSL03"/>
+      <viewAttribute id="HSL04"/>
+      <viewAttribute id="HSL05"/>
+      <viewAttribute id="HSL06"/>
+      <viewAttribute id="HSL07"/>
+      <viewAttribute id="HSL08"/>
+      <viewAttribute id="HSL09"/>
+      <viewAttribute id="HSL10"/>
+      <viewAttribute id="HSL11"/>
+      <viewAttribute id="HSL12"/>
+    
+      <viewAttribute id="RCNTR"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="RFAREA"/>
+      <viewAttribute id="RBUSA"/>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="SEGMENT"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="HSLVT_YTD" datatype="DECIMAL" length="23" scale="2" expressionLanguage="SQL">
+        <formula>CASE MONTH(CURRENT_DATE)
+	 WHEN '01' then 0
+	 WHEN '02' then &quot;HSL01&quot;
+	 WHEN '03' then &quot;HSL01&quot;+&quot;HSL02&quot;
+	 WHEN '04' then &quot;HSL01&quot;+&quot;HSL02&quot;+&quot;HSL03&quot;
+	 WHEN '05' then &quot;HSL01&quot;+&quot;HSL02&quot;+&quot;HSL03&quot;+&quot;HSL04&quot;
+	 WHEN '06' then &quot;HSL01&quot;+&quot;HSL02&quot;+&quot;HSL03&quot;+&quot;HSL04&quot;+&quot;HSL05&quot;
+	 WHEN '07' then &quot;HSL01&quot;+&quot;HSL02&quot;+&quot;HSL03&quot;+&quot;HSL04&quot;+&quot;HSL05&quot;+&quot;HSL06&quot;
+	 WHEN '08' then &quot;HSL01&quot;+&quot;HSL02&quot;+&quot;HSL03&quot;+&quot;HSL04&quot;+&quot;HSL05&quot;+&quot;HSL06&quot;+&quot;HSL07&quot;
+	 WHEN '09' then &quot;HSL01&quot;+&quot;HSL02&quot;+&quot;HSL03&quot;+&quot;HSL04&quot;+&quot;HSL05&quot;+&quot;HSL06&quot;+&quot;HSL07&quot;+&quot;HSL08&quot;
+	 WHEN '10' then &quot;HSL01&quot;+&quot;HSL02&quot;+&quot;HSL03&quot;+&quot;HSL04&quot;+&quot;HSL05&quot;+&quot;HSL06&quot;+&quot;HSL07&quot;+&quot;HSL08&quot;+&quot;HSL09&quot;
+	 WHEN '11' then &quot;HSL01&quot;+&quot;HSL02&quot;+&quot;HSL03&quot;+&quot;HSL04&quot;+&quot;HSL05&quot;+&quot;HSL06&quot;+&quot;HSL07&quot;+&quot;HSL08&quot;+&quot;HSL09&quot;+&quot;HSL10&quot;
+	 WHEN '12' then &quot;HSL01&quot;+&quot;HSL02&quot;+&quot;HSL03&quot;+&quot;HSL04&quot;+&quot;HSL05&quot;+&quot;HSL06&quot;+&quot;HSL07&quot;+&quot;HSL08&quot;+&quot;HSL09&quot;+&quot;HSL10&quot;+&quot;HSL11&quot;
+ END</formula>
+      </calculatedViewAttribute>
+    
+      <calculatedViewAttribute id="CC_DATE" datatype="NVARCHAR" length="13" expressionLanguage="SQL">
+    
+        <formula>CURRENT_DATE</formula>
+    
+      </calculatedViewAttribute>
+    
+      <calculatedViewAttribute id="CC_RPMAX" datatype="NVARCHAR" length="3" expressionLanguage="SQL">
+    
+        <formula>MONTH(ADD_MONTHS(CURRENT_DATE, -1))</formula>
+    
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="TGT_FAGLFLEXT"/>
+    <filter>&quot;RYEAR&quot;=YEAR(CURRENT_DATE)</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="PriorYear" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="RYEAR"/>
+      <viewAttribute id="DRCRK"/>
+      <viewAttribute id="RPMAX"/>
+      <viewAttribute id="ACTIV"/>
+      <viewAttribute id="RMVCT"/>
+      <viewAttribute id="RTCUR"/>
+      <viewAttribute id="RUNIT"/>
+      <viewAttribute id="AWTYP"/>
+      <viewAttribute id="RLDNR"/>
+      <viewAttribute id="RRCTY"/>
+      <viewAttribute id="RVERS"/>
+      <viewAttribute id="RACCT"/>
+      <viewAttribute id="COST_ELEM"/>
+      <viewAttribute id="RBUKRS"/>
+      <viewAttribute id="SCNTR"/>
+      <viewAttribute id="PPRCTR"/>
+      <viewAttribute id="SFAREA"/>
+      <viewAttribute id="SBUSA"/>
+      <viewAttribute id="RASSC"/>
+      <viewAttribute id="PSEGMENT"/>
+      <viewAttribute id="HSLVT"/>
+      <viewAttribute id="HSL01"/>
+      <viewAttribute id="HSL02"/>
+      <viewAttribute id="HSL03"/>
+      <viewAttribute id="HSL04"/>
+      <viewAttribute id="HSL05"/>
+      <viewAttribute id="HSL06"/>
+      <viewAttribute id="HSL07"/>
+      <viewAttribute id="HSL08"/>
+      <viewAttribute id="HSL09"/>
+      <viewAttribute id="HSL10"/>
+      <viewAttribute id="HSL11"/>
+      <viewAttribute id="HSL12"/>
+      <viewAttribute id="RCNTR"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="RFAREA"/>
+      <viewAttribute id="RBUSA"/>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="SEGMENT"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="HSLVT_DEC" datatype="DECIMAL" length="23" expressionLanguage="SQL">
+        <formula>&quot;HSL01&quot;+&quot;HSL02&quot;+&quot;HSL03&quot;+&quot;HSL04&quot;+&quot;HSL05&quot;+&quot;HSL06&quot;+&quot;HSL07&quot;+&quot;HSL08&quot;+&quot;HSL09&quot;+&quot;HSL10&quot;+&quot;HSL11&quot;+&quot;HSL12&quot;
+</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="CC_RPMAX" datatype="NVARCHAR" length="3" expressionLanguage="SQL">
+        <formula>MONTH(ADD_MONTHS(CURRENT_DATE, -1))</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="PriorYear$$$$TGT_FAGLFLEXT$$"/>
+    <filter>&quot;RYEAR&quot;=ADD_YEARS(CURRENT_DATE, -1)</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_1">
+    <viewAttributes>
+      <viewAttribute id="RYEAR"/>
+      <viewAttribute id="DRCRK"/>
+      <viewAttribute id="RPMAX"/>
+      <viewAttribute id="ACTIV"/>
+      <viewAttribute id="RMVCT"/>
+      <viewAttribute id="RTCUR"/>
+      <viewAttribute id="RUNIT"/>
+      <viewAttribute id="AWTYP"/>
+      <viewAttribute id="RLDNR"/>
+      <viewAttribute id="RRCTY"/>
+      <viewAttribute id="RVERS"/>
+      <viewAttribute id="RACCT"/>
+      <viewAttribute id="COST_ELEM"/>
+      <viewAttribute id="RBUKRS"/>
+      <viewAttribute id="SCNTR"/>
+      <viewAttribute id="PPRCTR"/>
+      <viewAttribute id="SFAREA"/>
+      <viewAttribute id="SBUSA"/>
+      <viewAttribute id="RASSC"/>
+      <viewAttribute id="PSEGMENT"/>
+      <viewAttribute id="HSLVT" aggregationType="sum"/>
+      <viewAttribute id="HSL01" aggregationType="sum"/>
+      <viewAttribute id="HSL02" aggregationType="sum"/>
+      <viewAttribute id="HSL03" aggregationType="sum"/>
+      <viewAttribute id="HSL04" aggregationType="sum"/>
+      <viewAttribute id="HSL05" aggregationType="sum"/>
+      <viewAttribute id="HSL06" aggregationType="sum"/>
+      <viewAttribute id="HSL07" aggregationType="sum"/>
+      <viewAttribute id="HSL08" aggregationType="sum"/>
+      <viewAttribute id="HSL09" aggregationType="sum"/>
+      <viewAttribute id="HSL10" aggregationType="sum"/>
+      <viewAttribute id="HSL11" aggregationType="sum"/>
+      <viewAttribute id="HSL12" aggregationType="sum"/>
+      <viewAttribute id="RCNTR"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="RFAREA"/>
+      <viewAttribute id="RBUSA"/>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="SEGMENT"/>
+      <viewAttribute id="HSLVT_YTD" aggregationType="sum"/>
+      <viewAttribute id="CC_DATE"/>
+      <viewAttribute id="CC_RPMAX"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="CurrentYear">
+      <mapping xsi:type="Calculation:AttributeMapping" target="RYEAR" source="RYEAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DRCRK" source="DRCRK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RPMAX" source="RPMAX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ACTIV" source="ACTIV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RMVCT" source="RMVCT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RTCUR" source="RTCUR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RUNIT" source="RUNIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AWTYP" source="AWTYP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RLDNR" source="RLDNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RRCTY" source="RRCTY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RVERS" source="RVERS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RACCT" source="RACCT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COST_ELEM" source="COST_ELEM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RBUKRS" source="RBUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SCNTR" source="SCNTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PPRCTR" source="PPRCTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SFAREA" source="SFAREA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SBUSA" source="SBUSA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RASSC" source="RASSC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PSEGMENT" source="PSEGMENT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HSLVT" source="HSLVT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HSL01" source="HSL01"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HSL02" source="HSL02"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HSL03" source="HSL03"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HSL04" source="HSL04"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HSL05" source="HSL05"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HSL06" source="HSL06"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HSL07" source="HSL07"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HSL08" source="HSL08"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HSL09" source="HSL09"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HSL10" source="HSL10"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HSL11" source="HSL11"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HSL12" source="HSL12"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RCNTR" source="RCNTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRCTR" source="PRCTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RFAREA" source="RFAREA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RBUSA" source="RBUSA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOKRS" source="KOKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SEGMENT" source="SEGMENT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HSLVT_YTD" source="HSLVT_YTD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CC_DATE" source="CC_DATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CC_RPMAX" source="CC_RPMAX"/>
+    </input>
+    <input node="PriorYear"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="Join_1">
+  <attributes>
+    <attribute id="RYEAR" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="RYEAR"/>
+      <keyMapping columnObjectName="Join_1" columnName="RYEAR"/>
+    </attribute>
+    <attribute id="DRCRK" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DRCRK"/>
+      <keyMapping columnObjectName="Join_1" columnName="DRCRK"/>
+    </attribute>
+    <attribute id="RPMAX" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="RPMAX"/>
+      <keyMapping columnObjectName="Join_1" columnName="CC_RPMAX"/>
+    </attribute>
+    <attribute id="ACTIV" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ACTIV"/>
+      <keyMapping columnObjectName="Join_1" columnName="ACTIV"/>
+    </attribute>
+    <attribute id="RMVCT" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="RMVCT"/>
+      <keyMapping columnObjectName="Join_1" columnName="RMVCT"/>
+    </attribute>
+    <attribute id="RTCUR" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="RTCUR"/>
+      <keyMapping columnObjectName="Join_1" columnName="RTCUR"/>
+    </attribute>
+    <attribute id="RUNIT" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="RUNIT"/>
+      <keyMapping columnObjectName="Join_1" columnName="RUNIT"/>
+    </attribute>
+    <attribute id="AWTYP" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="AWTYP"/>
+      <keyMapping columnObjectName="Join_1" columnName="AWTYP"/>
+    </attribute>
+    <attribute id="RLDNR" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="RLDNR"/>
+      <keyMapping columnObjectName="Join_1" columnName="RLDNR"/>
+    </attribute>
+    <attribute id="RRCTY" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="RRCTY"/>
+      <keyMapping columnObjectName="Join_1" columnName="RRCTY"/>
+    </attribute>
+    <attribute id="RVERS" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="RVERS"/>
+      <keyMapping columnObjectName="Join_1" columnName="RVERS"/>
+    </attribute>
+    <attribute id="RACCT" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="RACCT"/>
+      <keyMapping columnObjectName="Join_1" columnName="RACCT"/>
+    </attribute>
+    <attribute id="COST_ELEM" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="COST_ELEM"/>
+      <keyMapping columnObjectName="Join_1" columnName="COST_ELEM"/>
+    </attribute>
+    <attribute id="RBUKRS" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="RBUKRS"/>
+      <keyMapping columnObjectName="Join_1" columnName="RBUKRS"/>
+    </attribute>
+    <attribute id="SCNTR" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SCNTR"/>
+      <keyMapping columnObjectName="Join_1" columnName="SCNTR"/>
+    </attribute>
+    <attribute id="PPRCTR" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PPRCTR"/>
+      <keyMapping columnObjectName="Join_1" columnName="PPRCTR"/>
+    </attribute>
+    <attribute id="SFAREA" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SFAREA"/>
+      <keyMapping columnObjectName="Join_1" columnName="SFAREA"/>
+    </attribute>
+    <attribute id="SBUSA" order="18" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SBUSA"/>
+      <keyMapping columnObjectName="Join_1" columnName="SBUSA"/>
+    </attribute>
+    <attribute id="RASSC" order="19" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="RASSC"/>
+      <keyMapping columnObjectName="Join_1" columnName="RASSC"/>
+    </attribute>
+    <attribute id="PSEGMENT" order="20" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PSEGMENT"/>
+      <keyMapping columnObjectName="Join_1" columnName="PSEGMENT"/>
+    </attribute>
+  
+    <attribute id="RCNTR" order="22" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="RCNTR"/>
+  
+      <keyMapping columnObjectName="Join_1" columnName="RCNTR"/>
+  
+    </attribute>
+    <attribute id="PRCTR" order="23" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PRCTR"/>
+      <keyMapping columnObjectName="Join_1" columnName="PRCTR"/>
+    </attribute>
+    <attribute id="RFAREA" order="24" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="RFAREA"/>
+      <keyMapping columnObjectName="Join_1" columnName="RFAREA"/>
+    </attribute>
+    <attribute id="RBUSA" order="25" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="RBUSA"/>
+      <keyMapping columnObjectName="Join_1" columnName="RBUSA"/>
+    </attribute>
+    <attribute id="KOKRS" order="26" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KOKRS"/>
+      <keyMapping columnObjectName="Join_1" columnName="KOKRS"/>
+    </attribute>
+    <attribute id="SEGMENT" order="27" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SEGMENT"/>
+      <keyMapping columnObjectName="Join_1" columnName="SEGMENT"/>
+    </attribute>
+  
+    <attribute id="CC_DATE" order="28" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CC_DATE"/>
+  
+      <keyMapping columnObjectName="Join_1" columnName="CC_DATE"/>
+  
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures>
+    <measure id="HSLVT_YTD" order="21" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="TSLVT_YTD"/>
+      <measureMapping columnObjectName="Join_1" columnName="HSLVT_YTD"/>
+    </measure>
+  </baseMeasures>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+  <localDimensions/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="221" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    
+  
+    <shape expanded="true" modelObjectName="CurrentYear" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="356"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="PriorYear" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302" y="356"/>
+      <rectangleSize width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="221" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="CurrentYear" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="PriorYear" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="152"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

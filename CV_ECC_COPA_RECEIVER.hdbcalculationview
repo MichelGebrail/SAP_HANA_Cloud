@@ -1,0 +1,2341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="mccain-shared::CV_ECC_COPA_RECEIVER" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_ECC_COPA_DATA"/>
+<localVariables>
+  <variable id="IP_PERIO" parameter="true">
+    <descriptions defaultDescription="PERIOD"/>
+    <variableProperties datatype="NVARCHAR" length="7" mandatory="false">
+      <valueDomain type="empty"/>
+      <selection multiLine="false" type="SingleValue"/>
+    </variableProperties>
+  </variable>
+  <variable id="IP_BUKRS" parameter="true">
+    <descriptions defaultDescription="BUKRS"/>
+    <variableProperties datatype="NVARCHAR" length="4" mandatory="false">
+      <valueDomain type="empty"/>
+      <selection multiLine="false" type="SingleValue"/>
+    </variableProperties>
+  </variable>
+</localVariables>
+<variableMappings/>
+<dataSources>
+  <DataSource id="TGT_CE1MFL1_01">
+    <resourceUri>TGT_CE1MFL1_01</resourceUri>
+  </DataSource>
+  <DataSource id="TGT_CE1MFL1_02">
+    <resourceUri>TGT_CE1MFL1_02</resourceUri>
+  </DataSource>
+  <DataSource id="TGT_CE1MFL2">
+    <resourceUri>TGT_CE1MFL2</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_MFL1_01" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="PALEDGER"/>
+      <viewAttribute id="VRGAR"/>
+      <viewAttribute id="VERSI"/>
+      <viewAttribute id="PERIO"/>
+      <viewAttribute id="PAOBJNR"/>
+      <viewAttribute id="PASUBNR"/>
+      <viewAttribute id="BELNR"/>
+      <viewAttribute id="POSNR"/>
+      <viewAttribute id="HZDAT"/>
+      <viewAttribute id="USNAM"/>
+      <viewAttribute id="GJAHR"/>
+      <viewAttribute id="PERDE"/>
+      <viewAttribute id="WADAT"/>
+      <viewAttribute id="FADAT"/>
+      <viewAttribute id="BUDAT"/>
+      <viewAttribute id="ALTPERIO"/>
+      <viewAttribute id="PAPAOBJNR"/>
+      <viewAttribute id="PAPASUBNR"/>
+      <viewAttribute id="KNDNR"/>
+      <viewAttribute id="ARTNR"/>
+      <viewAttribute id="FKART"/>
+      <viewAttribute id="FRWAE"/>
+      <viewAttribute id="KURSF"/>
+      <viewAttribute id="KURSBK"/>
+      <viewAttribute id="KURSKZ"/>
+      <viewAttribute id="REC_WAERS"/>
+      <viewAttribute id="KAUFN"/>
+      <viewAttribute id="KDPOS"/>
+      <viewAttribute id="RKAUFNR"/>
+      <viewAttribute id="SKOST"/>
+      <viewAttribute id="PRZNR"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="GSBER"/>
+      <viewAttribute id="VKORG"/>
+      <viewAttribute id="VTWEG"/>
+      <viewAttribute id="SPART"/>
+      <viewAttribute id="HRKFT"/>
+      <viewAttribute id="PLIKZ"/>
+      <viewAttribute id="KSTAR"/>
+      <viewAttribute id="PSPNR"/>
+      <viewAttribute id="KSTRG"/>
+      <viewAttribute id="RBELN"/>
+      <viewAttribute id="RPOSN"/>
+      <viewAttribute id="STO_BELNR"/>
+      <viewAttribute id="STO_POSNR"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="PPRCTR"/>
+      <viewAttribute id="RKESTATU"/>
+      <viewAttribute id="TIMESTMP"/>
+      <viewAttribute id="COPA_AWTYP"/>
+      <viewAttribute id="COPA_AWORG"/>
+      <viewAttribute id="COPA_BWZPT"/>
+      <viewAttribute id="COPA_AWSYS"/>
+      <viewAttribute id="AUGRU"/>
+      <viewAttribute id="BZIRK"/>
+      <viewAttribute id="KDGRP"/>
+      <viewAttribute id="KMLAND"/>
+      <viewAttribute id="KMVKBU"/>
+      <viewAttribute id="KMVKGR"/>
+      <viewAttribute id="KTGRD"/>
+      <viewAttribute id="KUNRE"/>
+      <viewAttribute id="KUNWE"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="PRODH"/>
+      <viewAttribute id="WWIND"/>
+      <viewAttribute id="WWMKT"/>
+      <viewAttribute id="WWBRD"/>
+      <viewAttribute id="CRMCSTY"/>
+      <viewAttribute id="CRMELEM"/>
+      <viewAttribute id="CRMFIGR"/>
+      <viewAttribute id="WWDES"/>
+      <viewAttribute id="WWPRG"/>
+      <viewAttribute id="KMHI01"/>
+      <viewAttribute id="KMHI02"/>
+      <viewAttribute id="KMHI03"/>
+      <viewAttribute id="WWPDA"/>
+      <viewAttribute id="VVXX1_ME"/>
+      <viewAttribute id="VVXX2_ME"/>
+      <viewAttribute id="VVX11"/>
+      <viewAttribute id="VVX12"/>
+      <viewAttribute id="VVXX1"/>
+      <viewAttribute id="VVXX2"/>
+      <viewAttribute id="VVXX3"/>
+      <viewAttribute id="VVXX4"/>
+      <viewAttribute id="VVXX5"/>
+      <viewAttribute id="VVXX6"/>
+      <viewAttribute id="VVXX7"/>
+      <viewAttribute id="VVX10"/>
+      <viewAttribute id="VVX21"/>
+      <viewAttribute id="VVX22"/>
+      <viewAttribute id="VVX23"/>
+      <viewAttribute id="VVX24"/>
+      <viewAttribute id="VVX25"/>
+      <viewAttribute id="VVX26"/>
+      <viewAttribute id="VVX27"/>
+      <viewAttribute id="VVX28"/>
+      <viewAttribute id="VVX29"/>
+      <viewAttribute id="VVXX9"/>
+      <viewAttribute id="VVX15"/>
+      <viewAttribute id="VVFB1"/>
+      <viewAttribute id="VVFC1"/>
+      <viewAttribute id="VVFD1"/>
+      <viewAttribute id="VVEE1"/>
+      <viewAttribute id="VVEF1"/>
+      <viewAttribute id="VVFA1"/>
+      <viewAttribute id="VVCB2"/>
+      <viewAttribute id="VVCB3"/>
+      <viewAttribute id="VVCB4"/>
+      <viewAttribute id="VVCC1"/>
+      <viewAttribute id="VVDA1"/>
+      <viewAttribute id="VVDA2"/>
+      <viewAttribute id="VVDB1"/>
+      <viewAttribute id="VVDC1"/>
+      <viewAttribute id="VVDE1"/>
+      <viewAttribute id="VVDF1"/>
+      <viewAttribute id="VVEA1"/>
+      <viewAttribute id="VVEB1"/>
+      <viewAttribute id="VVEC1"/>
+      <viewAttribute id="VVED1"/>
+      <viewAttribute id="VVBC1"/>
+      <viewAttribute id="VVBC2"/>
+      <viewAttribute id="VVBC3"/>
+      <viewAttribute id="VVBC4"/>
+      <viewAttribute id="VVBD1"/>
+      <viewAttribute id="VVBD2"/>
+      <viewAttribute id="VVBD3"/>
+      <viewAttribute id="VVBD4"/>
+      <viewAttribute id="VVBE1"/>
+      <viewAttribute id="VVBE2"/>
+      <viewAttribute id="VVBE3"/>
+      <viewAttribute id="VVBE4"/>
+      <viewAttribute id="VVBF1"/>
+      <viewAttribute id="VVCA1"/>
+      <viewAttribute id="VVCB1"/>
+      <viewAttribute id="VVAB1"/>
+      <viewAttribute id="VVBA1"/>
+      <viewAttribute id="VVBA2"/>
+      <viewAttribute id="VVBA3"/>
+      <viewAttribute id="VVBA4"/>
+      <viewAttribute id="VVBA5"/>
+      <viewAttribute id="VVBA6"/>
+      <viewAttribute id="VVBA7"/>
+      <viewAttribute id="VVBA8"/>
+      <viewAttribute id="VVBA9"/>
+      <viewAttribute id="VVBB1"/>
+      <viewAttribute id="VVBB2"/>
+      <viewAttribute id="VVBB3"/>
+      <viewAttribute id="VVBB4"/>
+      <viewAttribute id="VVAA1"/>
+      <viewAttribute id="VVBC5"/>
+      <viewAttribute id="VVBD5"/>
+      <viewAttribute id="VVBAA"/>
+      <viewAttribute id="VVBAB"/>
+      <viewAttribute id="VVBAC"/>
+      <viewAttribute id="VVBAD"/>
+      <viewAttribute id="VVBAE"/>
+      <viewAttribute id="VVBAF"/>
+      <viewAttribute id="VVBB5"/>
+      <viewAttribute id="VVBB6"/>
+      <viewAttribute id="VVBC6"/>
+      <viewAttribute id="VVBE5"/>
+      <viewAttribute id="VVBE6"/>
+      <viewAttribute id="VVBE7"/>
+      <viewAttribute id="VVFE1"/>
+      <viewAttribute id="KATR9"/>
+      <viewAttribute id="WWBU1"/>
+      <viewAttribute id="WWFC1"/>
+      <viewAttribute id="WWFC4"/>
+      <viewAttribute id="WWFC5"/>
+      <viewAttribute id="WWGP1"/>
+      <viewAttribute id="VVX30"/>
+      <viewAttribute id="VVX31"/>
+      <viewAttribute id="VVX32"/>
+      <viewAttribute id="VVX33"/>
+      <viewAttribute id="VVX34"/>
+      <viewAttribute id="VVX35"/>
+      <viewAttribute id="VVX36"/>
+      <viewAttribute id="VVX37"/>
+      <viewAttribute id="VVX38"/>
+      <viewAttribute id="VVX39"/>
+      <viewAttribute id="VVX40"/>
+      <viewAttribute id="VVX41"/>
+      <viewAttribute id="VVX42"/>
+      <viewAttribute id="VVX43"/>
+      <viewAttribute id="VVX44"/>
+      <viewAttribute id="VVX45"/>
+      <viewAttribute id="VVX46"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="TGT_CE1MFL1_01"/>
+    <filter>&quot;VTWEG&quot; = '10' AND &quot;PALEDGER&quot; = '01' AND &quot;VRGAR&quot; IN ('B', 'F')</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_MFL1_02" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="PALEDGER"/>
+      <viewAttribute id="VRGAR"/>
+      <viewAttribute id="VERSI"/>
+      <viewAttribute id="PERIO"/>
+      <viewAttribute id="PAOBJNR"/>
+      <viewAttribute id="PASUBNR"/>
+      <viewAttribute id="BELNR"/>
+      <viewAttribute id="POSNR"/>
+      <viewAttribute id="HZDAT"/>
+      <viewAttribute id="USNAM"/>
+      <viewAttribute id="GJAHR"/>
+      <viewAttribute id="PERDE"/>
+      <viewAttribute id="WADAT"/>
+      <viewAttribute id="FADAT"/>
+      <viewAttribute id="BUDAT"/>
+      <viewAttribute id="ALTPERIO"/>
+      <viewAttribute id="PAPAOBJNR"/>
+      <viewAttribute id="PAPASUBNR"/>
+      <viewAttribute id="KNDNR"/>
+      <viewAttribute id="ARTNR"/>
+      <viewAttribute id="FKART"/>
+      <viewAttribute id="FRWAE"/>
+      <viewAttribute id="KURSF"/>
+      <viewAttribute id="KURSBK"/>
+      <viewAttribute id="KURSKZ"/>
+      <viewAttribute id="REC_WAERS"/>
+      <viewAttribute id="KAUFN"/>
+      <viewAttribute id="KDPOS"/>
+      <viewAttribute id="RKAUFNR"/>
+      <viewAttribute id="SKOST"/>
+      <viewAttribute id="PRZNR"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="GSBER"/>
+      <viewAttribute id="VKORG"/>
+      <viewAttribute id="VTWEG"/>
+      <viewAttribute id="SPART"/>
+      <viewAttribute id="HRKFT"/>
+      <viewAttribute id="PLIKZ"/>
+      <viewAttribute id="KSTAR"/>
+      <viewAttribute id="PSPNR"/>
+      <viewAttribute id="KSTRG"/>
+      <viewAttribute id="RBELN"/>
+      <viewAttribute id="RPOSN"/>
+      <viewAttribute id="STO_BELNR"/>
+      <viewAttribute id="STO_POSNR"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="PPRCTR"/>
+      <viewAttribute id="RKESTATU"/>
+      <viewAttribute id="TIMESTMP"/>
+      <viewAttribute id="COPA_AWTYP"/>
+      <viewAttribute id="COPA_AWORG"/>
+      <viewAttribute id="COPA_BWZPT"/>
+      <viewAttribute id="COPA_AWSYS"/>
+      <viewAttribute id="AUGRU"/>
+      <viewAttribute id="BZIRK"/>
+      <viewAttribute id="KDGRP"/>
+      <viewAttribute id="KMLAND"/>
+      <viewAttribute id="KMVKBU"/>
+      <viewAttribute id="KMVKGR"/>
+      <viewAttribute id="KTGRD"/>
+      <viewAttribute id="KUNRE"/>
+      <viewAttribute id="KUNWE"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="PRODH"/>
+      <viewAttribute id="WWIND"/>
+      <viewAttribute id="WWMKT"/>
+      <viewAttribute id="WWBRD"/>
+      <viewAttribute id="CRMCSTY"/>
+      <viewAttribute id="CRMELEM"/>
+      <viewAttribute id="CRMFIGR"/>
+      <viewAttribute id="WWDES"/>
+      <viewAttribute id="WWPRG"/>
+      <viewAttribute id="KMHI01"/>
+      <viewAttribute id="KMHI02"/>
+      <viewAttribute id="KMHI03"/>
+      <viewAttribute id="WWPDA"/>
+      <viewAttribute id="VVXX1_ME"/>
+      <viewAttribute id="VVXX2_ME"/>
+      <viewAttribute id="VVX11"/>
+      <viewAttribute id="VVX12"/>
+      <viewAttribute id="VVXX1"/>
+      <viewAttribute id="VVXX2"/>
+      <viewAttribute id="VVXX3"/>
+      <viewAttribute id="VVXX4"/>
+      <viewAttribute id="VVXX5"/>
+      <viewAttribute id="VVXX6"/>
+      <viewAttribute id="VVXX7"/>
+      <viewAttribute id="VVX10"/>
+      <viewAttribute id="VVX21"/>
+      <viewAttribute id="VVX22"/>
+      <viewAttribute id="VVX23"/>
+      <viewAttribute id="VVX24"/>
+      <viewAttribute id="VVX25"/>
+      <viewAttribute id="VVX26"/>
+      <viewAttribute id="VVX27"/>
+      <viewAttribute id="VVX28"/>
+      <viewAttribute id="VVX29"/>
+      <viewAttribute id="VVXX9"/>
+      <viewAttribute id="VVX15"/>
+      <viewAttribute id="VVFB1"/>
+      <viewAttribute id="VVFC1"/>
+      <viewAttribute id="VVFD1"/>
+      <viewAttribute id="VVEE1"/>
+      <viewAttribute id="VVEF1"/>
+      <viewAttribute id="VVFA1"/>
+      <viewAttribute id="VVCB2"/>
+      <viewAttribute id="VVCB3"/>
+      <viewAttribute id="VVCB4"/>
+      <viewAttribute id="VVCC1"/>
+      <viewAttribute id="VVDA1"/>
+      <viewAttribute id="VVDA2"/>
+      <viewAttribute id="VVDB1"/>
+      <viewAttribute id="VVDC1"/>
+      <viewAttribute id="VVDE1"/>
+      <viewAttribute id="VVDF1"/>
+      <viewAttribute id="VVEA1"/>
+      <viewAttribute id="VVEB1"/>
+      <viewAttribute id="VVEC1"/>
+      <viewAttribute id="VVED1"/>
+      <viewAttribute id="VVBC1"/>
+      <viewAttribute id="VVBC2"/>
+      <viewAttribute id="VVBC3"/>
+      <viewAttribute id="VVBC4"/>
+      <viewAttribute id="VVBD1"/>
+      <viewAttribute id="VVBD2"/>
+      <viewAttribute id="VVBD3"/>
+      <viewAttribute id="VVBD4"/>
+      <viewAttribute id="VVBE1"/>
+      <viewAttribute id="VVBE2"/>
+      <viewAttribute id="VVBE3"/>
+      <viewAttribute id="VVBE4"/>
+      <viewAttribute id="VVBF1"/>
+      <viewAttribute id="VVCA1"/>
+      <viewAttribute id="VVCB1"/>
+      <viewAttribute id="VVAB1"/>
+      <viewAttribute id="VVBA1"/>
+      <viewAttribute id="VVBA2"/>
+      <viewAttribute id="VVBA3"/>
+      <viewAttribute id="VVBA4"/>
+      <viewAttribute id="VVBA5"/>
+      <viewAttribute id="VVBA6"/>
+      <viewAttribute id="VVBA7"/>
+      <viewAttribute id="VVBA8"/>
+      <viewAttribute id="VVBA9"/>
+      <viewAttribute id="VVBB1"/>
+      <viewAttribute id="VVBB2"/>
+      <viewAttribute id="VVBB3"/>
+      <viewAttribute id="VVBB4"/>
+      <viewAttribute id="VVAA1"/>
+      <viewAttribute id="VVBC5"/>
+      <viewAttribute id="VVBD5"/>
+      <viewAttribute id="VVBAA"/>
+      <viewAttribute id="VVBAB"/>
+      <viewAttribute id="VVBAC"/>
+      <viewAttribute id="VVBAD"/>
+      <viewAttribute id="VVBAE"/>
+      <viewAttribute id="VVBAF"/>
+      <viewAttribute id="VVBB5"/>
+      <viewAttribute id="VVBB6"/>
+      <viewAttribute id="VVBC6"/>
+      <viewAttribute id="VVBE5"/>
+      <viewAttribute id="VVBE6"/>
+      <viewAttribute id="VVBE7"/>
+      <viewAttribute id="VVFE1"/>
+      <viewAttribute id="KATR9"/>
+      <viewAttribute id="WWBU1"/>
+      <viewAttribute id="WWFC1"/>
+      <viewAttribute id="WWFC4"/>
+      <viewAttribute id="WWFC5"/>
+      <viewAttribute id="WWGP1"/>
+      <viewAttribute id="VVX30"/>
+      <viewAttribute id="VVX31"/>
+      <viewAttribute id="VVX32"/>
+      <viewAttribute id="VVX33"/>
+      <viewAttribute id="VVX34"/>
+      <viewAttribute id="VVX35"/>
+      <viewAttribute id="VVX36"/>
+      <viewAttribute id="VVX37"/>
+      <viewAttribute id="VVX38"/>
+      <viewAttribute id="VVX39"/>
+      <viewAttribute id="VVX40"/>
+      <viewAttribute id="VVX41"/>
+      <viewAttribute id="VVX42"/>
+      <viewAttribute id="VVX43"/>
+      <viewAttribute id="VVX44"/>
+      <viewAttribute id="VVX45"/>
+      <viewAttribute id="VVX46"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="TGT_CE1MFL1_02"/>
+    <filter>&quot;VTWEG&quot; = '10' AND &quot;PALEDGER&quot; = '01' AND &quot;VRGAR&quot; IN ('B', 'F')</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:UnionView" id="Union">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="PALEDGER"/>
+      <viewAttribute id="VRGAR"/>
+      <viewAttribute id="VERSI"/>
+      <viewAttribute id="PERIO"/>
+      <viewAttribute id="PAOBJNR"/>
+      <viewAttribute id="PASUBNR"/>
+      <viewAttribute id="BELNR"/>
+      <viewAttribute id="POSNR"/>
+      <viewAttribute id="HZDAT"/>
+      <viewAttribute id="USNAM"/>
+      <viewAttribute id="GJAHR"/>
+      <viewAttribute id="PERDE"/>
+      <viewAttribute id="WADAT"/>
+      <viewAttribute id="FADAT"/>
+      <viewAttribute id="BUDAT"/>
+      <viewAttribute id="ALTPERIO"/>
+      <viewAttribute id="PAPAOBJNR"/>
+      <viewAttribute id="PAPASUBNR"/>
+      <viewAttribute id="KNDNR"/>
+      <viewAttribute id="ARTNR"/>
+      <viewAttribute id="FKART"/>
+      <viewAttribute id="FRWAE"/>
+      <viewAttribute id="KURSF"/>
+      <viewAttribute id="KURSBK"/>
+      <viewAttribute id="KURSKZ"/>
+      <viewAttribute id="REC_WAERS"/>
+      <viewAttribute id="KAUFN"/>
+      <viewAttribute id="KDPOS"/>
+      <viewAttribute id="RKAUFNR"/>
+      <viewAttribute id="SKOST"/>
+      <viewAttribute id="PRZNR"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="GSBER"/>
+      <viewAttribute id="VKORG"/>
+      <viewAttribute id="VTWEG"/>
+      <viewAttribute id="SPART"/>
+      <viewAttribute id="HRKFT"/>
+      <viewAttribute id="PLIKZ"/>
+      <viewAttribute id="KSTAR"/>
+      <viewAttribute id="PSPNR"/>
+      <viewAttribute id="KSTRG"/>
+      <viewAttribute id="RBELN"/>
+      <viewAttribute id="RPOSN"/>
+      <viewAttribute id="STO_BELNR"/>
+      <viewAttribute id="STO_POSNR"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="PPRCTR"/>
+      <viewAttribute id="RKESTATU"/>
+      <viewAttribute id="TIMESTMP"/>
+      <viewAttribute id="COPA_AWTYP"/>
+      <viewAttribute id="COPA_AWORG"/>
+      <viewAttribute id="COPA_BWZPT"/>
+      <viewAttribute id="COPA_AWSYS"/>
+      <viewAttribute id="AUGRU"/>
+      <viewAttribute id="BZIRK"/>
+      <viewAttribute id="KDGRP"/>
+      <viewAttribute id="KMLAND"/>
+      <viewAttribute id="KMVKBU"/>
+      <viewAttribute id="KMVKGR"/>
+      <viewAttribute id="KTGRD"/>
+      <viewAttribute id="KUNRE"/>
+      <viewAttribute id="KUNWE"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="PRODH"/>
+      <viewAttribute id="WWIND"/>
+      <viewAttribute id="WWMKT"/>
+      <viewAttribute id="WWBRD"/>
+      <viewAttribute id="CRMCSTY"/>
+      <viewAttribute id="CRMELEM"/>
+      <viewAttribute id="CRMFIGR"/>
+      <viewAttribute id="WWDES"/>
+      <viewAttribute id="WWPRG"/>
+      <viewAttribute id="KMHI01"/>
+      <viewAttribute id="KMHI02"/>
+      <viewAttribute id="KMHI03"/>
+      <viewAttribute id="WWPDA"/>
+      <viewAttribute id="VVXX1_ME"/>
+      <viewAttribute id="VVXX2_ME"/>
+      <viewAttribute id="VVX11"/>
+      <viewAttribute id="VVX12"/>
+      <viewAttribute id="VVXX1"/>
+      <viewAttribute id="VVXX2"/>
+      <viewAttribute id="VVXX3"/>
+      <viewAttribute id="VVXX4"/>
+      <viewAttribute id="VVXX5"/>
+      <viewAttribute id="VVXX6"/>
+      <viewAttribute id="VVXX7"/>
+      <viewAttribute id="VVX10"/>
+      <viewAttribute id="VVX21"/>
+      <viewAttribute id="VVX22"/>
+      <viewAttribute id="VVX23"/>
+      <viewAttribute id="VVX24"/>
+      <viewAttribute id="VVX25"/>
+      <viewAttribute id="VVX26"/>
+      <viewAttribute id="VVX27"/>
+      <viewAttribute id="VVX28"/>
+      <viewAttribute id="VVX29"/>
+      <viewAttribute id="VVXX9"/>
+      <viewAttribute id="VVX15"/>
+      <viewAttribute id="VVFB1"/>
+      <viewAttribute id="VVFC1"/>
+      <viewAttribute id="VVFD1"/>
+      <viewAttribute id="VVEE1"/>
+      <viewAttribute id="VVEF1"/>
+      <viewAttribute id="VVFA1"/>
+      <viewAttribute id="VVCB2"/>
+      <viewAttribute id="VVCB3"/>
+      <viewAttribute id="VVCB4"/>
+      <viewAttribute id="VVCC1"/>
+      <viewAttribute id="VVDA1"/>
+      <viewAttribute id="VVDA2"/>
+      <viewAttribute id="VVDB1"/>
+      <viewAttribute id="VVDC1"/>
+      <viewAttribute id="VVDE1"/>
+      <viewAttribute id="VVDF1"/>
+      <viewAttribute id="VVEA1"/>
+      <viewAttribute id="VVEB1"/>
+      <viewAttribute id="VVEC1"/>
+      <viewAttribute id="VVED1"/>
+      <viewAttribute id="VVBC1"/>
+      <viewAttribute id="VVBC2"/>
+      <viewAttribute id="VVBC3"/>
+      <viewAttribute id="VVBC4"/>
+      <viewAttribute id="VVBD1"/>
+      <viewAttribute id="VVBD2"/>
+      <viewAttribute id="VVBD3"/>
+      <viewAttribute id="VVBD4"/>
+      <viewAttribute id="VVBE1"/>
+      <viewAttribute id="VVBE2"/>
+      <viewAttribute id="VVBE3"/>
+      <viewAttribute id="VVBE4"/>
+      <viewAttribute id="VVBF1"/>
+      <viewAttribute id="VVCA1"/>
+      <viewAttribute id="VVCB1"/>
+      <viewAttribute id="VVAB1"/>
+      <viewAttribute id="VVBA1"/>
+      <viewAttribute id="VVBA2"/>
+      <viewAttribute id="VVBA3"/>
+      <viewAttribute id="VVBA4"/>
+      <viewAttribute id="VVBA5"/>
+      <viewAttribute id="VVBA6"/>
+      <viewAttribute id="VVBA7"/>
+      <viewAttribute id="VVBA8"/>
+      <viewAttribute id="VVBA9"/>
+      <viewAttribute id="VVBB1"/>
+      <viewAttribute id="VVBB2"/>
+      <viewAttribute id="VVBB3"/>
+      <viewAttribute id="VVBB4"/>
+      <viewAttribute id="VVAA1"/>
+      <viewAttribute id="VVBC5"/>
+      <viewAttribute id="VVBD5"/>
+      <viewAttribute id="VVBAA"/>
+      <viewAttribute id="VVBAB"/>
+      <viewAttribute id="VVBAC"/>
+      <viewAttribute id="VVBAD"/>
+      <viewAttribute id="VVBAE"/>
+      <viewAttribute id="VVBAF"/>
+      <viewAttribute id="VVBB5"/>
+      <viewAttribute id="VVBB6"/>
+      <viewAttribute id="VVBC6"/>
+      <viewAttribute id="VVBE5"/>
+      <viewAttribute id="VVBE6"/>
+      <viewAttribute id="VVBE7"/>
+      <viewAttribute id="VVFE1"/>
+      <viewAttribute id="KATR9"/>
+      <viewAttribute id="WWBU1"/>
+      <viewAttribute id="WWFC1"/>
+      <viewAttribute id="WWFC4"/>
+      <viewAttribute id="WWFC5"/>
+      <viewAttribute id="WWGP1"/>
+      <viewAttribute id="VVX30"/>
+      <viewAttribute id="VVX31"/>
+      <viewAttribute id="VVX32"/>
+      <viewAttribute id="VVX33"/>
+      <viewAttribute id="VVX34"/>
+      <viewAttribute id="VVX35"/>
+      <viewAttribute id="VVX36"/>
+      <viewAttribute id="VVX37"/>
+      <viewAttribute id="VVX38"/>
+      <viewAttribute id="VVX39"/>
+      <viewAttribute id="VVX40"/>
+      <viewAttribute id="VVX41"/>
+      <viewAttribute id="VVX42"/>
+      <viewAttribute id="VVX43"/>
+      <viewAttribute id="VVX44"/>
+      <viewAttribute id="VVX45"/>
+      <viewAttribute id="VVX46"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="COGS" datatype="DECIMAL" length="23" scale="2" expressionLanguage="SQL">
+        <formula>&quot;VVCA1&quot; - (&quot;VVX26&quot; + &quot;VVX27&quot; + &quot;VVX28&quot;)</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="STORAGE" datatype="DECIMAL" length="23" scale="2" expressionLanguage="SQL">
+        <formula>&quot;VVCC1&quot; + &quot;VVX27&quot;</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="FREIGHT" datatype="DECIMAL" length="23" scale="2" expressionLanguage="SQL">
+        <formula>&quot;VVCB1&quot;+&quot;VVCB2&quot;+&quot;VVCB3&quot;+&quot;VVCB4&quot;+&quot;VVX28&quot;</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="P_MFL1_01" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PALEDGER" source="PALEDGER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VRGAR" source="VRGAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERSI" source="VERSI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PERIO" source="PERIO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAOBJNR" source="PAOBJNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PASUBNR" source="PASUBNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BELNR" source="BELNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POSNR" source="POSNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HZDAT" source="HZDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="USNAM" source="USNAM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GJAHR" source="GJAHR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PERDE" source="PERDE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WADAT" source="WADAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FADAT" source="FADAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUDAT" source="BUDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ALTPERIO" source="ALTPERIO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAPAOBJNR" source="PAPAOBJNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAPASUBNR" source="PAPASUBNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KNDNR" source="KNDNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ARTNR" source="ARTNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FKART" source="FKART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FRWAE" source="FRWAE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KURSF" source="KURSF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KURSBK" source="KURSBK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KURSKZ" source="KURSKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REC_WAERS" source="REC_WAERS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KAUFN" source="KAUFN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KDPOS" source="KDPOS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RKAUFNR" source="RKAUFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SKOST" source="SKOST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRZNR" source="PRZNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOKRS" source="KOKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GSBER" source="GSBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VKORG" source="VKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VTWEG" source="VTWEG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPART" source="SPART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HRKFT" source="HRKFT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PLIKZ" source="PLIKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KSTAR" source="KSTAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PSPNR" source="PSPNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KSTRG" source="KSTRG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RBELN" source="RBELN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RPOSN" source="RPOSN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STO_BELNR" source="STO_BELNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STO_POSNR" source="STO_POSNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRCTR" source="PRCTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PPRCTR" source="PPRCTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RKESTATU" source="RKESTATU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TIMESTMP" source="TIMESTMP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COPA_AWTYP" source="COPA_AWTYP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COPA_AWORG" source="COPA_AWORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COPA_BWZPT" source="COPA_BWZPT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COPA_AWSYS" source="COPA_AWSYS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AUGRU" source="AUGRU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BZIRK" source="BZIRK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KDGRP" source="KDGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KMLAND" source="KMLAND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KMVKBU" source="KMVKBU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KMVKGR" source="KMVKGR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KTGRD" source="KTGRD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KUNRE" source="KUNRE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KUNWE" source="KUNWE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL" source="MATKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRODH" source="PRODH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWIND" source="WWIND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWMKT" source="WWMKT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWBRD" source="WWBRD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CRMCSTY" source="CRMCSTY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CRMELEM" source="CRMELEM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CRMFIGR" source="CRMFIGR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWDES" source="WWDES"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWPRG" source="WWPRG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KMHI01" source="KMHI01"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KMHI02" source="KMHI02"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KMHI03" source="KMHI03"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWPDA" source="WWPDA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX1_ME" source="VVXX1_ME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX2_ME" source="VVXX2_ME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX11" source="VVX11"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX12" source="VVX12"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX1" source="VVXX1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX2" source="VVXX2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX3" source="VVXX3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX4" source="VVXX4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX5" source="VVXX5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX6" source="VVXX6"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX7" source="VVXX7"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX10" source="VVX10"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX21" source="VVX21"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX22" source="VVX22"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX23" source="VVX23"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX24" source="VVX24"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX25" source="VVX25"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX26" source="VVX26"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX27" source="VVX27"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX28" source="VVX28"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX29" source="VVX29"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX9" source="VVXX9"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX15" source="VVX15"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVFB1" source="VVFB1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVFC1" source="VVFC1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVFD1" source="VVFD1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVEE1" source="VVEE1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVEF1" source="VVEF1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVFA1" source="VVFA1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVCB2" source="VVCB2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVCB3" source="VVCB3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVCB4" source="VVCB4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVCC1" source="VVCC1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVDA1" source="VVDA1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVDA2" source="VVDA2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVDB1" source="VVDB1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVDC1" source="VVDC1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVDE1" source="VVDE1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVDF1" source="VVDF1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVEA1" source="VVEA1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVEB1" source="VVEB1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVEC1" source="VVEC1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVED1" source="VVED1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBC1" source="VVBC1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBC2" source="VVBC2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBC3" source="VVBC3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBC4" source="VVBC4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBD1" source="VVBD1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBD2" source="VVBD2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBD3" source="VVBD3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBD4" source="VVBD4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBE1" source="VVBE1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBE2" source="VVBE2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBE3" source="VVBE3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBE4" source="VVBE4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBF1" source="VVBF1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVCA1" source="VVCA1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVCB1" source="VVCB1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVAB1" source="VVAB1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA1" source="VVBA1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA2" source="VVBA2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA3" source="VVBA3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA4" source="VVBA4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA5" source="VVBA5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA6" source="VVBA6"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA7" source="VVBA7"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA8" source="VVBA8"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA9" source="VVBA9"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBB1" source="VVBB1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBB2" source="VVBB2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBB3" source="VVBB3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBB4" source="VVBB4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVAA1" source="VVAA1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBC5" source="VVBC5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBD5" source="VVBD5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBAA" source="VVBAA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBAB" source="VVBAB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBAC" source="VVBAC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBAD" source="VVBAD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBAE" source="VVBAE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBAF" source="VVBAF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBB5" source="VVBB5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBB6" source="VVBB6"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBC6" source="VVBC6"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBE5" source="VVBE5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBE6" source="VVBE6"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBE7" source="VVBE7"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVFE1" source="VVFE1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KATR9" source="KATR9"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWBU1" source="WWBU1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWFC1" source="WWFC1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWFC4" source="WWFC4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWFC5" source="WWFC5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWGP1" source="WWGP1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX30" source="VVX30"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX31" source="VVX31"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX32" source="VVX32"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX33" source="VVX33"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX34" source="VVX34"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX35" source="VVX35"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX36" source="VVX36"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX37" source="VVX37"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX38" source="VVX38"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX39" source="VVX39"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX40" source="VVX40"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX41" source="VVX41"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX42" source="VVX42"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX43" source="VVX43"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX44" source="VVX44"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX45" source="VVX45"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX46" source="VVX46"/>
+    </input>
+    <input node="P_MFL1_02" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PALEDGER" source="PALEDGER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VRGAR" source="VRGAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERSI" source="VERSI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PERIO" source="PERIO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAOBJNR" source="PAOBJNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PASUBNR" source="PASUBNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BELNR" source="BELNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POSNR" source="POSNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HZDAT" source="HZDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="USNAM" source="USNAM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GJAHR" source="GJAHR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PERDE" source="PERDE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WADAT" source="WADAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FADAT" source="FADAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUDAT" source="BUDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ALTPERIO" source="ALTPERIO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAPAOBJNR" source="PAPAOBJNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAPASUBNR" source="PAPASUBNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KNDNR" source="KNDNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ARTNR" source="ARTNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FKART" source="FKART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FRWAE" source="FRWAE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KURSF" source="KURSF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KURSBK" source="KURSBK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KURSKZ" source="KURSKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REC_WAERS" source="REC_WAERS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KAUFN" source="KAUFN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KDPOS" source="KDPOS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RKAUFNR" source="RKAUFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SKOST" source="SKOST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRZNR" source="PRZNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOKRS" source="KOKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GSBER" source="GSBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VKORG" source="VKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VTWEG" source="VTWEG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPART" source="SPART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HRKFT" source="HRKFT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PLIKZ" source="PLIKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KSTAR" source="KSTAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PSPNR" source="PSPNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KSTRG" source="KSTRG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RBELN" source="RBELN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RPOSN" source="RPOSN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STO_BELNR" source="STO_BELNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STO_POSNR" source="STO_POSNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRCTR" source="PRCTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PPRCTR" source="PPRCTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RKESTATU" source="RKESTATU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TIMESTMP" source="TIMESTMP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COPA_AWTYP" source="COPA_AWTYP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COPA_AWORG" source="COPA_AWORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COPA_BWZPT" source="COPA_BWZPT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COPA_AWSYS" source="COPA_AWSYS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AUGRU" source="AUGRU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BZIRK" source="BZIRK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KDGRP" source="KDGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KMLAND" source="KMLAND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KMVKBU" source="KMVKBU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KMVKGR" source="KMVKGR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KTGRD" source="KTGRD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KUNRE" source="KUNRE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KUNWE" source="KUNWE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL" source="MATKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRODH" source="PRODH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWIND" source="WWIND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWMKT" source="WWMKT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWBRD" source="WWBRD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CRMCSTY" source="CRMCSTY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CRMELEM" source="CRMELEM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CRMFIGR" source="CRMFIGR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWDES" source="WWDES"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWPRG" source="WWPRG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KMHI01" source="KMHI01"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KMHI02" source="KMHI02"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KMHI03" source="KMHI03"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWPDA" source="WWPDA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX1_ME" source="VVXX1_ME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX2_ME" source="VVXX2_ME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX11" source="VVX11"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX12" source="VVX12"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX1" source="VVXX1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX2" source="VVXX2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX3" source="VVXX3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX4" source="VVXX4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX5" source="VVXX5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX6" source="VVXX6"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX7" source="VVXX7"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX10" source="VVX10"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX21" source="VVX21"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX22" source="VVX22"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX23" source="VVX23"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX24" source="VVX24"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX25" source="VVX25"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX26" source="VVX26"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX27" source="VVX27"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX28" source="VVX28"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX29" source="VVX29"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX9" source="VVXX9"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX15" source="VVX15"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVFB1" source="VVFB1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVFC1" source="VVFC1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVFD1" source="VVFD1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVEE1" source="VVEE1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVEF1" source="VVEF1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVFA1" source="VVFA1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVCB2" source="VVCB2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVCB3" source="VVCB3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVCB4" source="VVCB4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVCC1" source="VVCC1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVDA1" source="VVDA1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVDA2" source="VVDA2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVDB1" source="VVDB1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVDC1" source="VVDC1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVDE1" source="VVDE1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVDF1" source="VVDF1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVEA1" source="VVEA1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVEB1" source="VVEB1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVEC1" source="VVEC1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVED1" source="VVED1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBC1" source="VVBC1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBC2" source="VVBC2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBC3" source="VVBC3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBC4" source="VVBC4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBD1" source="VVBD1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBD2" source="VVBD2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBD3" source="VVBD3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBD4" source="VVBD4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBE1" source="VVBE1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBE2" source="VVBE2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBE3" source="VVBE3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBE4" source="VVBE4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBF1" source="VVBF1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVCA1" source="VVCA1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVCB1" source="VVCB1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVAB1" source="VVAB1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA1" source="VVBA1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA2" source="VVBA2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA3" source="VVBA3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA4" source="VVBA4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA5" source="VVBA5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA6" source="VVBA6"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA7" source="VVBA7"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA8" source="VVBA8"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA9" source="VVBA9"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBB1" source="VVBB1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBB2" source="VVBB2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBB3" source="VVBB3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBB4" source="VVBB4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVAA1" source="VVAA1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBC5" source="VVBC5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBD5" source="VVBD5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBAA" source="VVBAA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBAB" source="VVBAB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBAC" source="VVBAC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBAD" source="VVBAD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBAE" source="VVBAE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBAF" source="VVBAF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBB5" source="VVBB5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBB6" source="VVBB6"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBC6" source="VVBC6"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBE5" source="VVBE5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBE6" source="VVBE6"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBE7" source="VVBE7"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVFE1" source="VVFE1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KATR9" source="KATR9"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWBU1" source="WWBU1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWFC1" source="WWFC1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWFC4" source="WWFC4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWFC5" source="WWFC5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWGP1" source="WWGP1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX30" source="VVX30"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX31" source="VVX31"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX32" source="VVX32"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX33" source="VVX33"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX34" source="VVX34"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX35" source="VVX35"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX36" source="VVX36"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX37" source="VVX37"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX38" source="VVX38"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX39" source="VVX39"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX40" source="VVX40"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX41" source="VVX41"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX42" source="VVX42"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX43" source="VVX43"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX44" source="VVX44"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX45" source="VVX45"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX46" source="VVX46"/>
+    </input>
+  
+    <input node="P_MFL2" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PALEDGER" source="PALEDGER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VRGAR" source="VRGAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERSI" source="VERSI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PERIO" source="PERIO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAOBJNR" source="PAOBJNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PASUBNR" source="PASUBNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BELNR" source="BELNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POSNR" source="POSNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HZDAT" source="HZDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="USNAM" source="USNAM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GJAHR" source="GJAHR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PERDE" source="PERDE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WADAT" source="WADAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FADAT" source="FADAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUDAT" source="BUDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ALTPERIO" source="ALTPERIO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAPAOBJNR" source="PAPAOBJNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAPASUBNR" source="PAPASUBNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KNDNR" source="KNDNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ARTNR" source="ARTNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FKART" source="FKART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FRWAE" source="FRWAE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KURSF" source="KURSF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KURSBK" source="KURSBK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KURSKZ" source="KURSKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REC_WAERS" source="REC_WAERS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KAUFN" source="KAUFN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KDPOS" source="KDPOS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RKAUFNR" source="RKAUFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SKOST" source="SKOST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRZNR" source="PRZNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOKRS" source="KOKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GSBER" source="GSBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VKORG" source="VKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VTWEG" source="VTWEG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPART" source="SPART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HRKFT" source="HRKFT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PLIKZ" source="PLIKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KSTAR" source="KSTAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PSPNR" source="PSPNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KSTRG" source="KSTRG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RBELN" source="RBELN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RPOSN" source="RPOSN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STO_BELNR" source="STO_BELNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STO_POSNR" source="STO_POSNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRCTR" source="PRCTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PPRCTR" source="PPRCTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RKESTATU" source="RKESTATU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TIMESTMP" source="TIMESTMP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COPA_AWTYP" source="COPA_AWTYP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COPA_AWORG" source="COPA_AWORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COPA_BWZPT" source="COPA_BWZPT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COPA_AWSYS" source="COPA_AWSYS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AUGRU" source="AUGRU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BZIRK" source="BZIRK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KDGRP" source="KDGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KMLAND" source="KMLAND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KMVKBU" source="KMVKBU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KMVKGR" source="KMVKGR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KTGRD" source="KTGRD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KUNRE" source="KUNRE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KUNWE" source="KUNWE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL" source="MATKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRODH" source="PRODH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWIND" source="WWIND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWMKT" source="WWMKT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWBRD" source="WWBRD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CRMCSTY" source="CRMCSTY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CRMELEM" source="CRMELEM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CRMFIGR" source="CRMFIGR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWDES" source="WWDES"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWPRG" source="WWPRG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KMHI01" source="KMHI01"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KMHI02" source="KMHI02"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KMHI03" source="KMHI03"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWPDA" source="WWPDA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX1_ME" source="VVXX1_ME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX2_ME" source="VVXX2_ME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX11" source="VVX11"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX12" source="VVX12"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX1" source="VVXX1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX2" source="VVXX2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX3" source="VVXX3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX4" source="VVXX4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX5" source="VVXX5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX6" source="VVXX6"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX7" source="VVXX7"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX10" source="VVX10"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX21" source="VVX21"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX22" source="VVX22"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX23" source="VVX23"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX24" source="VVX24"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX25" source="VVX25"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX26" source="VVX26"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX27" source="VVX27"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX28" source="VVX28"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX29" source="VVX29"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX9" source="VVXX9"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX15" source="VVX15"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVFB1" source="VVFB1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVFC1" source="VVFC1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVFD1" source="VVFD1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVEE1" source="VVEE1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVEF1" source="VVEF1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVFA1" source="VVFA1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVCB2" source="VVCB2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVCB3" source="VVCB3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVCB4" source="VVCB4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVCC1" source="VVCC1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVDA1" source="VVDA1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVDA2" source="VVDA2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVDB1" source="VVDB1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVDC1" source="VVDC1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVDE1" source="VVDE1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVDF1" source="VVDF1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVEA1" source="VVEA1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVEB1" source="VVEB1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVEC1" source="VVEC1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVED1" source="VVED1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBC1" source="VVBC1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBC2" source="VVBC2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBC3" source="VVBC3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBC4" source="VVBC4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBD1" source="VVBD1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBD2" source="VVBD2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBD3" source="VVBD3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBD4" source="VVBD4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBE1" source="VVBE1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBE2" source="VVBE2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBE3" source="VVBE3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBE4" source="VVBE4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBF1" source="VVBF1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVCA1" source="VVCA1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVCB1" source="VVCB1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVAB1" source="VVAB1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA1" source="VVBA1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA2" source="VVBA2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA3" source="VVBA3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA4" source="VVBA4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA5" source="VVBA5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA6" source="VVBA6"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA7" source="VVBA7"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA8" source="VVBA8"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA9" source="VVBA9"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBB1" source="VVBB1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBB2" source="VVBB2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBB3" source="VVBB3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBB4" source="VVBB4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVAA1" source="VVAA1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBC5" source="VVBC5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBD5" source="VVBD5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBAA" source="VVBAA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBAB" source="VVBAB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBAC" source="VVBAC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBAD" source="VVBAD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBAE" source="VVBAE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBAF" source="VVBAF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBB5" source="VVBB5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBB6" source="VVBB6"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBC6" source="VVBC6"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBE5" source="VVBE5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBE6" source="VVBE6"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBE7" source="VVBE7"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVFE1" source="VVFE1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KATR9" source="KATR9"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWBU1" source="WWBU1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWFC1" source="WWFC1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWFC4" source="WWFC4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWFC5" source="WWFC5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWGP1" source="WWGP1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX30" source="VVX30"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX31" source="VVX31"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX32" source="VVX32"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX33" source="VVX33"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX34" source="VVX34"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX35" source="VVX35"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX36" source="VVX36"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX37" source="VVX37"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX38" source="VVX38"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX39" source="VVX39"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX40" source="VVX40"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX41" source="VVX41"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX42" source="VVX42"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX43" source="VVX43"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX44" source="VVX44"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX45" source="VVX45"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX46" source="VVX46"/>
+    </input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_MFL2" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="PALEDGER"/>
+      <viewAttribute id="VRGAR"/>
+      <viewAttribute id="VERSI"/>
+      <viewAttribute id="PERIO"/>
+      <viewAttribute id="PAOBJNR"/>
+      <viewAttribute id="PASUBNR"/>
+      <viewAttribute id="BELNR"/>
+      <viewAttribute id="POSNR"/>
+      <viewAttribute id="HZDAT"/>
+      <viewAttribute id="USNAM"/>
+      <viewAttribute id="GJAHR"/>
+      <viewAttribute id="PERDE"/>
+      <viewAttribute id="WADAT"/>
+      <viewAttribute id="FADAT"/>
+      <viewAttribute id="BUDAT"/>
+      <viewAttribute id="ALTPERIO"/>
+      <viewAttribute id="PAPAOBJNR"/>
+      <viewAttribute id="PAPASUBNR"/>
+      <viewAttribute id="KNDNR"/>
+      <viewAttribute id="ARTNR"/>
+      <viewAttribute id="FKART"/>
+      <viewAttribute id="FRWAE"/>
+      <viewAttribute id="KURSF"/>
+      <viewAttribute id="KURSBK"/>
+      <viewAttribute id="KURSKZ"/>
+      <viewAttribute id="REC_WAERS"/>
+      <viewAttribute id="KAUFN"/>
+      <viewAttribute id="KDPOS"/>
+      <viewAttribute id="RKAUFNR"/>
+      <viewAttribute id="SKOST"/>
+      <viewAttribute id="PRZNR"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="GSBER"/>
+      <viewAttribute id="VKORG"/>
+      <viewAttribute id="VTWEG"/>
+      <viewAttribute id="SPART"/>
+      <viewAttribute id="HRKFT"/>
+      <viewAttribute id="PLIKZ"/>
+      <viewAttribute id="KSTAR"/>
+      <viewAttribute id="PSPNR"/>
+      <viewAttribute id="KSTRG"/>
+      <viewAttribute id="RBELN"/>
+      <viewAttribute id="RPOSN"/>
+      <viewAttribute id="STO_BELNR"/>
+      <viewAttribute id="STO_POSNR"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="PPRCTR"/>
+      <viewAttribute id="RKESTATU"/>
+      <viewAttribute id="TIMESTMP"/>
+      <viewAttribute id="COPA_AWTYP"/>
+      <viewAttribute id="COPA_AWORG"/>
+      <viewAttribute id="COPA_BWZPT"/>
+      <viewAttribute id="COPA_AWSYS"/>
+      <viewAttribute id="AUGRU"/>
+      <viewAttribute id="BZIRK"/>
+      <viewAttribute id="KDGRP"/>
+      <viewAttribute id="KMLAND"/>
+      <viewAttribute id="KMVKBU"/>
+      <viewAttribute id="KMVKGR"/>
+      <viewAttribute id="KTGRD"/>
+      <viewAttribute id="KUNRE"/>
+      <viewAttribute id="KUNWE"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="PRODH"/>
+      <viewAttribute id="WWIND"/>
+      <viewAttribute id="WWMKT"/>
+      <viewAttribute id="WWBRD"/>
+      <viewAttribute id="CRMCSTY"/>
+      <viewAttribute id="CRMELEM"/>
+      <viewAttribute id="CRMFIGR"/>
+      <viewAttribute id="WWDES"/>
+      <viewAttribute id="WWPRG"/>
+      <viewAttribute id="KMHI01"/>
+      <viewAttribute id="KMHI02"/>
+      <viewAttribute id="KMHI03"/>
+      <viewAttribute id="WWPDA"/>
+      <viewAttribute id="VVXX1_ME"/>
+      <viewAttribute id="VVXX2_ME"/>
+      <viewAttribute id="VVX11"/>
+      <viewAttribute id="VVX12"/>
+      <viewAttribute id="VVXX1"/>
+      <viewAttribute id="VVXX2"/>
+      <viewAttribute id="VVXX3"/>
+      <viewAttribute id="VVXX4"/>
+      <viewAttribute id="VVXX5"/>
+      <viewAttribute id="VVXX6"/>
+      <viewAttribute id="VVXX7"/>
+      <viewAttribute id="VVX10"/>
+      <viewAttribute id="VVX21"/>
+      <viewAttribute id="VVX22"/>
+      <viewAttribute id="VVX23"/>
+      <viewAttribute id="VVX24"/>
+      <viewAttribute id="VVX25"/>
+      <viewAttribute id="VVX26"/>
+      <viewAttribute id="VVX27"/>
+      <viewAttribute id="VVX28"/>
+      <viewAttribute id="VVX29"/>
+      <viewAttribute id="VVXX9"/>
+      <viewAttribute id="VVX15"/>
+      <viewAttribute id="VVFB1"/>
+      <viewAttribute id="VVFC1"/>
+      <viewAttribute id="VVFD1"/>
+      <viewAttribute id="VVEE1"/>
+      <viewAttribute id="VVEF1"/>
+      <viewAttribute id="VVFA1"/>
+      <viewAttribute id="VVCB2"/>
+      <viewAttribute id="VVCB3"/>
+      <viewAttribute id="VVCB4"/>
+      <viewAttribute id="VVCC1"/>
+      <viewAttribute id="VVDA1"/>
+      <viewAttribute id="VVDA2"/>
+      <viewAttribute id="VVDB1"/>
+      <viewAttribute id="VVDC1"/>
+      <viewAttribute id="VVDE1"/>
+      <viewAttribute id="VVDF1"/>
+      <viewAttribute id="VVEA1"/>
+      <viewAttribute id="VVEB1"/>
+      <viewAttribute id="VVEC1"/>
+      <viewAttribute id="VVED1"/>
+      <viewAttribute id="VVBC1"/>
+      <viewAttribute id="VVBC2"/>
+      <viewAttribute id="VVBC3"/>
+      <viewAttribute id="VVBC4"/>
+      <viewAttribute id="VVBD1"/>
+      <viewAttribute id="VVBD2"/>
+      <viewAttribute id="VVBD3"/>
+      <viewAttribute id="VVBD4"/>
+      <viewAttribute id="VVBE1"/>
+      <viewAttribute id="VVBE2"/>
+      <viewAttribute id="VVBE3"/>
+      <viewAttribute id="VVBE4"/>
+      <viewAttribute id="VVBF1"/>
+      <viewAttribute id="VVCA1"/>
+      <viewAttribute id="VVCB1"/>
+      <viewAttribute id="VVAB1"/>
+      <viewAttribute id="VVBA1"/>
+      <viewAttribute id="VVBA2"/>
+      <viewAttribute id="VVBA3"/>
+      <viewAttribute id="VVBA4"/>
+      <viewAttribute id="VVBA5"/>
+      <viewAttribute id="VVBA6"/>
+      <viewAttribute id="VVBA7"/>
+      <viewAttribute id="VVBA8"/>
+      <viewAttribute id="VVBA9"/>
+      <viewAttribute id="VVBB1"/>
+      <viewAttribute id="VVBB2"/>
+      <viewAttribute id="VVBB3"/>
+      <viewAttribute id="VVBB4"/>
+      <viewAttribute id="VVAA1"/>
+      <viewAttribute id="VVBC5"/>
+      <viewAttribute id="VVBD5"/>
+      <viewAttribute id="VVBAA"/>
+      <viewAttribute id="VVBAB"/>
+      <viewAttribute id="VVBAC"/>
+      <viewAttribute id="VVBAD"/>
+      <viewAttribute id="VVBAE"/>
+      <viewAttribute id="VVBAF"/>
+      <viewAttribute id="VVBB5"/>
+      <viewAttribute id="VVBB6"/>
+      <viewAttribute id="VVBC6"/>
+      <viewAttribute id="VVBE5"/>
+      <viewAttribute id="VVBE6"/>
+      <viewAttribute id="VVBE7"/>
+      <viewAttribute id="VVFE1"/>
+      <viewAttribute id="KATR9"/>
+      <viewAttribute id="WWBU1"/>
+      <viewAttribute id="WWFC1"/>
+      <viewAttribute id="WWFC4"/>
+      <viewAttribute id="WWFC5"/>
+      <viewAttribute id="WWGP1"/>
+      <viewAttribute id="VVX30"/>
+      <viewAttribute id="VVX31"/>
+      <viewAttribute id="VVX32"/>
+      <viewAttribute id="VVX33"/>
+      <viewAttribute id="VVX34"/>
+      <viewAttribute id="VVX35"/>
+      <viewAttribute id="VVX36"/>
+      <viewAttribute id="VVX37"/>
+      <viewAttribute id="VVX38"/>
+      <viewAttribute id="VVX39"/>
+      <viewAttribute id="VVX40"/>
+      <viewAttribute id="VVX41"/>
+      <viewAttribute id="VVX42"/>
+      <viewAttribute id="VVX43"/>
+      <viewAttribute id="VVX44"/>
+      <viewAttribute id="VVX45"/>
+      <viewAttribute id="VVX46"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="TGT_CE1MFL2"/>
+    <filter>&quot;VTWEG&quot; = '10' AND &quot;PALEDGER&quot; = '01' AND &quot;VRGAR&quot; IN ('B', 'F')</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:AggregationView" id="Aggregation_1">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="PALEDGER"/>
+      <viewAttribute id="VRGAR"/>
+      <viewAttribute id="VERSI"/>
+      <viewAttribute id="PERIO"/>
+      <viewAttribute id="PAOBJNR"/>
+      <viewAttribute id="PASUBNR"/>
+      <viewAttribute id="BELNR"/>
+      <viewAttribute id="POSNR"/>
+      <viewAttribute id="COGS" aggregationType="sum"/>
+      <viewAttribute id="FREIGHT" aggregationType="sum"/>
+      <viewAttribute id="STORAGE" aggregationType="sum"/>
+      <viewAttribute id="VVAA1" aggregationType="sum"/>
+      <viewAttribute id="VVX22" aggregationType="sum"/>
+      <viewAttribute id="VVXX2" aggregationType="sum"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <restrictedViewAttributes/>
+    <input node="Join_2"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_1">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="PALEDGER"/>
+      <viewAttribute id="VRGAR"/>
+      <viewAttribute id="VERSI"/>
+      <viewAttribute id="PERIO"/>
+      <viewAttribute id="PAOBJNR"/>
+      <viewAttribute id="PASUBNR"/>
+      <viewAttribute id="BELNR"/>
+      <viewAttribute id="POSNR"/>
+      <viewAttribute id="COGS"/>
+      <viewAttribute id="FREIGHT"/>
+      <viewAttribute id="STORAGE"/>
+      <viewAttribute id="VVAA1"/>
+      <viewAttribute id="VVX22"/>
+      <viewAttribute id="VVXX2"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Aggregation_1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PALEDGER" source="PALEDGER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VRGAR" source="VRGAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERSI" source="VERSI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PERIO" source="PERIO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAOBJNR" source="PAOBJNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PASUBNR" source="PASUBNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BELNR" source="BELNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POSNR" source="POSNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COGS" source="COGS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FREIGHT" source="FREIGHT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STORAGE" source="STORAGE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVAA1" source="VVAA1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX22" source="VVX22"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX2" source="VVXX2"/>
+    </input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_COPA2">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="PALEDGER"/>
+      <viewAttribute id="VRGAR"/>
+      <viewAttribute id="VERSI"/>
+      <viewAttribute id="PERIO"/>
+      <viewAttribute id="PAOBJNR"/>
+      <viewAttribute id="PASUBNR"/>
+      <viewAttribute id="BELNR"/>
+      <viewAttribute id="POSNR"/>
+      <viewAttribute id="HZDAT"/>
+      <viewAttribute id="USNAM"/>
+      <viewAttribute id="GJAHR"/>
+      <viewAttribute id="PERDE"/>
+      <viewAttribute id="WADAT"/>
+      <viewAttribute id="FADAT"/>
+      <viewAttribute id="BUDAT"/>
+      <viewAttribute id="ALTPERIO"/>
+      <viewAttribute id="PAPAOBJNR"/>
+      <viewAttribute id="PAPASUBNR"/>
+      <viewAttribute id="KNDNR"/>
+      <viewAttribute id="ARTNR"/>
+      <viewAttribute id="FKART"/>
+      <viewAttribute id="FRWAE"/>
+      <viewAttribute id="KURSF"/>
+      <viewAttribute id="KURSBK"/>
+      <viewAttribute id="KURSKZ"/>
+      <viewAttribute id="REC_WAERS"/>
+      <viewAttribute id="KAUFN"/>
+      <viewAttribute id="KDPOS"/>
+      <viewAttribute id="RKAUFNR"/>
+      <viewAttribute id="SKOST"/>
+      <viewAttribute id="PRZNR"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="GSBER"/>
+      <viewAttribute id="VKORG"/>
+      <viewAttribute id="VTWEG"/>
+      <viewAttribute id="SPART"/>
+      <viewAttribute id="HRKFT"/>
+      <viewAttribute id="PLIKZ"/>
+      <viewAttribute id="KSTAR"/>
+      <viewAttribute id="PSPNR"/>
+      <viewAttribute id="KSTRG"/>
+      <viewAttribute id="RBELN"/>
+      <viewAttribute id="RPOSN"/>
+      <viewAttribute id="STO_BELNR"/>
+      <viewAttribute id="STO_POSNR"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="PPRCTR"/>
+      <viewAttribute id="RKESTATU"/>
+      <viewAttribute id="TIMESTMP"/>
+      <viewAttribute id="COPA_AWTYP"/>
+      <viewAttribute id="COPA_AWORG"/>
+      <viewAttribute id="COPA_BWZPT"/>
+      <viewAttribute id="COPA_AWSYS"/>
+      <viewAttribute id="AUGRU"/>
+      <viewAttribute id="BZIRK"/>
+      <viewAttribute id="KDGRP"/>
+      <viewAttribute id="KMLAND"/>
+      <viewAttribute id="KMVKBU"/>
+      <viewAttribute id="KMVKGR"/>
+      <viewAttribute id="KTGRD"/>
+      <viewAttribute id="KUNRE"/>
+      <viewAttribute id="KUNWE"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="PRODH"/>
+      <viewAttribute id="WWIND"/>
+      <viewAttribute id="WWMKT"/>
+      <viewAttribute id="WWBRD"/>
+      <viewAttribute id="CRMCSTY"/>
+      <viewAttribute id="CRMELEM"/>
+      <viewAttribute id="CRMFIGR"/>
+      <viewAttribute id="WWDES"/>
+      <viewAttribute id="WWPRG"/>
+      <viewAttribute id="KMHI01"/>
+      <viewAttribute id="KMHI02"/>
+      <viewAttribute id="KMHI03"/>
+      <viewAttribute id="WWPDA"/>
+      <viewAttribute id="VVXX1_ME"/>
+      <viewAttribute id="VVXX2_ME"/>
+      <viewAttribute id="VVX11"/>
+      <viewAttribute id="VVX12"/>
+      <viewAttribute id="VVXX1"/>
+      <viewAttribute id="VVXX2"/>
+      <viewAttribute id="VVXX3"/>
+      <viewAttribute id="VVXX4"/>
+      <viewAttribute id="VVXX5"/>
+      <viewAttribute id="VVXX6"/>
+      <viewAttribute id="VVXX7"/>
+      <viewAttribute id="VVX10"/>
+      <viewAttribute id="VVX21"/>
+      <viewAttribute id="VVX22"/>
+      <viewAttribute id="VVX23"/>
+      <viewAttribute id="VVX24"/>
+      <viewAttribute id="VVX25"/>
+      <viewAttribute id="VVX26"/>
+      <viewAttribute id="VVX27"/>
+      <viewAttribute id="VVX28"/>
+      <viewAttribute id="VVX29"/>
+      <viewAttribute id="VVXX9"/>
+      <viewAttribute id="VVX15"/>
+      <viewAttribute id="VVFB1"/>
+      <viewAttribute id="VVFC1"/>
+      <viewAttribute id="VVFD1"/>
+      <viewAttribute id="VVEE1"/>
+      <viewAttribute id="VVEF1"/>
+      <viewAttribute id="VVFA1"/>
+      <viewAttribute id="VVCB2"/>
+      <viewAttribute id="VVCB3"/>
+      <viewAttribute id="VVCB4"/>
+      <viewAttribute id="VVCC1"/>
+      <viewAttribute id="VVDA1"/>
+      <viewAttribute id="VVDA2"/>
+      <viewAttribute id="VVDB1"/>
+      <viewAttribute id="VVDC1"/>
+      <viewAttribute id="VVDE1"/>
+      <viewAttribute id="VVDF1"/>
+      <viewAttribute id="VVEA1"/>
+      <viewAttribute id="VVEB1"/>
+      <viewAttribute id="VVEC1"/>
+      <viewAttribute id="VVED1"/>
+      <viewAttribute id="VVBC1"/>
+      <viewAttribute id="VVBC2"/>
+      <viewAttribute id="VVBC3"/>
+      <viewAttribute id="VVBC4"/>
+      <viewAttribute id="VVBD1"/>
+      <viewAttribute id="VVBD2"/>
+      <viewAttribute id="VVBD3"/>
+      <viewAttribute id="VVBD4"/>
+      <viewAttribute id="VVBE1"/>
+      <viewAttribute id="VVBE2"/>
+      <viewAttribute id="VVBE3"/>
+      <viewAttribute id="VVBE4"/>
+      <viewAttribute id="VVBF1"/>
+      <viewAttribute id="VVCA1"/>
+      <viewAttribute id="VVCB1"/>
+      <viewAttribute id="VVAB1"/>
+      <viewAttribute id="VVBA1"/>
+      <viewAttribute id="VVBA2"/>
+      <viewAttribute id="VVBA3"/>
+      <viewAttribute id="VVBA4"/>
+      <viewAttribute id="VVBA5"/>
+      <viewAttribute id="VVBA6"/>
+      <viewAttribute id="VVBA7"/>
+      <viewAttribute id="VVBA8"/>
+      <viewAttribute id="VVBA9"/>
+      <viewAttribute id="VVBB1"/>
+      <viewAttribute id="VVBB2"/>
+      <viewAttribute id="VVBB3"/>
+      <viewAttribute id="VVBB4"/>
+      <viewAttribute id="VVAA1"/>
+      <viewAttribute id="VVBC5"/>
+      <viewAttribute id="VVBD5"/>
+      <viewAttribute id="VVBAA"/>
+      <viewAttribute id="VVBAB"/>
+      <viewAttribute id="VVBAC"/>
+      <viewAttribute id="VVBAD"/>
+      <viewAttribute id="VVBAE"/>
+      <viewAttribute id="VVBAF"/>
+      <viewAttribute id="VVBB5"/>
+      <viewAttribute id="VVBB6"/>
+      <viewAttribute id="VVBC6"/>
+      <viewAttribute id="VVBE5"/>
+      <viewAttribute id="VVBE6"/>
+      <viewAttribute id="VVBE7"/>
+      <viewAttribute id="VVFE1"/>
+      <viewAttribute id="KATR9"/>
+      <viewAttribute id="WWBU1"/>
+      <viewAttribute id="WWFC1"/>
+      <viewAttribute id="WWFC4"/>
+      <viewAttribute id="WWFC5"/>
+      <viewAttribute id="WWGP1"/>
+      <viewAttribute id="VVX30"/>
+      <viewAttribute id="VVX31"/>
+      <viewAttribute id="VVX32"/>
+      <viewAttribute id="VVX33"/>
+      <viewAttribute id="VVX34"/>
+      <viewAttribute id="VVX35"/>
+      <viewAttribute id="VVX36"/>
+      <viewAttribute id="VVX37"/>
+      <viewAttribute id="VVX38"/>
+      <viewAttribute id="VVX39"/>
+      <viewAttribute id="VVX40"/>
+      <viewAttribute id="VVX41"/>
+      <viewAttribute id="VVX42"/>
+      <viewAttribute id="VVX43"/>
+      <viewAttribute id="VVX44"/>
+      <viewAttribute id="VVX45"/>
+      <viewAttribute id="VVX46"/>
+      <viewAttribute id="COGS"/>
+      <viewAttribute id="STORAGE"/>
+      <viewAttribute id="FREIGHT"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="DUMMY" datatype="NVARCHAR" length="13" expressionLanguage="SQL">
+        <formula>1</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="Union"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_COPA1">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="PALEDGER"/>
+      <viewAttribute id="VRGAR"/>
+      <viewAttribute id="VERSI"/>
+      <viewAttribute id="PERIO"/>
+      <viewAttribute id="PAOBJNR"/>
+      <viewAttribute id="PASUBNR"/>
+      <viewAttribute id="BELNR"/>
+      <viewAttribute id="POSNR"/>
+      <viewAttribute id="HZDAT"/>
+      <viewAttribute id="USNAM"/>
+      <viewAttribute id="GJAHR"/>
+      <viewAttribute id="PERDE"/>
+      <viewAttribute id="WADAT"/>
+      <viewAttribute id="FADAT"/>
+      <viewAttribute id="BUDAT"/>
+      <viewAttribute id="ALTPERIO"/>
+      <viewAttribute id="PAPAOBJNR"/>
+      <viewAttribute id="PAPASUBNR"/>
+      <viewAttribute id="KNDNR"/>
+      <viewAttribute id="ARTNR"/>
+      <viewAttribute id="FKART"/>
+      <viewAttribute id="FRWAE"/>
+      <viewAttribute id="KURSF"/>
+      <viewAttribute id="KURSBK"/>
+      <viewAttribute id="KURSKZ"/>
+      <viewAttribute id="REC_WAERS"/>
+      <viewAttribute id="KAUFN"/>
+      <viewAttribute id="KDPOS"/>
+      <viewAttribute id="RKAUFNR"/>
+      <viewAttribute id="SKOST"/>
+      <viewAttribute id="PRZNR"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="GSBER"/>
+      <viewAttribute id="VKORG"/>
+      <viewAttribute id="VTWEG"/>
+      <viewAttribute id="SPART"/>
+      <viewAttribute id="HRKFT"/>
+      <viewAttribute id="PLIKZ"/>
+      <viewAttribute id="KSTAR"/>
+      <viewAttribute id="PSPNR"/>
+      <viewAttribute id="KSTRG"/>
+      <viewAttribute id="RBELN"/>
+      <viewAttribute id="RPOSN"/>
+      <viewAttribute id="STO_BELNR"/>
+      <viewAttribute id="STO_POSNR"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="PPRCTR"/>
+      <viewAttribute id="RKESTATU"/>
+      <viewAttribute id="TIMESTMP"/>
+      <viewAttribute id="COPA_AWTYP"/>
+      <viewAttribute id="COPA_AWORG"/>
+      <viewAttribute id="COPA_BWZPT"/>
+      <viewAttribute id="COPA_AWSYS"/>
+      <viewAttribute id="AUGRU"/>
+      <viewAttribute id="BZIRK"/>
+      <viewAttribute id="KDGRP"/>
+      <viewAttribute id="KMLAND"/>
+      <viewAttribute id="KMVKBU"/>
+      <viewAttribute id="KMVKGR"/>
+      <viewAttribute id="KTGRD"/>
+      <viewAttribute id="KUNRE"/>
+      <viewAttribute id="KUNWE"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="PRODH"/>
+      <viewAttribute id="WWIND"/>
+      <viewAttribute id="WWMKT"/>
+      <viewAttribute id="WWBRD"/>
+      <viewAttribute id="CRMCSTY"/>
+      <viewAttribute id="CRMELEM"/>
+      <viewAttribute id="CRMFIGR"/>
+      <viewAttribute id="WWDES"/>
+      <viewAttribute id="WWPRG"/>
+      <viewAttribute id="KMHI01"/>
+      <viewAttribute id="KMHI02"/>
+      <viewAttribute id="KMHI03"/>
+      <viewAttribute id="WWPDA"/>
+      <viewAttribute id="VVXX1_ME"/>
+      <viewAttribute id="VVXX2_ME"/>
+      <viewAttribute id="VVX11"/>
+      <viewAttribute id="VVX12"/>
+      <viewAttribute id="VVXX1"/>
+      <viewAttribute id="VVXX2"/>
+      <viewAttribute id="VVXX3"/>
+      <viewAttribute id="VVXX4"/>
+      <viewAttribute id="VVXX5"/>
+      <viewAttribute id="VVXX6"/>
+      <viewAttribute id="VVXX7"/>
+      <viewAttribute id="VVX10"/>
+      <viewAttribute id="VVX21"/>
+      <viewAttribute id="VVX22"/>
+      <viewAttribute id="VVX23"/>
+      <viewAttribute id="VVX24"/>
+      <viewAttribute id="VVX25"/>
+      <viewAttribute id="VVX26"/>
+      <viewAttribute id="VVX27"/>
+      <viewAttribute id="VVX28"/>
+      <viewAttribute id="VVX29"/>
+      <viewAttribute id="VVXX9"/>
+      <viewAttribute id="VVX15"/>
+      <viewAttribute id="VVFB1"/>
+      <viewAttribute id="VVFC1"/>
+      <viewAttribute id="VVFD1"/>
+      <viewAttribute id="VVEE1"/>
+      <viewAttribute id="VVEF1"/>
+      <viewAttribute id="VVFA1"/>
+      <viewAttribute id="VVCB2"/>
+      <viewAttribute id="VVCB3"/>
+      <viewAttribute id="VVCB4"/>
+      <viewAttribute id="VVCC1"/>
+      <viewAttribute id="VVDA1"/>
+      <viewAttribute id="VVDA2"/>
+      <viewAttribute id="VVDB1"/>
+      <viewAttribute id="VVDC1"/>
+      <viewAttribute id="VVDE1"/>
+      <viewAttribute id="VVDF1"/>
+      <viewAttribute id="VVEA1"/>
+      <viewAttribute id="VVEB1"/>
+      <viewAttribute id="VVEC1"/>
+      <viewAttribute id="VVED1"/>
+      <viewAttribute id="VVBC1"/>
+      <viewAttribute id="VVBC2"/>
+      <viewAttribute id="VVBC3"/>
+      <viewAttribute id="VVBC4"/>
+      <viewAttribute id="VVBD1"/>
+      <viewAttribute id="VVBD2"/>
+      <viewAttribute id="VVBD3"/>
+      <viewAttribute id="VVBD4"/>
+      <viewAttribute id="VVBE1"/>
+      <viewAttribute id="VVBE2"/>
+      <viewAttribute id="VVBE3"/>
+      <viewAttribute id="VVBE4"/>
+      <viewAttribute id="VVBF1"/>
+      <viewAttribute id="VVCA1"/>
+      <viewAttribute id="VVCB1"/>
+      <viewAttribute id="VVAB1"/>
+      <viewAttribute id="VVBA1"/>
+      <viewAttribute id="VVBA2"/>
+      <viewAttribute id="VVBA3"/>
+      <viewAttribute id="VVBA4"/>
+      <viewAttribute id="VVBA5"/>
+      <viewAttribute id="VVBA6"/>
+      <viewAttribute id="VVBA7"/>
+      <viewAttribute id="VVBA8"/>
+      <viewAttribute id="VVBA9"/>
+      <viewAttribute id="VVBB1"/>
+      <viewAttribute id="VVBB2"/>
+      <viewAttribute id="VVBB3"/>
+      <viewAttribute id="VVBB4"/>
+      <viewAttribute id="VVAA1"/>
+      <viewAttribute id="VVBC5"/>
+      <viewAttribute id="VVBD5"/>
+      <viewAttribute id="VVBAA"/>
+      <viewAttribute id="VVBAB"/>
+      <viewAttribute id="VVBAC"/>
+      <viewAttribute id="VVBAD"/>
+      <viewAttribute id="VVBAE"/>
+      <viewAttribute id="VVBAF"/>
+      <viewAttribute id="VVBB5"/>
+      <viewAttribute id="VVBB6"/>
+      <viewAttribute id="VVBC6"/>
+      <viewAttribute id="VVBE5"/>
+      <viewAttribute id="VVBE6"/>
+      <viewAttribute id="VVBE7"/>
+      <viewAttribute id="VVFE1"/>
+      <viewAttribute id="KATR9"/>
+      <viewAttribute id="WWBU1"/>
+      <viewAttribute id="WWFC1"/>
+      <viewAttribute id="WWFC4"/>
+      <viewAttribute id="WWFC5"/>
+      <viewAttribute id="WWGP1"/>
+      <viewAttribute id="VVX30"/>
+      <viewAttribute id="VVX31"/>
+      <viewAttribute id="VVX32"/>
+      <viewAttribute id="VVX33"/>
+      <viewAttribute id="VVX34"/>
+      <viewAttribute id="VVX35"/>
+      <viewAttribute id="VVX36"/>
+      <viewAttribute id="VVX37"/>
+      <viewAttribute id="VVX38"/>
+      <viewAttribute id="VVX39"/>
+      <viewAttribute id="VVX40"/>
+      <viewAttribute id="VVX41"/>
+      <viewAttribute id="VVX42"/>
+      <viewAttribute id="VVX43"/>
+      <viewAttribute id="VVX44"/>
+      <viewAttribute id="VVX45"/>
+      <viewAttribute id="VVX46"/>
+      <viewAttribute id="COGS"/>
+      <viewAttribute id="STORAGE"/>
+      <viewAttribute id="FREIGHT"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="DUMMY" datatype="NVARCHAR" length="13" expressionLanguage="SQL">
+        <formula>1</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="Union"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_2" cardinality="CN_N" joinType="inner">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="PALEDGER"/>
+      <viewAttribute id="VRGAR"/>
+      <viewAttribute id="VERSI"/>
+      <viewAttribute id="PERIO"/>
+      <viewAttribute id="PAOBJNR"/>
+      <viewAttribute id="PASUBNR"/>
+      <viewAttribute id="BELNR"/>
+      <viewAttribute id="POSNR"/>
+      <viewAttribute id="HZDAT"/>
+      <viewAttribute id="USNAM"/>
+      <viewAttribute id="GJAHR"/>
+      <viewAttribute id="PERDE"/>
+      <viewAttribute id="WADAT"/>
+      <viewAttribute id="FADAT"/>
+      <viewAttribute id="BUDAT"/>
+      <viewAttribute id="ALTPERIO"/>
+      <viewAttribute id="PAPAOBJNR"/>
+      <viewAttribute id="PAPASUBNR"/>
+      <viewAttribute id="KNDNR"/>
+      <viewAttribute id="ARTNR"/>
+      <viewAttribute id="FKART"/>
+      <viewAttribute id="FRWAE"/>
+      <viewAttribute id="KURSF"/>
+      <viewAttribute id="KURSBK"/>
+      <viewAttribute id="KURSKZ"/>
+      <viewAttribute id="REC_WAERS"/>
+      <viewAttribute id="KAUFN"/>
+      <viewAttribute id="KDPOS"/>
+      <viewAttribute id="RKAUFNR"/>
+      <viewAttribute id="SKOST"/>
+      <viewAttribute id="PRZNR"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="GSBER"/>
+      <viewAttribute id="VKORG"/>
+      <viewAttribute id="VTWEG"/>
+      <viewAttribute id="SPART"/>
+      <viewAttribute id="HRKFT"/>
+      <viewAttribute id="PLIKZ"/>
+      <viewAttribute id="KSTAR"/>
+      <viewAttribute id="PSPNR"/>
+      <viewAttribute id="KSTRG"/>
+      <viewAttribute id="RBELN"/>
+      <viewAttribute id="RPOSN"/>
+      <viewAttribute id="STO_BELNR"/>
+      <viewAttribute id="STO_POSNR"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="PPRCTR"/>
+      <viewAttribute id="RKESTATU"/>
+      <viewAttribute id="TIMESTMP"/>
+      <viewAttribute id="COPA_AWTYP"/>
+      <viewAttribute id="COPA_AWORG"/>
+      <viewAttribute id="COPA_BWZPT"/>
+      <viewAttribute id="COPA_AWSYS"/>
+      <viewAttribute id="AUGRU"/>
+      <viewAttribute id="BZIRK"/>
+      <viewAttribute id="KDGRP"/>
+      <viewAttribute id="KMLAND"/>
+      <viewAttribute id="KMVKBU"/>
+      <viewAttribute id="KMVKGR"/>
+      <viewAttribute id="KTGRD"/>
+      <viewAttribute id="KUNRE"/>
+      <viewAttribute id="KUNWE"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="PRODH"/>
+      <viewAttribute id="WWIND"/>
+      <viewAttribute id="WWMKT"/>
+      <viewAttribute id="WWBRD"/>
+      <viewAttribute id="CRMCSTY"/>
+      <viewAttribute id="CRMELEM"/>
+      <viewAttribute id="CRMFIGR"/>
+      <viewAttribute id="WWDES"/>
+      <viewAttribute id="WWPRG"/>
+      <viewAttribute id="KMHI01"/>
+      <viewAttribute id="KMHI02"/>
+      <viewAttribute id="KMHI03"/>
+      <viewAttribute id="WWPDA"/>
+      <viewAttribute id="VVXX1_ME"/>
+      <viewAttribute id="VVXX2_ME"/>
+      <viewAttribute id="VVX11"/>
+      <viewAttribute id="VVX12"/>
+      <viewAttribute id="VVXX1"/>
+      <viewAttribute id="VVXX2"/>
+      <viewAttribute id="VVXX3"/>
+      <viewAttribute id="VVXX4"/>
+      <viewAttribute id="VVXX5"/>
+      <viewAttribute id="VVXX6"/>
+      <viewAttribute id="VVXX7"/>
+      <viewAttribute id="VVX10"/>
+      <viewAttribute id="VVX21"/>
+      <viewAttribute id="VVX22"/>
+      <viewAttribute id="VVX23"/>
+      <viewAttribute id="VVX24"/>
+      <viewAttribute id="VVX25"/>
+      <viewAttribute id="VVX26"/>
+      <viewAttribute id="VVX27"/>
+      <viewAttribute id="VVX28"/>
+      <viewAttribute id="VVX29"/>
+      <viewAttribute id="VVXX9"/>
+      <viewAttribute id="VVX15"/>
+      <viewAttribute id="VVFB1"/>
+      <viewAttribute id="VVFC1"/>
+      <viewAttribute id="VVFD1"/>
+      <viewAttribute id="VVEE1"/>
+      <viewAttribute id="VVEF1"/>
+      <viewAttribute id="VVFA1"/>
+      <viewAttribute id="VVCB2"/>
+      <viewAttribute id="VVCB3"/>
+      <viewAttribute id="VVCB4"/>
+      <viewAttribute id="VVCC1"/>
+      <viewAttribute id="VVDA1"/>
+      <viewAttribute id="VVDA2"/>
+      <viewAttribute id="VVDB1"/>
+      <viewAttribute id="VVDC1"/>
+      <viewAttribute id="VVDE1"/>
+      <viewAttribute id="VVDF1"/>
+      <viewAttribute id="VVEA1"/>
+      <viewAttribute id="VVEB1"/>
+      <viewAttribute id="VVEC1"/>
+      <viewAttribute id="VVED1"/>
+      <viewAttribute id="VVBC1"/>
+      <viewAttribute id="VVBC2"/>
+      <viewAttribute id="VVBC3"/>
+      <viewAttribute id="VVBC4"/>
+      <viewAttribute id="VVBD1"/>
+      <viewAttribute id="VVBD2"/>
+      <viewAttribute id="VVBD3"/>
+      <viewAttribute id="VVBD4"/>
+      <viewAttribute id="VVBE1"/>
+      <viewAttribute id="VVBE2"/>
+      <viewAttribute id="VVBE3"/>
+      <viewAttribute id="VVBE4"/>
+      <viewAttribute id="VVBF1"/>
+      <viewAttribute id="VVCA1"/>
+      <viewAttribute id="VVCB1"/>
+      <viewAttribute id="VVAB1"/>
+      <viewAttribute id="VVBA1"/>
+      <viewAttribute id="VVBA2"/>
+      <viewAttribute id="VVBA3"/>
+      <viewAttribute id="VVBA4"/>
+      <viewAttribute id="VVBA5"/>
+      <viewAttribute id="VVBA6"/>
+      <viewAttribute id="VVBA7"/>
+      <viewAttribute id="VVBA8"/>
+      <viewAttribute id="VVBA9"/>
+      <viewAttribute id="VVBB1"/>
+      <viewAttribute id="VVBB2"/>
+      <viewAttribute id="VVBB3"/>
+      <viewAttribute id="VVBB4"/>
+      <viewAttribute id="VVAA1"/>
+      <viewAttribute id="VVBC5"/>
+      <viewAttribute id="VVBD5"/>
+      <viewAttribute id="VVBAA"/>
+      <viewAttribute id="VVBAB"/>
+      <viewAttribute id="VVBAC"/>
+      <viewAttribute id="VVBAD"/>
+      <viewAttribute id="VVBAE"/>
+      <viewAttribute id="VVBAF"/>
+      <viewAttribute id="VVBB5"/>
+      <viewAttribute id="VVBB6"/>
+      <viewAttribute id="VVBC6"/>
+      <viewAttribute id="VVBE5"/>
+      <viewAttribute id="VVBE6"/>
+      <viewAttribute id="VVBE7"/>
+      <viewAttribute id="VVFE1"/>
+      <viewAttribute id="KATR9"/>
+      <viewAttribute id="WWBU1"/>
+      <viewAttribute id="WWFC1"/>
+      <viewAttribute id="WWFC4"/>
+      <viewAttribute id="WWFC5"/>
+      <viewAttribute id="WWGP1"/>
+      <viewAttribute id="VVX30"/>
+      <viewAttribute id="VVX31"/>
+      <viewAttribute id="VVX32"/>
+      <viewAttribute id="VVX33"/>
+      <viewAttribute id="VVX34"/>
+      <viewAttribute id="VVX35"/>
+      <viewAttribute id="VVX36"/>
+      <viewAttribute id="VVX37"/>
+      <viewAttribute id="VVX38"/>
+      <viewAttribute id="VVX39"/>
+      <viewAttribute id="VVX40"/>
+      <viewAttribute id="VVX41"/>
+      <viewAttribute id="VVX42"/>
+      <viewAttribute id="VVX43"/>
+      <viewAttribute id="VVX44"/>
+      <viewAttribute id="VVX45"/>
+      <viewAttribute id="VVX46"/>
+      <viewAttribute id="COGS"/>
+      <viewAttribute id="STORAGE"/>
+      <viewAttribute id="FREIGHT"/>
+      <viewAttribute id="DUMMY"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="P_COPA2">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PALEDGER" source="PALEDGER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VRGAR" source="VRGAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERSI" source="VERSI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PERIO" source="PERIO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAOBJNR" source="PAOBJNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PASUBNR" source="PASUBNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BELNR" source="BELNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POSNR" source="POSNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HZDAT" source="HZDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="USNAM" source="USNAM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GJAHR" source="GJAHR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PERDE" source="PERDE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WADAT" source="WADAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FADAT" source="FADAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUDAT" source="BUDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ALTPERIO" source="ALTPERIO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAPAOBJNR" source="PAPAOBJNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAPASUBNR" source="PAPASUBNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KNDNR" source="KNDNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ARTNR" source="ARTNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FKART" source="FKART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FRWAE" source="FRWAE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KURSF" source="KURSF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KURSBK" source="KURSBK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KURSKZ" source="KURSKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REC_WAERS" source="REC_WAERS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KAUFN" source="KAUFN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KDPOS" source="KDPOS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RKAUFNR" source="RKAUFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SKOST" source="SKOST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRZNR" source="PRZNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOKRS" source="KOKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GSBER" source="GSBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VKORG" source="VKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VTWEG" source="VTWEG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPART" source="SPART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HRKFT" source="HRKFT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PLIKZ" source="PLIKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KSTAR" source="KSTAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PSPNR" source="PSPNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KSTRG" source="KSTRG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RBELN" source="RBELN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RPOSN" source="RPOSN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STO_BELNR" source="STO_BELNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STO_POSNR" source="STO_POSNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRCTR" source="PRCTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PPRCTR" source="PPRCTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RKESTATU" source="RKESTATU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TIMESTMP" source="TIMESTMP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COPA_AWTYP" source="COPA_AWTYP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COPA_AWORG" source="COPA_AWORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COPA_BWZPT" source="COPA_BWZPT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COPA_AWSYS" source="COPA_AWSYS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AUGRU" source="AUGRU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BZIRK" source="BZIRK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KDGRP" source="KDGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KMLAND" source="KMLAND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KMVKBU" source="KMVKBU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KMVKGR" source="KMVKGR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KTGRD" source="KTGRD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KUNRE" source="KUNRE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KUNWE" source="KUNWE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL" source="MATKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRODH" source="PRODH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWIND" source="WWIND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWMKT" source="WWMKT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWBRD" source="WWBRD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CRMCSTY" source="CRMCSTY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CRMELEM" source="CRMELEM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CRMFIGR" source="CRMFIGR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWDES" source="WWDES"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWPRG" source="WWPRG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KMHI01" source="KMHI01"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KMHI02" source="KMHI02"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KMHI03" source="KMHI03"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWPDA" source="WWPDA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX1_ME" source="VVXX1_ME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX2_ME" source="VVXX2_ME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX11" source="VVX11"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX12" source="VVX12"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX1" source="VVXX1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX2" source="VVXX2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX3" source="VVXX3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX4" source="VVXX4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX5" source="VVXX5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX6" source="VVXX6"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX7" source="VVXX7"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX10" source="VVX10"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX21" source="VVX21"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX22" source="VVX22"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX23" source="VVX23"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX24" source="VVX24"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX25" source="VVX25"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX26" source="VVX26"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX27" source="VVX27"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX28" source="VVX28"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX29" source="VVX29"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVXX9" source="VVXX9"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX15" source="VVX15"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVFB1" source="VVFB1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVFC1" source="VVFC1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVFD1" source="VVFD1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVEE1" source="VVEE1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVEF1" source="VVEF1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVFA1" source="VVFA1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVCB2" source="VVCB2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVCB3" source="VVCB3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVCB4" source="VVCB4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVCC1" source="VVCC1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVDA1" source="VVDA1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVDA2" source="VVDA2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVDB1" source="VVDB1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVDC1" source="VVDC1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVDE1" source="VVDE1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVDF1" source="VVDF1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVEA1" source="VVEA1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVEB1" source="VVEB1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVEC1" source="VVEC1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVED1" source="VVED1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBC1" source="VVBC1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBC2" source="VVBC2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBC3" source="VVBC3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBC4" source="VVBC4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBD1" source="VVBD1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBD2" source="VVBD2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBD3" source="VVBD3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBD4" source="VVBD4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBE1" source="VVBE1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBE2" source="VVBE2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBE3" source="VVBE3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBE4" source="VVBE4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBF1" source="VVBF1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVCA1" source="VVCA1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVCB1" source="VVCB1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVAB1" source="VVAB1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA1" source="VVBA1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA2" source="VVBA2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA3" source="VVBA3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA4" source="VVBA4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA5" source="VVBA5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA6" source="VVBA6"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA7" source="VVBA7"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA8" source="VVBA8"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBA9" source="VVBA9"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBB1" source="VVBB1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBB2" source="VVBB2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBB3" source="VVBB3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBB4" source="VVBB4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVAA1" source="VVAA1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBC5" source="VVBC5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBD5" source="VVBD5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBAA" source="VVBAA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBAB" source="VVBAB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBAC" source="VVBAC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBAD" source="VVBAD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBAE" source="VVBAE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBAF" source="VVBAF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBB5" source="VVBB5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBB6" source="VVBB6"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBC6" source="VVBC6"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBE5" source="VVBE5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBE6" source="VVBE6"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVBE7" source="VVBE7"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVFE1" source="VVFE1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KATR9" source="KATR9"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWBU1" source="WWBU1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWFC1" source="WWFC1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWFC4" source="WWFC4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWFC5" source="WWFC5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWGP1" source="WWGP1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX30" source="VVX30"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX31" source="VVX31"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX32" source="VVX32"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX33" source="VVX33"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX34" source="VVX34"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX35" source="VVX35"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX36" source="VVX36"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX37" source="VVX37"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX38" source="VVX38"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX39" source="VVX39"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX40" source="VVX40"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX41" source="VVX41"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX42" source="VVX42"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX43" source="VVX43"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX44" source="VVX44"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX45" source="VVX45"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VVX46" source="VVX46"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COGS" source="COGS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STORAGE" source="STORAGE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FREIGHT" source="FREIGHT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DUMMY" source="DUMMY"/>
+    </input>
+    <input node="P_COPA1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+    </input>
+    <joinAttribute name="MANDT"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="Join_1">
+  <attributes/>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="411.25934071131553" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    
+  
+    <shape expanded="true" modelObjectName="P_MFL1_01" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="91.99999999999997" y="866.9999952316284"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_MFL1_02" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="512" y="866.9999952316284"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Union" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302" y="711.9999964237213"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="P_MFL2" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302" y="866.9999952316284"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Aggregation_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="391.92069882614516" y="341.9999988079071"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="411.25934071131553" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Aggregation_1" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_COPA2" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="236.55297895914708" y="586.9999976158142"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_COPA1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="446.55297895914714" y="586.9999976158142"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_2" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="391.92069882614516" y="446.9999988079071"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="P_COPA2" modelObjectNameSpace="Join_2" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="P_COPA1" modelObjectNameSpace="Join_2" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="164.84228515625"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>
