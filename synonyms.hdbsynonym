@@ -1,0 +1,17 @@
+{
+  "mccain-shared::MFL1_01": {
+    "target": {
+      "object": "mccain-shared::CE1MFL1_01"
+    }
+  },
+  "mccain-shared::MFL1_02": {
+    "target": {
+      "object": "mccain-shared::CE1MFL1_02"
+    }
+  },
+  "mccain-shared::MFL2": {
+    "target": {
+      "object": "mccain-shared::CE1MFL2"
+    }
+  }
+}
